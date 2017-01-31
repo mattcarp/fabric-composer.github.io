@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  
+  
+  
+
+<head>
+  <meta charset="utf-8">
+  
+    <title>Task - Start a Fabric Runtime | Fabric Composer</title>
+  
+  <meta name="viewport" content="width=device-width">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <meta name="google-site-verification" content="fBQRJ6h7MV7_TJ7grbgq4P-d-07NRfDWPe4pqEEoH5w">
+  <link href="//fonts.googleapis.com/css?family=Roboto+Slab:400,700%7CRoboto:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="/assets/js/clipboard.min.js"></script>
+
+  
+    <link href="/assets/css/normalize.css" rel="stylesheet">
+    <link href="/assets/css/main.css" rel="stylesheet">
+    <link href="/assets/css/footer.css" rel="stylesheet">
+    <link href="/assets/css/prettify.css" rel="stylesheet">
+  
+
+
+
+  <!--link href="/blog/atom.xml" type="application/atom+xml" rel="alternate" title="Concerto Blog Atom Feed">-->
+</head>
+
+
+<body class="">
+
+  
+  
+
+
+
+
+
+<header class="page-header">
+  <div class="container">
+    <div class="mobile-bar">
+     <h1 ><a href="/index.html" class="logot">Fabric Composer</a> </h1></a>
+      <button class="mobile-menu-toggle ir">open</button>
+    </div>
+    <nav class="main-menu">
+      <ul class="main-nav">
+        <li>
+          <a href="/index.html"><i class="fa fa-home" aria-hidden="true"></i></a>
+        </li>
+        <li>
+          <a href="/overview/overview.html">Overview</a>
+        </li>
+        <li>
+          <a href="/start/getting-started.html">Getting Started</a>
+          <ul>
+<li><a href="/start/getting-started-cmd-line.html">Running the sample network</a></li>
+<li><a href="/start/getting-started-coding-bnd.html">Coding a Network Definition</a></li>
+<li><a href="/start/getting-started-nodejs-app.html">Writing a nodejs app</a></li>
+<li><a href="/start/getting-started-rest-api.html">Adding a REST api</a></li>
+</ul>
+
+        </li>
+        <li>
+          <a href="/concepts/index.html">Concepts</a>
+                    <ul>
+<li><a href="/concepts/businessnetwork.html">Business Network</a></li>
+<li><a href="/concepts/businessnetworkdefinition.html">Business Network Definition</a></li>
+<li><a href="/concepts/participantsandidentities.html">Participants and Transactions</a> </li>
+</ul>
+
+        </li>
+        <li>
+          <a href="/tasks/index.html">Tasks</a>
+          <ul>
+<li><a href="/tasks/prerequisites.html">Installing Pre-requisites</a></li>
+<li><a href="/tasks/deploybusinessnetwork.html">Deploy Business Network</a></li>
+<li><a href="/tasks/createconnectionprofile.html">Create Connection Profile</a></li>
+<li><a href="/tasks/bnd-define.html">Create a Business Network Definition</a></li>
+<li><a href="/tasks/bnd-publish.html"> Publish a Business Network Definition</a></li>
+<li><a href="/tasks/genapp.html">Generating an Application</a></li>
+<li><a href="/tasks/model-define.html">Create a Business Domain Model</a></li>
+<li><a href="/tasks/model-publish.html">Publish a Business Domain Model</a></li>
+<li><a href="/tasks/runtime-start.html">Start a Fabric Runtime</a></li>
+<li><a href="/tasks/testing.html">Test a Business Network Definition</a></li>
+<li><a href="/tasks/runtime-update.html">Update a Business Network Definition on Fabric</a></li>
+<li><a href="/tasks/participant-add.html">Add a Participant</a></li>
+<li><a href="/tasks/identity-issue.html">Issue an Identity for a Participant</a></li>
+<li><a href="/tasks/identity-revoke.html">Revoke an Identity for a Participant</a></li>
+<li><a href="/tasks/current-participant.html">Implementing access control using the current Participant</a></li>
+<li><a href="/tasks/diagnostics.html">Diagnosing Problems</a></li>
+</ul>
+
+        </li>
+        <li>
+            <a href="/reference/index.html">Reference</a>
+            <ul>
+<li><a href="/reference/MeetTheModules.html">Meet the Modules</a></li>
+<li><a href="/reference/platforms.html">Supported Platforms</a></li>
+<li><a href="/reference/cto_language.html">Modeling Language</a></li>
+<li><a href="/reference/acl_language.html">Access Control Language</a></li>
+<li><a href="reference/connectionprofile.html">Connection Profile</a></li>
+<li><a href="/reference/js_scripts.html">Transaction Processor Functions</a></li>
+<li><a href="/reference/commands.html">Command Line Interface</a></li>
+<li><a href="/reference/concerto.generator.tests.html">Application Generator</a></li>
+<li><a href="/reference/concerto.participant.add.html">CLI Add Participant</a></li>
+<li><a href="/reference/concerto.identity.issue.html">CLI Issue Identity </a></li>
+<li><a href="/reference/concerto.identity.revoke.html">CLI Revoke Identity</a></li>
+<li><a href="/jsdoc/develop/index.html">API Documentation</a></li>
+<li><a href="/reference/glossary.html">Glossary</a></li>
+</ul>
+
+        </li>
+        <li>
+            <a href="/support/index.html">Support</a>
+        </li>
+      </ul>
+    </nav>
+  </div><!-- /.container -->
+</header><!-- /.page-header -->
+
+  
+
+  <div class="SiteWrapper">
+    
+      <div id="content">
+  <h2 class="page-title">
+    <span class="container">Task - Start a Fabric Runtime</span>
+  </h2>
+
+  <div class="container clearfix has-sidebar">
+    
+      <nav class="context-nav">
+        
+        
+          <ul>
+<li><a href="/tasks/prerequisites.html">Installing Pre-requisites</a></li>
+<li><a href="/tasks/deploybusinessnetwork.html">Deploy Business Network</a></li>
+<li><a href="/tasks/createconnectionprofile.html">Create Connection Profile</a></li>
+<li><a href="/tasks/bnd-define.html">Create a Business Network Definition</a></li>
+<li><a href="/tasks/bnd-publish.html"> Publish a Business Network Definition</a></li>
+<li><a href="/tasks/genapp.html">Generating an Application</a></li>
+<li><a href="/tasks/model-define.html">Create a Business Domain Model</a></li>
+<li><a href="/tasks/model-publish.html">Publish a Business Domain Model</a></li>
+<li><a href="/tasks/runtime-start.html">Start a Fabric Runtime</a></li>
+<li><a href="/tasks/testing.html">Test a Business Network Definition</a></li>
+<li><a href="/tasks/runtime-update.html">Update a Business Network Definition on Fabric</a></li>
+<li><a href="/tasks/participant-add.html">Add a Participant</a></li>
+<li><a href="/tasks/identity-issue.html">Issue an Identity for a Participant</a></li>
+<li><a href="/tasks/identity-revoke.html">Revoke an Identity for a Participant</a></li>
+<li><a href="/tasks/current-participant.html">Implementing access control using the current Participant</a></li>
+<li><a href="/tasks/diagnostics.html">Diagnosing Problems</a></li>
+</ul>
+
+        
+      </nav>
+    
+
+    <article class="main">
+      
+
+      <section class="content-chunk">
+        
+          <h1 id="start-a-fabric-runtime">Start a Fabric Runtime</h1>
+
+<p>You can start a local Fabric using Docker compose. The Getting Started project includes the setup.sh and teardown.sh scripts you need to download the required Docker images for Hyperledger and start or stop them.</p>
+
+        
+
+        
+      </section>
+    </article>
+  </div>
+</div>
+
+    
+
+    
+    
+<footer class="SiteFooter">
+  <ul class="SiteFooter-links">
+    <li>
+    <a href="https://twitter.com/ibmblockchain" class="icon">
+        <img src="/assets/img/social-twitter.svg" class="SiteFooter-icon" alt="Twitter">
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/fabric-composer/fabric-composer" class="icon">
+        <img src="/assets/img/social-github.svg" class="SiteFooter-icon" alt="Github">
+      </a>
+    </li>
+    <li>
+      <a href="http://stackoverflow.com/questions/tagged/fabric-composer" class="icon">
+      <i class="fa fa-stack-overflow icon" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="mobile-ln"></li>
+    <li>
+      <a href="https://fabric-composer.github.io/fabric-composer/jsdoc/develop/index.html" class="SiteFooter-button SiteFooter-button--light">APIs</a>
+    </li>
+  </ul>
+  <p class="copyright">Copyright 2017 IBM Corp. All Rights Reserved</p>
+</footer><!-- /.footer-links -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
+<script src="/assets/js/libs/prettify.js"></script>
+<script src="/assets/js/script.js"></script>
+
+    
+  </div>
+</body>
+</html>
