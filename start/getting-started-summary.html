@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   
-    <title>Fabric Composer Participant Add Command | Fabric Composer</title>
+    <title>Getting Started with Fabric Composer | Fabric Composer</title>
   
   <meta name="viewport" content="width=device-width">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -126,7 +126,7 @@
     
       <div id="content">
   <h2 class="page-title">
-    <span class="container">Fabric Composer Participant Add Command</span>
+    <span class="container">Getting Started with Fabric Composer</span>
   </h2>
 
   <div class="container clearfix has-sidebar">
@@ -135,19 +135,10 @@
         
         
           <ul>
-<li><a href="/reference/MeetTheModules.html">Meet the Modules</a></li>
-<li><a href="/reference/platforms.html">Supported Platforms</a></li>
-<li><a href="/reference/cto_language.html">Modeling Language</a></li>
-<li><a href="/reference/acl_language.html">Access Control Language</a></li>
-<li><a href="reference/connectionprofile.html">Connection Profile</a></li>
-<li><a href="/reference/js_scripts.html">Transaction Processor Functions</a></li>
-<li><a href="/reference/commands.html">Command Line Interface</a></li>
-<li><a href="/reference/concerto.generator.tests.html">Application Generator</a></li>
-<li><a href="/reference/concerto.participant.add.html">CLI Add Participant</a></li>
-<li><a href="/reference/concerto.identity.issue.html">CLI Issue Identity </a></li>
-<li><a href="/reference/concerto.identity.revoke.html">CLI Revoke Identity</a></li>
-<li><a href="/jsdoc/develop/index.html">API Documentation</a></li>
-<li><a href="/reference/glossary.html">Glossary</a></li>
+<li><a href="/start/getting-started.html">Running the sample network</a></li>
+<li><a href="/start/getting-started-coding-bnd.html">Coding a Network Definition</a></li>
+<li><a href="/start/getting-started-nodejs-app.html">Writing a nodejs app</a></li>
+<li><a href="/start/getting-started-rest-api.html">Adding a REST api</a></li>
 </ul>
 
         
@@ -159,54 +150,31 @@
 
       <section class="content-chunk">
         
-          <h1 id="composer-participant-add">composer participant add</h1>
+          <h1 id="getting-started-with-concerto-application-development">Getting started with Concerto Application Development</h1>
 
-<p>The <code>composer participant add</code> command adds a new instance of a participant to a
-participant registry. See the task <a href="../tasks/participant-add.html">Add a Participant</a>
-for a walkthrough of using this command or the API.</p>
+<p>The major components of Fabric Composer are:</p>
 
-<h2 id="syntax">Syntax</h2>
-<div class="highlight"><pre><code class="language-" data-lang="">$ composer participant add
-composer participant add [options]
+<ul>
+<li>The Fabric Composer language for describing the structure of resources (assets, participants and transactions) that participate in a blockchain-mediated business network.</li>
+<li>Javascript APIs to query, create, update and delete resources and submit transactions from client applications. Fabric Composer resources are stored on the blockchain.</li>
+<li>Javascript transaction processor functions that runs on Hyperledger when transactions are submitted for processing. These functions may update the state of resources stored on the blockchain via server-side Concerto APIs.</li>
+<li>A web network builder and tools to interactively test Fabric Composer-based solutions.</li>
+</ul>
 
-Options:
-  --help                       Show help  [boolean]
-  --connectionProfileName, -p  The connection profile name  [string]
-  --businessNetworkName, -n    The business network name  [string] [required]
-  --enrollId, -i               The enrollment ID of the user  [string] [required]
-  --enrollSecret, -s           The enrollment secret of the user  [string]
-  --data, -d                   Serialized participant JSON object as a string  [string] [required]
-</code></pre></div>
-<h2 id="options">Options</h2>
+<h1 id="where-to-get-started">Where to get started?</h1>
 
-<p><code>--connectionProfileName, -p</code></p>
+<p>Firstly it&#39;s worth reading the <a href="../overview/overview.html">Overview</a> - this will give you the essential background and context.</p>
 
-<p>The connection profile name.<br>
-Example: <code>defaultProfile</code></p>
+<p><strong>Developers</strong> - do you want to start with the sample application in the git repo and get some code running?  Head to the <a href="../start/getting-started-cmd-line.html">Getting Started</a></p>
 
-<p><code>--businessNetworkName, -n</code></p>
+<p><strong>Analysts</strong> - do you want to start modeling the business network?  Head to the <a href="../start/getting-started-composer.html">Getting Started with Web Network Builder</a></p>
 
-<p>The name of the deployed Business Network to connect to.<br>
-Example:
-<code>digitalproperty-network</code></p>
+<h1 id="good-places-to-go-next">Good places to go next</h1>
 
-<p><code>--enrollId, -i</code></p>
-
-<p>The enrollment ID of the identity that should be used to connect to the deployed
-Business Network.
-Example: <code>maeid1</code></p>
-
-<p><code>--enrollSecret, -s</code></p>
-
-<p>The enrollment secret of the identity that should be used to connect to deployed
-Business Network.<br>
-Example: <code>Xurw3yU9zI0l</code></p>
-
-<p><code>--data, -d</code></p>
-
-<p>The serialized JSON representation of the participant to add to the participant
-registry. The data must be valid according to the model of the participant.<br>
-Example: <code>{&quot;$class&quot;:&quot;net.biz.digitalPropertyNetwork.Person&quot;,&quot;personId&quot;:&quot;mae@biznet.org&quot;,&quot;firstName&quot;:&quot;Mae&quot;,&quot;lastName&quot;:&quot;Smith&quot;}</code></p>
+<ul>
+<li>It&#39;s worth reading more about the <a href="../concepts/index.html">Concepts</a></li>
+<li>There are common tasks that need to be performed - check out the <a href="../tasks/index.html">Task Map</a></li>
+</ul>
 
         
 
