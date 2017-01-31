@@ -164,7 +164,7 @@
         
           <h1 id="deploying-a-business-network">Deploying a Business Network</h1>
 
-<p>A business network is deployed using the <code>concerto network deploy</code> command.</p>
+<p>A business network is deployed using the <code>composer network deploy</code> command.</p>
 
 <h2 id="procedure">Procedure</h2>
 
@@ -179,19 +179,19 @@
 </code></pre></div></li>
 </ol>
 <div class="highlight"><pre><code class="language-" data-lang="">-   **lib** contains all of the transactions processor functions
--   **models** contains all of the model files written in the [Concerto Language](../reference/cto_language.html).
+-   **models** contains all of the model files written in the [CTO Language](../reference/cto_language.html).
 -   **package.json** is required, and is used to create the [Business Network Definition](../reference/businessnetworkdefinition.html)'s identifier
 
-You can use the `concerto archive` command to create an archive with the correct format.
+You can use the `composer archive` command to create an archive with the correct format.
 
 **NOTE**: *Do not zip a a folder containing **lib**, **models**, and **package.json** to create an Business Network Archive, zip the contents themselves*
 </code></pre></div>
 <ol>
 <li><p>Start <a href="">Hyperledger Fabric Peer and Membership Service</a></p></li>
-<li><p><a href="createconnectionprofile.html">Create a Connection Profile</a> or do <em>not</em> use <code>-p</code> and allow Concerto to create a <code>Default Connection Profile</code> for you.</p></li>
+<li><p><a href="createconnectionprofile.html">Create a Connection Profile</a> or do <em>not</em> use <code>-p</code> and allow Fabric Composer to create a <code>Default Connection Profile</code> for you.</p></li>
 <li><p>Enter the command on a single line. For example:</p>
 
-<p><code>concerto network deploy -a &lt;BusinessNetworkDefinition&gt;.zip -i &lt;Your EnrollmentID&gt;</code></p></li>
+<p><code>composer network deploy -a &lt;BusinessNetworkDefinition&gt;.zip -i &lt;Your EnrollmentID&gt;</code></p></li>
 <li><p>Enter your Enrollment Secret when prompted.</p>
 
 <p><code>prompt: What is the enrollment secret of the user?:</code></p></li>

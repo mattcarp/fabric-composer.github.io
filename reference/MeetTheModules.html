@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   
-    <title>Concerto - Meet the Modules and Git Repos | Fabric Composer</title>
+    <title>Fabric Composer - Meet the Modules and Git Repos | Fabric Composer</title>
   
   <meta name="viewport" content="width=device-width">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -126,7 +126,7 @@
     
       <div id="content">
   <h2 class="page-title">
-    <span class="container">Concerto - Meet the Modules and Git Repos</span>
+    <span class="container">Fabric Composer - Meet the Modules and Git Repos</span>
   </h2>
 
   <div class="container clearfix has-sidebar">
@@ -161,17 +161,17 @@
         
           <h1 id="meet-the-npm-modules">Meet the npm Modules</h1>
 
-<p>As part of the Concerto system we have 3 main modules for application developers. If you are writing an application this is your entry point.</p>
+<p>Fabric Composer has 3 main modules for application developers. If you are writing an application this is your entry point.</p>
 
 <ol>
-<li><p><code>concerto-client</code></p></li>
-<li><p><code>concerto-admin</code></p></li>
-<li><p><code>concerto-cli</code></p></li>
+<li><p><code>composer-client</code></p></li>
+<li><p><code>composer-admin</code></p></li>
+<li><p><code>composer-cli</code></p></li>
 </ol>
 
-<p><code>concerto-client</code> and <code>concerto-admin</code> are the two modules that provide APIs for applications. node.js applications should only use APIs that come from these modules. If there are other APIs that are need please contact us.</p>
+<p><code>composer-client</code> and <code>composer-admin</code> are the two modules that provide APIs for applications. node.js applications should only use APIs that come from these modules. If there are other APIs that are need please contact us.</p>
 
-<p>Details of all the APIs have been documented in JSDocs. Please go to the <a href="https://pages.github.ibm.com/Blockchain-WW-Labs/Concerto/jsdoc/develop/index.html">JSDoc API Documentation</a></p>
+<p>Details of all the APIs have been documented in JSDocs (see reference).</p>
 
 <h2 id="composer-client">composer-client</h2>
 
@@ -189,36 +189,6 @@
 <div class="highlight"><pre><code class="language-" data-lang="">npm install -g composer-cli
 </code></pre></div>
 <p>If you wish however you can instgall this as a local dependancy, but you could need to access the cli.js node class directly rather than used the <code>concerto</code> command.</p>
-
-<h1 id="git-repositories">GIT repositories</h1>
-
-<p>If you want to know more about the implementation, or if you want to contribute to Concerto, then you&#39;ll need to be aware of the git repos that are used.
-For information on how these are structured, how to build them and how to contribute, please review the README.md in the relavent repo. Best to start with the Concerto one.</p>
-
-<ol>
-<li>Concerto-Docs</li>
-<li>Concerto</li>
-<li>Composer</li>
-<li>GettingStarted</li>
-<li>DigitalProperty-Network</li>
-<li>DigitalProperty-Model</li>
-</ol>
-
-<h2 id="concerto-docs">Concerto-Docs</h2>
-
-<p>All the documentation for the main concerto website side (The gh-pages branch of concerto) are stored here. The travis build for this repo will also produce the jsdoc for the APIs</p>
-
-<h2 id="concerto">Concerto</h2>
-
-<p>This is the main &#39;monorepo&#39; that has all the code for the Concerto systems and produces all the npm modules. This uses the lerna tool to manage the monorepo.</p>
-
-<h2 id="composer">Composer</h2>
-
-<p>This is the Web UI for concerto</p>
-
-<h2 id="getting-started-digitalproperty-model-digitalproperty-model">Getting Started/DigitalProperty-Model/DigitalProperty-Model</h2>
-
-<p>This is a dedicated repo for the Getting Started tutorials of Concerto.</p>
 
         
 

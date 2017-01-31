@@ -164,21 +164,21 @@
         
           <h1 id="how-to-test-a-business-network-definition">How to Test a Business Network Definition</h1>
 
-<p>After you have deployed a business network definition it is often useful to run a &quot;smoke test&quot; to ensure that the deployment was successful. The <code>concerto</code> CLI exposes several commands for running such smoke tests.</p>
+<p>After you have deployed a business network definition it is often useful to run a &quot;smoke test&quot; to ensure that the deployment was successful. The <code>composer</code> CLI exposes several commands for running such smoke tests.</p>
 
 <p>In addition you can write full-blown system tests using Docker Compose and Chai, that start a Fabric, deploy your business network definition and then programmatically create assets, submit transactions and inspect the state of asset registries.</p>
 
 <h2 id="creating-assets">Creating Assets</h2>
 
-<p>Use the <code>ibm-concerto-client</code> module and the <code>BusinessNetworkConnection</code> API to add assets to an asset registry.</p>
+<p>Use the <code>composer-client</code> module and the <code>BusinessNetworkConnection</code> API to add assets to an asset registry.</p>
 
 <h2 id="viewing-registries">Viewing Registries</h2>
 
-<p><code>concerto network list</code></p>
+<p><code>composer network list</code></p>
 
 <h2 id="submitting-transactions">Submitting Transactions</h2>
 
-<p><code>concerto transaction submit</code></p>
+<p><code>composer transaction submit</code></p>
 
 <h2 id="writing-assertions">Writing Assertions</h2>
 
@@ -186,7 +186,7 @@
 
 <h1 id="generating-tests">Generating Tests</h1>
 
-<p>You may choose to add skeletal tests to your application using the <code>concerto generator tests</code> command.</p>
+<p>You may choose to add skeletal tests to your application using the <code>composer generator tests</code> command.</p>
 
         
 

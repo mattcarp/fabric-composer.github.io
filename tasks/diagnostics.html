@@ -168,7 +168,7 @@
 
 <p>Let&#39;s look at the Getting Started application, and use that to explain how to get diagnostics out of the Framework.</p>
 
-<p>Key Point: This is a framework - so your application will need to have it&#39;s own logging framework. Plus, your application could also have configuration information to control Concerto&#39;s own logging. Concerto does use the Winston logging module by default - and will use the Config module to look for any configuration information. If none is found, then a set of defaults will be used.</p>
+<p>Key Point: This is a framework - so your application will need to have it&#39;s own logging framework. Plus, your application could also have configuration information to control Fabric Composer&#39;s own logging. Concerto does use the Winston logging module by default - and will use the Config module to look for any configuration information. If none is found, then a set of defaults will be used.</p>
 
 <p>Note that the config module does write out a warning, if there are no configuration files set. Eg. <code>WARNING: No configurations found in configuration directory</code>. This can be suppressed with an environment variable if you are happy with the defaults and don&#39;t wish to use config in your application. See more information <a href="https://github.com/lorenwest/node-config/wiki/Environment-Variables#suppress_no_config_warning">here</a>.</p>
 
@@ -181,7 +181,7 @@
 
 <h2 id="application">Application</h2>
 
-<p>Internally, the Concerto framework uses the <a href="https://github.com/winstonjs/winston">Winston</a> node.js logging package by default, with an initial level of log points and destinations set up.</p>
+<p>Internally, Fabric Composer uses the <a href="https://github.com/winstonjs/winston">Winston</a> node.js logging package by default, with an initial level of log points and destinations set up.</p>
 
 <h2 id="default-configuration">Default Configuration</h2>
 
@@ -238,7 +238,7 @@
 
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>The first section is specific to the Getting Started application, the second <code>ConcertoConfig</code> section is for the Concerto framework.</p>
+<p>The first section is specific to the Getting Started application, the second <code>ConcertoConfig</code> section is for the Fabric Composer.</p>
 
 <ul>
 <li><code>logger</code> is used to refer the module that does actual logging. default is implying that this is the winston framework</li>
