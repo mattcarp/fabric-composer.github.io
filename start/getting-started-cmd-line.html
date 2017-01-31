@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   
-    <title>Getting Started with the IBM Blockchain Framework | Fabric Composer</title>
+    <title>Getting Started with Fabric Composer | Fabric Composer</title>
   
   <meta name="viewport" content="width=device-width">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -126,7 +126,7 @@
     
       <div id="content">
   <h2 class="page-title">
-    <span class="container">Getting Started with the IBM Blockchain Framework</span>
+    <span class="container">Getting Started with Fabric Composer</span>
   </h2>
 
   <div class="container clearfix has-sidebar">
@@ -150,9 +150,9 @@
 
       <section class="content-chunk">
         
-          <h1 id="getting-started-with-concerto-application-development">Getting started with Concerto Application Development</h1>
+          <h1 id="getting-started-with-fabric-composer-application-development">Getting started with Fabric Composer Application Development</h1>
 
-<p>To help get started with application development using the Concerto Framework, this guide will talk you through downloading Concerto, starting a Fabric, deploying a simple business network and submitting transactions.</p>
+<p>To help get started with application development using the Fabric Composer Framework, this guide will talk you through downloading Fabric Composer, starting a Fabric, deploying a simple business network and submitting transactions.</p>
 
 <p>This is all done using a simple business network  <strong>Digital Property Network</strong></p>
 
@@ -180,11 +180,11 @@
   --&gt; LandTitle title
 }
 </code></pre></div>
-<p>The applications we&#39;re going to look at are going to store a number of (pretend) land titles, and mark them for sale. All this will be using the Concerto Framework backed by a real blockchain in the shape of a locally executing Hyperledger Fabric.</p>
+<p>The applications we&#39;re going to look at are going to store a number of (pretend) land titles, and mark them for sale. All this will be using the Fabric Composer backed by a real blockchain in the shape of a locally executing Hyperledger Fabric.</p>
 
 <h1 id="but-what-is-an-asset">But what is an asset?</h1>
 
-<p>An is a term used to describe things of value both in the physical world and the equally real intangible world. These are stored in Asset Registries. Participants can act on these assets bys submitting transactions. With the features of a blockchain provided by the Hyperledger Fabric, an application using the Concerto Frameowk has a single source of truth for the state of these assets and their history.</p>
+<p>An is a term used to describe things of value both in the physical world and the equally real intangible world. These are stored in Asset Registries. Participants can act on these assets by submitting transactions. With the features of a blockchain provided by the Hyperledger Fabric, an application using Fabric Composer has a single source of truth for the state of these assets and their history.</p>
 
 <p>It&#39;s worth reading the <a href="../overview/overview.html">Overview</a> page to get an idea of how everything fits together. The <a href="../reference/glossary.html">Glossary</a> provides a detailed description of each term.</p>
 
@@ -198,21 +198,21 @@
 
 <p>First check that you are running on a <a href="../reference/platforms.html">supported system</a> and install the required development <a href="../tasks/prerequisites.html">prerequisites</a>.  Essentially this means Linux/MacOS &amp; node.js &amp; docker &amp; docker-compose &amp; git</p>
 
-<h3 id="install-the-concerto-cli">Install the Concerto CLI</h3>
+<h3 id="install-the-fabric-composer-cli">Install the  Fabric Composer CLI</h3>
 
-<p>Installing the Concerto CLI tools module is the first step. This gives you commands to deploy, update and list business networks.</p>
+<p>Installing the  Fabric Composer CLI tools module is the first step. This gives you commands to deploy, update and list business networks.</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">npm install -g composer-cli
 </code></pre></div>
 <h3 id="clone-the-getting-started-repository">Clone the Getting Started Repository</h3>
 
 <p>Next you need to pull down the code for the Getting Started sample.</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">git clone git@github.ibm.com:Blockchain-WW-Labs/Concerto-GettingStarted.git
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">git clone git@github.com:fabric-composer/sample-applications.git
+<span class="nb">cd </span>sample-applications/packages/getting-started
 </code></pre></div>
 <h3 id="install-the-dependencies-start-fabric-and-deploy-the-business-network">Install the Dependencies, Start Fabric and Deploy the Business Network</h3>
 
 <p>Next you can run the following commands to install all the dependent Node modules for the sample, pull down the Docker images for Hyperledger Fabric, start the Fabric and then deploy a Business Network Definition.</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd </span>Concerto-GettingStarted
-npm install
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">npm install
 </code></pre></div>
 <p>This is doing quite a bit of work but at the end of it you will have all the dependent modules, together with a running local Hyperledger instance, and the DigitalProperty Network will have been deployed to that Hyperledger. At this point it doesn&#39;t contain any assets at all.</p>
 
@@ -227,7 +227,7 @@ First, the assets are created and the newly created assets are listed. Then a tr
 <p>So to recap</p>
 
 <ul>
-<li>You installed Concerto command line tools</li>
+<li>You installed Fabric Composer command line tools</li>
 <li>The &#39;Getting Started&#39; repository was cloned</li>
 <li>All the code dependencies where pulled down, and a docker-hosted Hyperledger instance was Started
 
@@ -238,7 +238,7 @@ First, the assets are created and the newly created assets are listed. Then a tr
 <li>A simple transaction was invoked to update the assets</li>
 </ul>
 
-<p><strong>All done!</strong> But let&#39;s go ahead and make a change to start to show how easy it is to develop with Concerto.</p>
+<p><strong>All done!</strong> But let&#39;s go ahead and make a change to start to show how easy it is to develop with Fabric Composer.</p>
 
 <h1 id="updating-the-business-network">Updating the Business Network</h1>
 
@@ -254,14 +254,6 @@ npm install
 <h3 id="update-the-transaction-processor-function">Update the Transaction Processor Function</h3>
 
 <p>Open the file <code>lib/DigitalLandTitle.js</code> in a text editor and replace the contents with:</p>
-
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span>
-
-<span class="p">}</span></code></pre></figure> 
-
-<p>&lt;button class=&quot;btn&quot; data-clipboard-text=&quot;&#123;</p>
-
-<p>&#125;&quot;&gt;Copy to clipboard</button></p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s1">'use strict'</span><span class="p">;</span>
 
@@ -280,26 +272,7 @@ npm install
             <span class="k">return</span> <span class="nx">result</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">propertyForSale</span><span class="p">.</span><span class="nx">title</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">);</span>
-<span class="p">}</span></code></pre></figure> 
-
-<p>&lt;button class=&quot;btn&quot; data-clipboard-text=&quot;&#39;use strict&#39;;</p>
-
-<p>/** Process a property that is held for sale
- * @param &#123;net.biz.digitalPropertyNetwork.RegisterPropertyForSale&#125; propertyForSale the property to be sold
- * @transaction
- */
-function onRegisterPropertyForSale(propertyForSale) &#123;
-    console.log(&#39;### onRegisterPropertyForSale &#39; + propertyForSale.toString());
-    propertyForSale.title.forSale = true;</p>
-<div class="highlight"><pre><code class="language-" data-lang="">/* new line is here to update the information */
-propertyForSale.title.information = propertyForSale.title.information + ' Updated at: ' + new Date().toDateString();
-
-return getAssetRegistry('net.biz.digitalPropertyNetwork.LandTitle').then(function(result) &amp;#123;
-        return result.update(propertyForSale.title);
-    &amp;#125;
-);
-</code></pre></div>
-<p>&#125;&quot;&gt;Copy to clipboard</button></p>
+<span class="p">}</span></code></pre></figure>
 
 <h3 id="update-the-business-network-definition">Update the Business Network Definition</h3>
 
@@ -307,7 +280,7 @@ return getAssetRegistry('net.biz.digitalPropertyNetwork.LandTitle').then(functio
 
 <p>What we&#39;ll do therefore is adopt a different approach to create the Business Network Archive that is deployed to the Hyperledger.
 From within the DigitalProperty-Network directory..</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>concerto archive create --inputDir .
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>composer archive create --inputDir .
 Creating Business Network Archive
 Looking <span class="k">for </span>package.json of Business Network Definition <span class="k">in</span> /home/matthew/git17/DigitalProperty-Network
 
@@ -321,7 +294,7 @@ Command completed successfully.
 <p>We now have a new file that is the digital business network archive.</p>
 
 <h3 id="update-the-deployed-business-network">Update the deployed business network</h3>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>concerto network update --archiveFile digitalproperty-network@0.0.22.bna  --enrollId WebAppAdmin --enrollSecret DJY27pEnl16d
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>composer network update --archiveFile digitalproperty-network@0.0.22.bna  --enrollId WebAppAdmin --enrollSecret DJY27pEnl16d
 Deploying business network from archive digitalproperty-network-0.0.22.bna
 Business network definition:
     Identifier: digitalproperty-network-0.0.22
@@ -353,28 +326,28 @@ available via <span class="sb">`</span>npm run-script<span class="sb">`</span>:
   teardownHLF
     scripts/teardown.sh
   deployNetwork
-    concerto archive create -m digitalproperty-network --archiveFile digitalPropertyNetwork.zip <span class="o">&amp;&amp;</span> concerto network deploy --archiveFile digitalPropertyNetwork.zip  --enrollId WebAppAdmin --enrollSecret DJY27pEnl16d <span class="o">&amp;&amp;</span> concerto network list -n digitalproperty-network --enrollId WebAppAdmin --enrollSecret DJY27pEnl16d
+    composer archive create -m digitalproperty-network --archiveFile digitalPropertyNetwork.zip <span class="o">&amp;&amp;</span> composer network deploy --archiveFile digitalPropertyNetwork.zip  --enrollId WebAppAdmin --enrollSecret DJY27pEnl16d <span class="o">&amp;&amp;</span> composer network list -n digitalproperty-network --enrollId WebAppAdmin --enrollSecret DJY27pEnl16d
 
 </code></pre></div>
-<p>If you issue this command, that will submit a the transaction as was done during the full run - but importantly this is the updated transaction function. You should now see:</p>
+<p>If you issue this command, that will submit a transaction as before - but importantly this is the updated transaction function. You should now see:</p>
 <div class="highlight"><pre><code class="language-" data-lang="">$ npm run submitTransaction
 
-&gt; composer-gettingstarted@1.0.0 submitTransaction /home/matthew/git17/Concerto-GettingStarted
+&gt; composer-gettingstarted@1.0.0 submitTransaction
 &gt; node cli.js landregistry submit &amp;&amp; node cli.js landregistry list
 
-info: [Handel] IBM Concerto: Handel appliation
-info: [Handel] LandRegistry:&lt;init&gt; businessNetworkDefinition obtained digitalproperty-network-0.0.11
-info: [Handel] updateForSale Getting assest from the registry.
-info: [Handel] updateForSale Submitting transaction
-info: [Handel] Transaction Submitted
-info: [Handel] Command completed successfully.
-info: [Handel] IBM Concerto: Handel appliation
-info: [Handel] LandRegistry:&lt;init&gt; businessNetworkDefinition obtained digitalproperty-network-0.0.11
-info: [Handel] listTitles Getting the asset registry
-info: [Handel] listTitles Getting all assest from the registry.
-info: [Handel] listTitles Current Land Titles
-info: [Handel] Titles listed
-info: [Handel]
+info: [Composer-GettingStarted] Fabric Composer: Getting Started application
+info: [Composer-GettingStarted] LandRegistry:&lt;init&gt; businessNetworkDefinition obtained digitalproperty-network-0.0.11
+info: [Composer-GettingStarted] updateForSale Getting assest from the registry.
+info: [Composer-GettingStarted] updateForSale Submitting transaction
+info: [Composer-GettingStarted] Transaction Submitted
+info: [Composer-GettingStarted] Command completed successfully.
+info: [Composer-GettingStarted] Fabric Composer: Getting Started application
+info: [Composer-GettingStarted] LandRegistry:&lt;init&gt; businessNetworkDefinition obtained digitalproperty-network-0.0.11
+info: [Composer-GettingStarted] listTitles Getting the asset registry
+info: [Composer-GettingStarted] listTitles Getting all assest from the registry.
+info: [Composer-GettingStarted] listTitles Current Land Titles
+info: [Composer-GettingStarted] Titles listed
+info: [Composer-GettingStarted]
 ┌──────────┬────────────────┬────────────┬─────────┬───────────────────────────────────────────────────────────────────────────────────────┬─────────┐
 │ TitleID  │ OwnerID        │ First Name │ Surname │ Description                                                                           │ ForSale │
 ├──────────┼────────────────┼────────────┼─────────┼───────────────────────────────────────────────────────────────────────────────────────┼─────────┤
@@ -382,7 +355,7 @@ info: [Handel]
 ├──────────┼────────────────┼────────────┼─────────┼───────────────────────────────────────────────────────────────────────────────────────┼─────────┤
 │ LID:6789 │ PID:1234567890 │ Fred       │ Bloggs  │ A small flat in the city                                                              │ No      │
 └──────────┴────────────────┴────────────┴─────────┴───────────────────────────────────────────────────────────────────────────────────────┴─────────┘
-info: [Handel] Command completed successfully.
+info: [Composer-GettingStarted] Command completed successfully.
 </code></pre></div>
 <h2 id="digging-deeper">Digging Deeper</h2>
 
@@ -406,19 +379,19 @@ available via <span class="sb">`</span>npm run-script<span class="sb">`</span>:
   teardownHLF
     scripts/teardown.sh
   deployNetwork
-    concerto archive create -m digitalproperty-network --archiveFile digitalPropertyNetwork.zip <span class="o">&amp;&amp;</span> concerto network deploy --archiveFile digitalPropertyNetwork.zip  --enrollId WebAppAdmin --enrollSecret DJY27pEnl16d <span class="o">&amp;&amp;</span> concerto network list -n digitalproperty-network --enrollId WebAppAdmin --enrollSecret DJY27pEnl16d
+    composer archive create -m digitalproperty-network --archiveFile digitalPropertyNetwork.zip <span class="o">&amp;&amp;</span> composer network deploy --archiveFile digitalPropertyNetwork.zip  --enrollId WebAppAdmin --enrollSecret DJY27pEnl16d <span class="o">&amp;&amp;</span> composer network list -n digitalproperty-network --enrollId WebAppAdmin --enrollSecret DJY27pEnl16d
 </code></pre></div>
 <ul>
 <li><em>npm test</em>  The standard test target runs some mocha based unti tests, then invokes two other npm run commands to store some test assets and submit a simple transaction.</li>
-<li><em>npm install</em> This standard target installs the dependancies and also some some essential setup for the Concerto Framework</li>
+<li><em>npm install</em> This standard target installs the dependancies and also some some essential setup for the Fabric Composer Framework</li>
 </ul>
 
-<p>Let&#39;s look at each of the other scripts and what they do - there are two main shell scripts that we have written that will control Hyperledger, some concerto commands and then the application.</p>
+<p>Let&#39;s look at each of the other scripts and what they do - there are two main shell scripts that we have written that will control Hyperledger, some Fabric Composer commands and then the application.</p>
 
 <p><strong>Shell scripts to control Hyperledger</strong></p>
 
 <ul>
-<li><code>scripts/download-hyperledger.sh</code> This is a shell script that will download and tag the docker images for Hyperledger v0.6. It is important to note that this script will also delete the Concerto Connection Profiles. This is important if you have connected to other Hyperledger Fabrics, or have changed the default ports that Hyperledger uses.</li>
+<li><code>scripts/download-hyperledger.sh</code> This is a shell script that will download and tag the docker images for Hyperledger v0.6. It is important to note that this script will also delete the Fabric Composer Connection Profiles. This is important if you have connected to other Hyperledger Fabrics, or have changed the default ports that Hyperledger uses.</li>
 </ul>
 
 <p><code>npm install</code> uses this script.</p>
@@ -427,23 +400,23 @@ available via <span class="sb">`</span>npm run-script<span class="sb">`</span>:
 <li><code>scripts/start-hyperledger.sh</code> This is a shell script that starts the Hyperledger Fabric, this will also wait to make sure the Hyperledger fabric has started.
 <code>npm run startHLF</code> can also be used to call this script.</li>
 <li><code>scripts/stop-hyperledger.sh</code> This is the opposite of the start script, and will stop the Hyperledger Fabric - but it critically does not delete or remove any state. Therefore it canbe restarted with the start script.  <code>npm run stopHLF</code> can also be used to call this script.</li>
-<li><code>scripts/teardown.sh</code> This will stop and remove all the docker images related to Hyperledger fabric. This can be used to do an effective clean-up of the Hyperledger Fabric and the Concerto Connection Profiles.</li>
+<li><code>scripts/teardown.sh</code> This will stop and remove all the docker images related to Hyperledger fabric. This can be used to do an effective clean-up of the Hyperledger Fabric and the Fabric Composer Connection Profiles.</li>
 </ul>
 
-<p><strong>Concerto CLI</strong></p>
+<p><strong>Composer CLI</strong></p>
 
 <ul>
-<li><p><code>concerto archive create -m digitalproperty-network --archiveFile digitalPropertyNetwork.zip</code>
+<li><p><code>composer archive create -m digitalproperty-network --archiveFile digitalPropertyNetwork.zip</code>
 This command is used to create a Business Network Archive. <code>--archiveFile</code> is the name of the file. The <code>-m</code> is the npm module name of the business network to use. There is also a -d option to specify the directory the business network is in. Useful whilst developing the business network transactions functions.</p></li>
-<li><p><code>concerto network deploy --archiveFile digitalPropertyNetwork.zip  --enrollId WebAppAdmin --enrollSecret DJY27pEnl16d</code>
+<li><p><code>composer network deploy --archiveFile digitalPropertyNetwork.zip  --enrollId WebAppAdmin --enrollSecret DJY27pEnl16d</code>
 This deploys the business network to the HyperLedger runtime; the archive is specified but also the Hyperledger Entrollment Id and Secret (the secret if not included in the command line will be prompted for)</p></li>
-<li><p><code>concerto network list -n digitalproperty-network --enrollId WebAppAdmin --enrollSecret DJY27pEnl16d</code>
+<li><p><code>composer network list -n digitalproperty-network --enrollId WebAppAdmin --enrollSecret DJY27pEnl16d</code>
 This lists the deployed business network details. <code>-n</code> is the name of the business network. With the same options for the Hyperledger Entrollment Id and Secret (the secret if not included in the command line will be prompted for)</p></li>
 </ul>
 
 <p><strong>Sample Applications</strong></p>
 
-<p>There are 3 sample Javascript applications that use the Concerto Client API to perform operations on the business network. These are applications that specific to the business network that has been defined in this Digital Property Network.</p>
+<p>There are 3 sample Javascript applications that use the Fabric Composer Client API to perform operations on the business network. These are applications that specific to the business network that has been defined in this Digital Property Network.</p>
 
 <ul>
 <li><code>node cli.js landregistry submit</code>  This applications connects, and submits a transaction.</li>
@@ -453,7 +426,7 @@ This lists the deployed business network details. <code>-n</code> is the name of
 
 <h1 id="where-next">Where next?</h1>
 
-<p>So we have downloaded the Hyperledger docker containers and stated a fabric. We have used the Concerto Command line to deploy and update a the DigitalProperty Network. We have used some Javascript applications in node.js to list assets and submit transactions to work on those assets.  A simple change and update has been made to one of the transaction functions.</p>
+<p>So we have downloaded the Hyperledger docker containers and stated a fabric. We have used the Fabric Composer Command line to deploy and update the DigitalProperty Network. We have used some Javascript applications in node.js to list assets and submit transactions to work on those assets.  A simple change and update has been made to one of the transaction functions.</p>
 
         
 
@@ -486,7 +459,7 @@ This lists the deployed business network details. <code>-n</code> is the name of
     </li>
     <li class="mobile-ln"></li>
     <li>
-      <a href="https://fabric-composer.github.io/fabric-composer/jsdoc/develop/index.html" class="SiteFooter-button SiteFooter-button--light">APIs</a>
+      <a href="https://fabric-composer.github.io/jsdoc/develop/index.html" class="SiteFooter-button SiteFooter-button--light">APIs</a>
     </li>
   </ul>
   <p class="copyright">Copyright 2017 IBM Corp. All Rights Reserved</p>
