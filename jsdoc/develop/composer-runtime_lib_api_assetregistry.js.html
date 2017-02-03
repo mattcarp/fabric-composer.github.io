@@ -33,14 +33,14 @@
 			<li class="dropdown">
 				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-composer-admin.html">composer-admin</a></li><li><a href="module-ibm-concerto-client.html">ibm-concerto-client</a></li><li><a href="module-ibm-concerto-common.html">ibm-concerto-common</a></li><li><a href="module-ibm-concerto-runtime.html">ibm-concerto-runtime</a></li>
+					<li><a href="module-composer-admin.html">composer-admin</a></li><li><a href="module-composer-client.html">composer-client</a></li><li><a href="module-composer-common.html">composer-common</a></li><li><a href="module-composer-runtime.html">composer-runtime</a></li>
 				</ul>
 			</li>
 			
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-composer-admin.AdminConnection.html">composer-admin.AdminConnection</a></li><li><a href="module-composer-client.AssetRegistry.html">composer-client.AssetRegistry</a></li><li><a href="module-composer-client.BusinessNetworkConnection.html">composer-client.BusinessNetworkConnection</a></li><li><a href="module-composer-client.ParticipantRegistry.html">composer-client.ParticipantRegistry</a></li><li><a href="module-composer-client.Registry.html">composer-client.Registry</a></li><li><a href="module-composer-client.TransactionRegistry.html">composer-client.TransactionRegistry</a></li><li><a href="module-composer-common.BaseException.html">composer-common.BaseException</a></li><li><a href="module-composer-common.BusinessNetworkDefinition.html">composer-common.BusinessNetworkDefinition</a></li><li><a href="module-composer-common.Factory.html">composer-common.Factory</a></li><li><a href="module-composer-common.Identifiable.html">composer-common.Identifiable</a></li><li><a href="module-composer-common.IllegalModelException.html">composer-common.IllegalModelException</a></li><li><a href="module-composer-common.Introspector.html">composer-common.Introspector</a></li><li><a href="module-composer-common.ParseException.html">composer-common.ParseException</a></li><li><a href="module-composer-common.Relationship.html">composer-common.Relationship</a></li><li><a href="module-composer-common.Resource.html">composer-common.Resource</a></li><li><a href="module-composer-common.SecurityContext.html">composer-common.SecurityContext</a></li><li><a href="module-composer-common.SecurityException.html">composer-common.SecurityException</a></li><li><a href="module-composer-common.Serializer.html">composer-common.Serializer</a></li><li><a href="module-composer-common.ValidatedResource.html">composer-common.ValidatedResource</a></li><li><a href="module-composer-common.ValidationException.html">composer-common.ValidationException</a></li><li><a href="module-composer-runtime.AccessException.html">composer-runtime.AccessException</a></li><li><a href="module-composer-runtime.AssetRegistry.html">composer-runtime.AssetRegistry</a></li><li><a href="module-composer-runtime.Factory.html">composer-runtime.Factory</a></li><li><a href="module-composer-runtime.ParticipantRegistry.html">composer-runtime.ParticipantRegistry</a></li><li><a href="module-ibm-concerto-common.Concept.html">ibm-concerto-common.Concept</a></li><li><a href="module-ibm-concerto-common.Typed.html">ibm-concerto-common.Typed</a></li><li><a href="module-ibm-concerto-common.ValidatedConcept.html">ibm-concerto-common.ValidatedConcept</a></li>
+					<li><a href="module-composer-admin.AdminConnection.html">composer-admin.AdminConnection</a></li><li><a href="module-composer-client.AssetRegistry.html">composer-client.AssetRegistry</a></li><li><a href="module-composer-client.BusinessNetworkConnection.html">composer-client.BusinessNetworkConnection</a></li><li><a href="module-composer-client.ParticipantRegistry.html">composer-client.ParticipantRegistry</a></li><li><a href="module-composer-client.Registry.html">composer-client.Registry</a></li><li><a href="module-composer-client.TransactionRegistry.html">composer-client.TransactionRegistry</a></li><li><a href="module-composer-common.BaseException.html">composer-common.BaseException</a></li><li><a href="module-composer-common.BusinessNetworkDefinition.html">composer-common.BusinessNetworkDefinition</a></li><li><a href="module-composer-common.Concept.html">composer-common.Concept</a></li><li><a href="module-composer-common.Factory.html">composer-common.Factory</a></li><li><a href="module-composer-common.Identifiable.html">composer-common.Identifiable</a></li><li><a href="module-composer-common.IllegalModelException.html">composer-common.IllegalModelException</a></li><li><a href="module-composer-common.Introspector.html">composer-common.Introspector</a></li><li><a href="module-composer-common.ParseException.html">composer-common.ParseException</a></li><li><a href="module-composer-common.Relationship.html">composer-common.Relationship</a></li><li><a href="module-composer-common.Resource.html">composer-common.Resource</a></li><li><a href="module-composer-common.SecurityContext.html">composer-common.SecurityContext</a></li><li><a href="module-composer-common.SecurityException.html">composer-common.SecurityException</a></li><li><a href="module-composer-common.Serializer.html">composer-common.Serializer</a></li><li><a href="module-composer-common.Typed.html">composer-common.Typed</a></li><li><a href="module-composer-common.ValidatedConcept.html">composer-common.ValidatedConcept</a></li><li><a href="module-composer-common.ValidatedResource.html">composer-common.ValidatedResource</a></li><li><a href="module-composer-common.ValidationException.html">composer-common.ValidationException</a></li><li><a href="module-composer-runtime.AccessException.html">composer-runtime.AccessException</a></li><li><a href="module-composer-runtime.AssetRegistry.html">composer-runtime.AssetRegistry</a></li><li><a href="module-composer-runtime.Factory.html">composer-runtime.Factory</a></li><li><a href="module-composer-runtime.ParticipantRegistry.html">composer-runtime.ParticipantRegistry</a></li>
 				</ul>
 			</li>
 			
@@ -106,7 +106,7 @@ const LOG = Logger.getLog('AssetRegistry');
 
 /**
  * Do not attempt to create an instance of this class.&lt;br>
- * You must use the {@link module:concerto-runtime#getAssetRegistry getAssetRegistry}
+ * You must use the {@link module:composer-runtime#getAssetRegistry getAssetRegistry}
  * method instead.
  *
  * @class AssetRegistry
@@ -151,7 +151,7 @@ class AssetRegistry {
          *     // Add optional error handling here.
          *   });
          * @public
-         * @method module:concerto-runtime.AssetRegistry#getAll
+         * @method module:composer-runtime.AssetRegistry#getAll
          * @return {Promise} A promise. The promise is resolved with an array of
          * {@link Resource} instances representing all of the assets stored in this
          * asset registry. If the asset registry does not exist, or the current
@@ -180,7 +180,7 @@ class AssetRegistry {
          *     // Add optional error handling here.
          *   });
          * @public
-         * @method module:concerto-runtime.AssetRegistry#get
+         * @method module:composer-runtime.AssetRegistry#get
          * @param {string} id The ID of the asset.
          * @return {Promise} A promise. The promise is resolved with a {@link Resource}
          * instance representing the specified asset in this asset registry. If the
@@ -213,7 +213,7 @@ class AssetRegistry {
          *     // Add optional error handling here.
          *   });
          * @public
-         * @method module:concerto-runtime.AssetRegistry#addAll
+         * @method module:composer-runtime.AssetRegistry#addAll
          * @param {Resource[]} assets The assets to add to this asset registry.
          * @return {Promise} A promise. The promise is resolved when all of the
          * assets have been added to this asset registry. If the assets cannot be
@@ -243,7 +243,7 @@ class AssetRegistry {
          *     // Add optional error handling here.
          *   });
          * @public
-         * @method module:concerto-runtime.AssetRegistry#add
+         * @method module:composer-runtime.AssetRegistry#add
          * @param {Resource} asset The assets to add to this asset registry.
          * @return {Promise} A promise. The promise is resolved when the asset has
          * been added to this asset registry. If the asset cannot be added to this
@@ -276,7 +276,7 @@ class AssetRegistry {
          *     // Add optional error handling here.
          *   });
          * @public
-         * @method module:concerto-runtime.AssetRegistry#updateAll
+         * @method module:composer-runtime.AssetRegistry#updateAll
          * @param {Resource[]} assets The assets to update in this asset registry.
          * @return {Promise} A promise. The promise is resolved when all of the
          * assets have been updated in this asset registry. If the assets cannot be
@@ -307,7 +307,7 @@ class AssetRegistry {
          *     // Add optional error handling here.
          *   });
          * @public
-         * @method module:concerto-runtime.AssetRegistry#update
+         * @method module:composer-runtime.AssetRegistry#update
          * @param {Resource} asset The asset to update in this asset registry.
          * @return {Promise} A promise. The promise is resolved when the asset
          * have been updated in this asset registry. If the asset cannot be
@@ -338,7 +338,7 @@ class AssetRegistry {
          *     // Add optional error handling here.
          *   });
          * @public
-         * @method module:concerto-runtime.AssetRegistry#removeAll
+         * @method module:composer-runtime.AssetRegistry#removeAll
          * @param {string[]|Resource[]} assets The assets, or the IDs of the assets,
          * to remove from this asset registry.
          * @return {Promise} A promise. The promise is resolved when all of the
@@ -368,7 +368,7 @@ class AssetRegistry {
          *     // Add optional error handling here.
          *   });
          * @public
-         * @method module:concerto-runtime.AssetRegistry#remove
+         * @method module:composer-runtime.AssetRegistry#remove
          * @param {string|Resource} asset The asset, or ID of the asset, to remove
          * from this asset registry.
          * @return {Promise} A promise. The promise is resolved when the asset
@@ -435,7 +435,7 @@ module.exports = AssetRegistry;
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
 	
-		on Tue Jan 31st 2017
+		on Fri Feb 3rd 2017
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

@@ -33,14 +33,14 @@
 			<li class="dropdown">
 				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-composer-admin.html">composer-admin</a></li><li><a href="module-ibm-concerto-client.html">ibm-concerto-client</a></li><li><a href="module-ibm-concerto-common.html">ibm-concerto-common</a></li><li><a href="module-ibm-concerto-runtime.html">ibm-concerto-runtime</a></li>
+					<li><a href="module-composer-admin.html">composer-admin</a></li><li><a href="module-composer-client.html">composer-client</a></li><li><a href="module-composer-common.html">composer-common</a></li><li><a href="module-composer-runtime.html">composer-runtime</a></li>
 				</ul>
 			</li>
 			
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-composer-admin.AdminConnection.html">composer-admin.AdminConnection</a></li><li><a href="module-composer-client.AssetRegistry.html">composer-client.AssetRegistry</a></li><li><a href="module-composer-client.BusinessNetworkConnection.html">composer-client.BusinessNetworkConnection</a></li><li><a href="module-composer-client.ParticipantRegistry.html">composer-client.ParticipantRegistry</a></li><li><a href="module-composer-client.Registry.html">composer-client.Registry</a></li><li><a href="module-composer-client.TransactionRegistry.html">composer-client.TransactionRegistry</a></li><li><a href="module-composer-common.BaseException.html">composer-common.BaseException</a></li><li><a href="module-composer-common.BusinessNetworkDefinition.html">composer-common.BusinessNetworkDefinition</a></li><li><a href="module-composer-common.Factory.html">composer-common.Factory</a></li><li><a href="module-composer-common.Identifiable.html">composer-common.Identifiable</a></li><li><a href="module-composer-common.IllegalModelException.html">composer-common.IllegalModelException</a></li><li><a href="module-composer-common.Introspector.html">composer-common.Introspector</a></li><li><a href="module-composer-common.ParseException.html">composer-common.ParseException</a></li><li><a href="module-composer-common.Relationship.html">composer-common.Relationship</a></li><li><a href="module-composer-common.Resource.html">composer-common.Resource</a></li><li><a href="module-composer-common.SecurityContext.html">composer-common.SecurityContext</a></li><li><a href="module-composer-common.SecurityException.html">composer-common.SecurityException</a></li><li><a href="module-composer-common.Serializer.html">composer-common.Serializer</a></li><li><a href="module-composer-common.ValidatedResource.html">composer-common.ValidatedResource</a></li><li><a href="module-composer-common.ValidationException.html">composer-common.ValidationException</a></li><li><a href="module-composer-runtime.AccessException.html">composer-runtime.AccessException</a></li><li><a href="module-composer-runtime.AssetRegistry.html">composer-runtime.AssetRegistry</a></li><li><a href="module-composer-runtime.Factory.html">composer-runtime.Factory</a></li><li><a href="module-composer-runtime.ParticipantRegistry.html">composer-runtime.ParticipantRegistry</a></li><li><a href="module-ibm-concerto-common.Concept.html">ibm-concerto-common.Concept</a></li><li><a href="module-ibm-concerto-common.Typed.html">ibm-concerto-common.Typed</a></li><li><a href="module-ibm-concerto-common.ValidatedConcept.html">ibm-concerto-common.ValidatedConcept</a></li>
+					<li><a href="module-composer-admin.AdminConnection.html">composer-admin.AdminConnection</a></li><li><a href="module-composer-client.AssetRegistry.html">composer-client.AssetRegistry</a></li><li><a href="module-composer-client.BusinessNetworkConnection.html">composer-client.BusinessNetworkConnection</a></li><li><a href="module-composer-client.ParticipantRegistry.html">composer-client.ParticipantRegistry</a></li><li><a href="module-composer-client.Registry.html">composer-client.Registry</a></li><li><a href="module-composer-client.TransactionRegistry.html">composer-client.TransactionRegistry</a></li><li><a href="module-composer-common.BaseException.html">composer-common.BaseException</a></li><li><a href="module-composer-common.BusinessNetworkDefinition.html">composer-common.BusinessNetworkDefinition</a></li><li><a href="module-composer-common.Concept.html">composer-common.Concept</a></li><li><a href="module-composer-common.Factory.html">composer-common.Factory</a></li><li><a href="module-composer-common.Identifiable.html">composer-common.Identifiable</a></li><li><a href="module-composer-common.IllegalModelException.html">composer-common.IllegalModelException</a></li><li><a href="module-composer-common.Introspector.html">composer-common.Introspector</a></li><li><a href="module-composer-common.ParseException.html">composer-common.ParseException</a></li><li><a href="module-composer-common.Relationship.html">composer-common.Relationship</a></li><li><a href="module-composer-common.Resource.html">composer-common.Resource</a></li><li><a href="module-composer-common.SecurityContext.html">composer-common.SecurityContext</a></li><li><a href="module-composer-common.SecurityException.html">composer-common.SecurityException</a></li><li><a href="module-composer-common.Serializer.html">composer-common.Serializer</a></li><li><a href="module-composer-common.Typed.html">composer-common.Typed</a></li><li><a href="module-composer-common.ValidatedConcept.html">composer-common.ValidatedConcept</a></li><li><a href="module-composer-common.ValidatedResource.html">composer-common.ValidatedResource</a></li><li><a href="module-composer-common.ValidationException.html">composer-common.ValidationException</a></li><li><a href="module-composer-runtime.AccessException.html">composer-runtime.AccessException</a></li><li><a href="module-composer-runtime.AssetRegistry.html">composer-runtime.AssetRegistry</a></li><li><a href="module-composer-runtime.Factory.html">composer-runtime.Factory</a></li><li><a href="module-composer-runtime.ParticipantRegistry.html">composer-runtime.ParticipantRegistry</a></li>
 				</ul>
 			</li>
 			
@@ -106,7 +106,7 @@ const LOG = Logger.getLog('Factory');
 
 /**
  * Do not attempt to create an instance of this class.&lt;br>
- * You must use the {@link module:concerto-runtime#getFactory getFactory}
+ * You must use the {@link module:composer-runtime#getFactory getFactory}
  * method instead.
  *
  * @class Factory
@@ -138,7 +138,7 @@ class Factory {
          * properties of the new instance should be set as standard JavaScript
          * object properties. The new instance can then be stored in a registry
          * using the appropriate registry APIs, for example {@link
-         * module:concerto-runtime.AssetRegistry AssetRegistry}.
+         * module:composer-runtime.AssetRegistry AssetRegistry}.
          * @example
          * // Get the factory.
          * var factory = getFactory();
@@ -148,7 +148,7 @@ class Factory {
          * vehicle.colour = 'BLUE';
          * vehicle.manufacturer = 'Toyota';
          * @public
-         * @method module:concerto-runtime.Factory#newInstance
+         * @method module:composer-runtime.Factory#newInstance
          * @param {string} ns The namespace of the resource to create.
          * @param {string} type The type of the resource to create.
          * @param {string} id The identifier of the new resource.
@@ -176,7 +176,7 @@ class Factory {
          * // Set the relationship as the value of the vehicle property of the driver.
          * driver.vehicle = vehicle;
          * @public
-         * @method module:concerto-runtime.Factory#newRelationship
+         * @method module:composer-runtime.Factory#newRelationship
          * @param {string} ns The namespace of the resource referenced by the relationship.
          * @param {string} type The type of the resource referenced by the relationship.
          * @param {string} id The identifier of the resource referenced by the relationship.
@@ -242,7 +242,7 @@ module.exports = Factory;
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
 	
-		on Tue Jan 31st 2017
+		on Fri Feb 3rd 2017
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

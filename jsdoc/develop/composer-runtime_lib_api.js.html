@@ -33,14 +33,14 @@
 			<li class="dropdown">
 				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-composer-admin.html">composer-admin</a></li><li><a href="module-ibm-concerto-client.html">ibm-concerto-client</a></li><li><a href="module-ibm-concerto-common.html">ibm-concerto-common</a></li><li><a href="module-ibm-concerto-runtime.html">ibm-concerto-runtime</a></li>
+					<li><a href="module-composer-admin.html">composer-admin</a></li><li><a href="module-composer-client.html">composer-client</a></li><li><a href="module-composer-common.html">composer-common</a></li><li><a href="module-composer-runtime.html">composer-runtime</a></li>
 				</ul>
 			</li>
 			
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-composer-admin.AdminConnection.html">composer-admin.AdminConnection</a></li><li><a href="module-composer-client.AssetRegistry.html">composer-client.AssetRegistry</a></li><li><a href="module-composer-client.BusinessNetworkConnection.html">composer-client.BusinessNetworkConnection</a></li><li><a href="module-composer-client.ParticipantRegistry.html">composer-client.ParticipantRegistry</a></li><li><a href="module-composer-client.Registry.html">composer-client.Registry</a></li><li><a href="module-composer-client.TransactionRegistry.html">composer-client.TransactionRegistry</a></li><li><a href="module-composer-common.BaseException.html">composer-common.BaseException</a></li><li><a href="module-composer-common.BusinessNetworkDefinition.html">composer-common.BusinessNetworkDefinition</a></li><li><a href="module-composer-common.Factory.html">composer-common.Factory</a></li><li><a href="module-composer-common.Identifiable.html">composer-common.Identifiable</a></li><li><a href="module-composer-common.IllegalModelException.html">composer-common.IllegalModelException</a></li><li><a href="module-composer-common.Introspector.html">composer-common.Introspector</a></li><li><a href="module-composer-common.ParseException.html">composer-common.ParseException</a></li><li><a href="module-composer-common.Relationship.html">composer-common.Relationship</a></li><li><a href="module-composer-common.Resource.html">composer-common.Resource</a></li><li><a href="module-composer-common.SecurityContext.html">composer-common.SecurityContext</a></li><li><a href="module-composer-common.SecurityException.html">composer-common.SecurityException</a></li><li><a href="module-composer-common.Serializer.html">composer-common.Serializer</a></li><li><a href="module-composer-common.ValidatedResource.html">composer-common.ValidatedResource</a></li><li><a href="module-composer-common.ValidationException.html">composer-common.ValidationException</a></li><li><a href="module-composer-runtime.AccessException.html">composer-runtime.AccessException</a></li><li><a href="module-composer-runtime.AssetRegistry.html">composer-runtime.AssetRegistry</a></li><li><a href="module-composer-runtime.Factory.html">composer-runtime.Factory</a></li><li><a href="module-composer-runtime.ParticipantRegistry.html">composer-runtime.ParticipantRegistry</a></li><li><a href="module-ibm-concerto-common.Concept.html">ibm-concerto-common.Concept</a></li><li><a href="module-ibm-concerto-common.Typed.html">ibm-concerto-common.Typed</a></li><li><a href="module-ibm-concerto-common.ValidatedConcept.html">ibm-concerto-common.ValidatedConcept</a></li>
+					<li><a href="module-composer-admin.AdminConnection.html">composer-admin.AdminConnection</a></li><li><a href="module-composer-client.AssetRegistry.html">composer-client.AssetRegistry</a></li><li><a href="module-composer-client.BusinessNetworkConnection.html">composer-client.BusinessNetworkConnection</a></li><li><a href="module-composer-client.ParticipantRegistry.html">composer-client.ParticipantRegistry</a></li><li><a href="module-composer-client.Registry.html">composer-client.Registry</a></li><li><a href="module-composer-client.TransactionRegistry.html">composer-client.TransactionRegistry</a></li><li><a href="module-composer-common.BaseException.html">composer-common.BaseException</a></li><li><a href="module-composer-common.BusinessNetworkDefinition.html">composer-common.BusinessNetworkDefinition</a></li><li><a href="module-composer-common.Concept.html">composer-common.Concept</a></li><li><a href="module-composer-common.Factory.html">composer-common.Factory</a></li><li><a href="module-composer-common.Identifiable.html">composer-common.Identifiable</a></li><li><a href="module-composer-common.IllegalModelException.html">composer-common.IllegalModelException</a></li><li><a href="module-composer-common.Introspector.html">composer-common.Introspector</a></li><li><a href="module-composer-common.ParseException.html">composer-common.ParseException</a></li><li><a href="module-composer-common.Relationship.html">composer-common.Relationship</a></li><li><a href="module-composer-common.Resource.html">composer-common.Resource</a></li><li><a href="module-composer-common.SecurityContext.html">composer-common.SecurityContext</a></li><li><a href="module-composer-common.SecurityException.html">composer-common.SecurityException</a></li><li><a href="module-composer-common.Serializer.html">composer-common.Serializer</a></li><li><a href="module-composer-common.Typed.html">composer-common.Typed</a></li><li><a href="module-composer-common.ValidatedConcept.html">composer-common.ValidatedConcept</a></li><li><a href="module-composer-common.ValidatedResource.html">composer-common.ValidatedResource</a></li><li><a href="module-composer-common.ValidationException.html">composer-common.ValidationException</a></li><li><a href="module-composer-runtime.AccessException.html">composer-runtime.AccessException</a></li><li><a href="module-composer-runtime.AssetRegistry.html">composer-runtime.AssetRegistry</a></li><li><a href="module-composer-runtime.Factory.html">composer-runtime.Factory</a></li><li><a href="module-composer-runtime.ParticipantRegistry.html">composer-runtime.ParticipantRegistry</a></li>
 				</ul>
 			</li>
 			
@@ -137,9 +137,9 @@ class Api {
          * @example
          * // Get the factory.
          * var factory = getFactory();
-         * @method module:concerto-runtime#getFactory
+         * @method module:composer-runtime#getFactory
          * @public
-         * @return {module:concerto-runtime.Factory} The factory.
+         * @return {module:composer-runtime.Factory} The factory.
          */
         this.getFactory = function getFactory() {
             const method = 'getFactory';
@@ -162,11 +162,11 @@ class Api {
          *   .catch(function (error) {
          *     // Add optional error handling here.
          *   });
-         * @method module:concerto-runtime#getAssetRegistry
+         * @method module:composer-runtime#getAssetRegistry
          * @public
          * @param {string} id The ID of the asset registry.
          * @return {Promise} A promise. The promise is resolved with an {@link
-         * module:concerto-runtime.AssetRegistry AssetRegistry} instance
+         * module:composer-runtime.AssetRegistry AssetRegistry} instance
          * representing the asset registry if it exists. If the asset registry
          * does not exist, or the current user does not have access to the asset
          * registry, then the promise will be rejected with an error that describes
@@ -196,11 +196,11 @@ class Api {
          *   .catch(function (error) {
          *     // Add optional error handling here.
          *   });
-         * @method module:concerto-runtime#getParticipantRegistry
+         * @method module:composer-runtime#getParticipantRegistry
          * @public
          * @param {string} id The ID of the participant registry.
          * @return {Promise} A promise. The promise is resolved with an {@link
-         * module:concerto-runtime.ParticipantRegistry ParticipantRegistry} instance
+         * module:composer-runtime.ParticipantRegistry ParticipantRegistry} instance
          * representing the participant registry if it exists. If the participant registry
          * does not exist, or the current user does not have access to the participant
          * registry, then the promise will be rejected with an error that describes
@@ -233,9 +233,9 @@ class Api {
          *   // Throw an error as the current participant is not a driver.
          *   throw new Error('Current participant is not the first driver');
          * }
-         * @method module:concerto-runtime#getCurrentParticipant
+         * @method module:composer-runtime#getCurrentParticipant
          * @public
-         * @return {module:concerto-common.Resource} The current participant,
+         * @return {module:composer-common.Resource} The current participant,
          * or null if the transaction was submitted using an identity that does
          * not map to a participant.
          */
@@ -301,7 +301,7 @@ module.exports = Api;
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
 	
-		on Tue Jan 31st 2017
+		on Fri Feb 3rd 2017
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
