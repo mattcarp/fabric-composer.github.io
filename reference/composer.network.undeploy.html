@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   
-    <title>Fabric Composer Command Line | Fabric Composer</title>
+    <title>Fabric Composer Network Undeploy CLI | Fabric Composer</title>
   
   <meta name="viewport" content="width=device-width">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -134,73 +134,28 @@
         <div class="col-md-10">
           <section class="content-chunk">
             
-              <h1 id="fabric-composer-command-line">Fabric Composer Command Line</h1>
+              <h1 id="fabric-composer-network-undeploy">Fabric Composer Network Undeploy</h1>
 
-<p>The Fabric Composer command line application, <code>composer</code>, can be used to perform multiple
-administrative, operational, and development tasks.</p>
+<p>The <code>composer network undeploy</code> utility is used to undeploy a business network from a Hyperledger Fabric runtime.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">composer network undeploy -a &lt;business-network-archive&gt; -i &lt;enrollment-id&gt; -s &lt;enrollment-secret&gt;
+</code></pre></div>
+<p>Note that after undeploy the business network definition can no longer be used, however the docker container
+associated with the business network definition is still running. The docker container for the business network
+definition must be explicitly stopped and removed if no longer needed.</p>
 
-<p>The Fabric Composer command line application can be installed using npm:</p>
-
-<p><code>npm install -g composer-cli</code></p>
-
-<h2 id="business-network-archives">Business Network Archives</h2>
-
-<p><code>composer archive create</code></p>
-
-<p>Create a Business Network Archive from a directory on disk: <a href="./composer.archive.create.html">composer archive create</a></p>
-
-<p><code>composer archive list</code></p>
-
-<p>Verify the contents of a Business Network Archive on disk: <a href="./composer.archive.list.html">composer archive list</a></p>
-
-<h2 id="business-network-management">Business Network management</h2>
-
-<p><code>composer network deploy</code></p>
-
-<p>Deploy a Business Network Definition: <a href="./composer.network.deploy.html">composer network deploy</a></p>
-
-<p><code>composer network undeploy</code></p>
-
-<p>Undeploy a Business Network Definition: <a href="./composer.network.undeploy.html">composer network undeploy</a></p>
-
-<p><code>composer network list</code></p>
-
-<p>List the contents of a deployed Business Network: <a href="./composer.network.list.html">composer network list</a></p>
-
-<p><code>composer network ping</code></p>
-
-<p>Test the connection to a deployed a Business Network: <a href="./composer.network.ping.html">composer network ping</a></p>
-
-<p><code>composer network update</code></p>
-
-<p>Update a deployed Business Network: <a href="./composer.network.update.html">composer network update</a></p>
-
-<h2 id="participant-and-identity-management">Participant and Identity management</h2>
-
-<p><code>composer participant add</code></p>
-
-<p>Adds a participant to a participant registry: <a href="./composer.participant.add.html">composer participant add</a></p>
-
-<p><code>composer identity issue</code></p>
-
-<p>Issue an identity to a participant: <a href="./composer.identity.issue.html">composer identity issue</a></p>
-
-<p><code>composer identity revoke</code></p>
-
-<p>Revoke an identity from a participant: <a href="./composer.identity.revoke.html">composer identity revoke</a></p>
-
-<h2 id="transaction-execution">Transaction execution</h2>
-
-<p><code>composer transaction submit</code></p>
-
-<p>Submit a transaction for execution: <a href="./composer.transaction.submit.html">composer transaction submit</a></p>
-
-<h2 id="development-accelerators">Development accelerators</h2>
-
-<p><code>composer generator tests</code></p>
-
-<p>Generate tests for a Business Network Definition: <a href="./composer.generator.tests.html">composer generator tests</a></p>
-
+<h3 id="options">Options</h3>
+<div class="highlight"><pre><code class="language-" data-lang="">  --help                       Show help  [boolean]
+  -v, --version                Show version number  [boolean]
+  --archiveFile, -a            The business network archive file name  [string] [required]
+  --connectionProfileName, -p  The connection profile name  [string]
+  --enrollId, -i               The enrollment ID of the user  [string] [required]
+  --enrollSecret, -s           The enrollment secret of the user  [string]
+</code></pre></div>
+<h2 id="example-output">Example Output</h2>
+<div class="highlight"><pre><code class="language-" data-lang="">composer network undeploy -n digitalproperty-network -i WebAppAdmin -s DJY27pEnl16d
+Undeploying business network definition. This may take some seconds...
+Command completed successfully.
+</code></pre></div>
             
           </section>
         </div>
