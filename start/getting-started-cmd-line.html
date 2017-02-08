@@ -150,12 +150,12 @@
 <h2 id="what-is-the-digital-property-network">What is the Digital Property Network?</h2>
 
 <p>This network will be expanded for other tutorials, but for this getting started we&#39;ll keep it simple. We going to model <em>Land Titles</em>, each of which has an owner, description, and a boolean saying if this property/land is up for sale.</p>
-<div class="highlight"><pre><code class="language-" data-lang="">asset LandTitle identified by titleId {
-  o String   titleId
-  o Person   owner
-  o String   information
-  o Boolean  forSale   optional
-}
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">asset</span> <span class="nx">LandTitle</span> <span class="nx">identified</span> <span class="nx">by</span> <span class="nx">titleId</span> <span class="p">{</span>
+  <span class="nx">o</span> <span class="nb">String</span>   <span class="nx">titleId</span>
+  <span class="nx">o</span> <span class="nx">Person</span>   <span class="nx">owner</span>
+  <span class="nx">o</span> <span class="nb">String</span>   <span class="nx">information</span>
+  <span class="nx">o</span> <span class="nb">Boolean</span>  <span class="nx">forSale</span>   <span class="nx">optional</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>We&#39;ll also model the <em>Owner</em> as a Person (First,Last name).</p>
 <div class="highlight"><pre><code class="language-" data-lang="">participant Person identified by personId {
@@ -203,8 +203,8 @@ npm install
 <h3 id="update-the-transaction-processor-function">Update the Transaction Processor Function</h3>
 
 <p>Open the file <code>lib/DigitalLandTitle.js</code> in a text editor and replace the contents with:</p>
-
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s1">'use strict'</span><span class="p">;</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">
+<span class="s1">'use strict'</span><span class="p">;</span>
 
 <span class="cm">/** Process a property that is held for sale
  * @param {net.biz.digitalPropertyNetwork.RegisterPropertyForSale} propertyForSale the property to be sold
@@ -221,8 +221,8 @@ npm install
             <span class="k">return</span> <span class="nx">result</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">propertyForSale</span><span class="p">.</span><span class="nx">title</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">);</span>
-<span class="p">}</span></code></pre></figure>
-
+<span class="p">}</span>
+</code></pre></div>
 <h3 id="update-the-business-network-definition">Update the Business Network Definition</h3>
 
 <p>In a real-life scenario at this point you would edit <code>package.json</code> to increment the version number in the <code>DigitalProperty-Network</code> directory and publish this to npm. But please don&#39;t publish to the DigitalProperty-Network in npm - otherwise we&#39;ll have version numbers in the 1000s :-)</p>
