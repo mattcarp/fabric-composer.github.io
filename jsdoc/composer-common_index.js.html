@@ -108,7 +108,7 @@
  */
 
 /* istanbul ignore next */
-if (process.version.match(/v4\.4\./)) {
+if (!nodeHasNewBufferVersion()) {
     const originalBufferFrom = Buffer.from;
     const newBufferFrom = function (str, encoding) {
         if (arguments.length === 2 &amp;&amp; typeof str === 'string' &amp;&amp; encoding === 'base64') {
@@ -119,12 +119,27 @@ if (process.version.match(/v4\.4\./)) {
     Object.defineProperty(Buffer, 'from', { value: newBufferFrom });
 }
 
+/**
+ * Check whether we're running in a version of node which has the updated Buffer implementation
+ * Used above to fall back to the old version if needed.
+ * @return {boolean} whether the new version is supported
+ */
+function nodeHasNewBufferVersion() {
+    try {
+        Buffer.from('b2xkbm9kZQ==', 'base64');
+        return true;
+    } catch (e) {
+        return false;
+    }
+}
+
 module.exports.AclFile = require('./lib/acl/aclfile');
 module.exports.AclManager = require('./lib/aclmanager');
 module.exports.AssetDeclaration = require('./lib/introspect/assetdeclaration');
 module.exports.BaseException = require('./lib/baseexception');
 module.exports.BusinessNetworkDefinition = require('./lib/businessnetworkdefinition');
 module.exports.ClassDeclaration = require('./lib/introspect/classdeclaration');
+module.exports.Concept = require('./lib/model/concept');
 module.exports.Connection = require('./lib/connection');
 module.exports.ConnectionManager = require('./lib/connectionmanager');
 module.exports.ConnectionProfileManager = require('./lib/connectionprofilemanager');
