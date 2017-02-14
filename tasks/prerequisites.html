@@ -149,7 +149,7 @@
 <p>The recommended versions are:
 <em>Docker</em>: v1.12.5
 <em>Docker-compose</em>: v1.9.0
-<em>node.js</em>: v4 or v6</p>
+<em>node.js</em>: v6.9.5</p>
 
 <h2 id="automatic-installation">Automatic Installation</h2>
 
@@ -256,7 +256,7 @@ sudo apt-get -y install git
 <h3 id="3-installing-nvm">3. Installing NVM</h3>
 
 <p>We highly recommend installing <a href="https://github.com/creationix/nvm">nvm</a> to easily install and manage versions of <a href="https://nodejs.org/en/">node.js</a> and <a href="https://www.npmjs.com/">npm</a>. The main runtime uses node.js and npm is used for package management and dependency installation.
-The runtime requires a version higher than v4.6.0.</p>
+The runtime requires a version higher than v6.</p>
 
 <p><strong>Installation Commands for Ubuntu:</strong></p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Install nvm dependencies</span>
@@ -275,10 +275,12 @@ EOF
 <span class="nb">source</span> ~/.profile
 
 <span class="c"># Install node and npm</span>
-nvm install 4.6.2
+nvm install 6.9.5
 
-<span class="c"># Configure nvm to use version 4.6.2</span>
-nvm use 4.6.2.
+
+<span class="c"># Configure nvm to use version 6</span>
+nvm use 6.9.5
+nvm <span class="nb">alias </span>default 6.9.5
 
 <span class="c"># Install the latest version of npm</span>
 npm install npm@latest -g
@@ -352,19 +354,6 @@ sudo pip install docker-compose
 
 <ul>
 <li><a href="https://docs.docker.com/compose/install/">Official Docker Compose installation guide</a></li>
-</ul>
-
-<h3 id="6-login-to-npm-whitewater">6. Login to npm Whitewater</h3>
-
-<p>All of the Fabric Composer packages can be found in the public npm registry.</p>
-
-<p><strong>Installation Commands for MacOS:</strong></p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">tbd
-</code></pre></div>
-<p><strong>Additional Notes:</strong></p>
-
-<ul>
-<li><a href="https://npm.whitewater.ibm.com/">npm Whitewater</a></li>
 </ul>
 
             

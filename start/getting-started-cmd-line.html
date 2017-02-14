@@ -153,7 +153,7 @@
 <p>This network will be expanded for other tutorials, but for this getting started we&#39;ll keep it simple. We going to model <em>Land Titles</em>, each of which has an owner, description, and a boolean saying if this property/land is up for sale.</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">asset</span> <span class="nx">LandTitle</span> <span class="nx">identified</span> <span class="nx">by</span> <span class="nx">titleId</span> <span class="p">{</span>
   <span class="nx">o</span> <span class="nb">String</span>   <span class="nx">titleId</span>
-  <span class="nx">o</span> <span class="nx">Person</span>   <span class="nx">owner</span>
+  <span class="o">--&gt;</span> <span class="nx">Person</span>   <span class="nx">owner</span>
   <span class="nx">o</span> <span class="nb">String</span>   <span class="nx">information</span>
   <span class="nx">o</span> <span class="nb">Boolean</span>  <span class="nx">forSale</span>   <span class="nx">optional</span>
 <span class="p">}</span>
@@ -197,7 +197,7 @@
 <h3 id="clone-the-repository-and-install-dependencies">Clone the Repository and Install Dependencies</h3>
 
 <p>First clone the repository:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">git clone git@github.com:fabric-composer/sample-networks.git
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">git clone https://github.com/fabric-composer/sample-networks.git
 <span class="nb">cd </span>sample-networks/packages/DigitalProperty-Network
 npm install
 </code></pre></div>
@@ -236,18 +236,18 @@ Looking <span class="k">for </span>package.json of Business Network Definition <
 
 Description:Digital Property Network
 Name:digitalproperty-network
-Identifier:digitalproperty-network-0.0.22
+Identifier:digitalproperty-network-0.0.1
 
-Written Business Network Definition Archive file to digitalproperty-network-0.0.22.bna
+Written Business Network Definition Archive file to digitalproperty-network-0.0.1.bna
 Command completed successfully.
 </code></pre></div>
 <p>We now have a new file that is the digital business network archive.</p>
 
 <h3 id="update-the-deployed-business-network">Update the deployed business network</h3>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>composer network update --archiveFile digitalproperty-network@0.0.22.bna  --enrollId WebAppAdmin --enrollSecret DJY27pEnl16d
-Deploying business network from archive digitalproperty-network-0.0.22.bna
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>composer network update --archiveFile digitalproperty-network@0.0.1.bna  --enrollId WebAppAdmin --enrollSecret DJY27pEnl16d
+Deploying business network from archive digitalproperty-network-0.0.1.bna
 Business network definition:
-    Identifier: digitalproperty-network-0.0.22
+    Identifier: digitalproperty-network-0.0.1
     Description: Digital Property Network
 Updating business network definition. This may take a few seconds...
 Command completed successfully.
@@ -276,7 +276,7 @@ available via <span class="sb">`</span>npm run-script<span class="sb">`</span>:
   teardownHLF
     scripts/teardown.sh
   deployNetwork
-    composer archive create -m digitalproperty-network --archiveFile digitalPropertyNetwork.zip <span class="o">&amp;&amp;</span> composer network deploy --archiveFile digitalPropertyNetwork.zip  --enrollId WebAppAdmin --enrollSecret DJY27pEnl16d <span class="o">&amp;&amp;</span> composer network list -n digitalproperty-network --enrollId WebAppAdmin --enrollSecret DJY27pEnl16d
+    composer archive create -m digitalproperty-network --archiveFile digitalPropertyNetwork.bna <span class="o">&amp;&amp;</span> composer network deploy --archiveFile digitalPropertyNetwork.bna  --enrollId WebAppAdmin --enrollSecret DJY27pEnl16d <span class="o">&amp;&amp;</span> composer network list -n digitalproperty-network --enrollId WebAppAdmin --enrollSecret DJY27pEnl16d
 
 </code></pre></div>
 <p>If you issue this command, that will submit a transaction as before - but importantly this is the updated transaction function. You should now see:</p>
@@ -309,10 +309,10 @@ info: [Composer-GettingStarted] LandRegistry:&lt;init&gt; businessNetworkDefinit
 
 **Composer CLI**
 
-* `composer archive create -m digitalproperty-network --archiveFile digitalPropertyNetwork.zip`
+* `composer archive create -m digitalproperty-network --archiveFile digitalPropertyNetwork.bna`
 This command is used to create a Business Network Archive. `--archiveFile` is the name of the file. The `-m` is the npm module name of the business network to use. There is also a -d option to specify the directory the business network is in. Useful whilst developing the business network transactions functions.
 
-* `composer network deploy --archiveFile digitalPropertyNetwork.zip  --enrollId WebAppAdmin --enrollSecret DJY27pEnl16d`
+* `composer network deploy --archiveFile digitalPropertyNetwork.bna  --enrollId WebAppAdmin --enrollSecret DJY27pEnl16d`
 This deploys the business network to the HyperLedger runtime; the archive is specified but also the Hyperledger Entrollment Id and Secret (the secret if not included in the command line will be prompted for)
 * `composer network list -n digitalproperty-network --enrollId WebAppAdmin --enrollSecret DJY27pEnl16d`
 This lists the deployed business network details. `-n` is the name of the business network. With the same options for the Hyperledger Entrollment Id and Secret (the secret if not included in the command line will be prompted for)
