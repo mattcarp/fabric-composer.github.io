@@ -147,7 +147,7 @@
 <h2 id="procedure">Procedure</h2>
 
 <ol>
-<li><p>Before deploying a business network, a <a href="">Business Network Definition</a> is needed as a <code>zip</code> file with the following structure:</p>
+<li><p>Before deploying a business network, a <a href="../concepts/businessnetworkdefinition.html">Business Network Definition</a> is needed as a <code>zip</code> file with the following structure:</p>
 <div class="highlight"><pre><code class="language-" data-lang="">BusinessNetworkArchive.zip
 ├── lib
 │   └── mozart.cto.js
@@ -158,14 +158,14 @@
 </ol>
 <div class="highlight"><pre><code class="language-" data-lang="">-   **lib** contains all of the transactions processor functions
 -   **models** contains all of the model files written in the [CTO Language](../reference/cto_language.html).
--   **package.json** is required, and is used to create the [Business Network Definition](../reference/businessnetworkdefinition.html)'s identifier
+-   **package.json** is required, and is used to create the [Business Network Definition](../concepts/businessnetworkdefinition.html)'s identifier
 
 You can use the `composer archive` command to create an archive with the correct format.
 
 **NOTE**: *Do not zip a a folder containing **lib**, **models**, and **package.json** to create an Business Network Archive, zip the contents themselves*
 </code></pre></div>
 <ol>
-<li><p>Start <a href="">Hyperledger Fabric Peer and Membership Service</a></p></li>
+<li><p>Start <a href="runtime-start.html">Hyperledger Fabric Peer and Membership Service</a></p></li>
 <li><p><a href="createconnectionprofile.html">Create a Connection Profile</a> or do <em>not</em> use <code>-p</code> and allow Fabric Composer to create a <code>Default Connection Profile</code> for you.</p></li>
 <li><p>Enter the command on a single line. For example:</p>
 
