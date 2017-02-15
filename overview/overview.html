@@ -203,16 +203,16 @@ and transactions in the business network. The business network also specifies <e
 
 <span class="nx">asset</span> <span class="nx">LandTitle</span> <span class="nx">identified</span> <span class="nx">by</span> <span class="nx">titleId</span> <span class="p">{</span>
   <span class="nx">o</span> <span class="nb">String</span>   <span class="nx">titleId</span>
-  <span class="nx">o</span> <span class="nx">Person</span>   <span class="nx">owner</span>
+  <span class="o">--&gt;</span> <span class="nx">Person</span>   <span class="nx">owner</span>
   <span class="nx">o</span> <span class="nb">String</span>   <span class="nx">information</span>
   <span class="nx">o</span> <span class="nb">Boolean</span>  <span class="nx">forSale</span>   <span class="nx">optional</span>
 <span class="p">}</span>
 
 <span class="nx">asset</span> <span class="nx">SalesAgreement</span> <span class="nx">identified</span> <span class="nx">by</span> <span class="nx">salesId</span> <span class="p">{</span>
   <span class="nx">o</span> <span class="nb">String</span>    <span class="nx">salesId</span>
-  <span class="nx">o</span> <span class="nx">Person</span>    <span class="nx">buyer</span>
-  <span class="nx">o</span> <span class="nx">Person</span>    <span class="nx">seller</span>
-  <span class="nx">o</span> <span class="nx">LandTitle</span> <span class="nx">title</span>
+  <span class="o">--&gt;</span> <span class="nx">Person</span>    <span class="nx">buyer</span>
+  <span class="o">--&gt;</span> <span class="nx">Person</span>    <span class="nx">seller</span>
+  <span class="o">--&gt;</span> <span class="nx">LandTitle</span> <span class="nx">title</span>
 <span class="p">}</span>
 
 <span class="nx">participant</span> <span class="nx">Person</span> <span class="nx">identified</span> <span class="nx">by</span> <span class="nx">personId</span> <span class="p">{</span>
