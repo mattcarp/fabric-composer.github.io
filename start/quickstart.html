@@ -14,6 +14,7 @@
   <meta name="google-site-verification" content="fBQRJ6h7MV7_TJ7grbgq4P-d-07NRfDWPe4pqEEoH5w">
   <link href="//fonts.googleapis.com/css?family=Roboto+Slab:400,700%7CRoboto:400,700,700italic,400italic" rel="stylesheet" type="text/css">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Open+Sans:300,400,700|PT+Sans:400,700|Playfair+Display|Source+Code+Pro" rel="stylesheet">
   <script src="/assets/js/clipboard.min.js"></script>
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -33,6 +34,7 @@
     <link href="/assets/css/prettify.css" rel="stylesheet">
     <link href="/assets/css/bootstrap.css" rel="stylesheet">
     <link href="/assets/css/composer-style.css" rel="stylesheet">
+    <!-- <link href="/assets/css/new-style.min.css" rel="stylesheet"> -->
   
 
   <!--link href="/blog/atom.xml" type="application/atom+xml" rel="alternate" title="Concerto Blog Atom Feed">-->
@@ -43,6 +45,8 @@
 
   
   
+
+
 
 
 
@@ -69,7 +73,10 @@
                 <li>
                     <a href="/start/quickstart.html">Quickstart</a>
                 </li>
-                <li class="dropdown">
+                <li>
+                    <a href="/overview/overview.html">Documentation</a>
+                </li>
+                <!-- <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Docs <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
@@ -91,7 +98,7 @@
                             <a href="/jsdoc/index.html">API Documentation</a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
                 <li>
                     <a href="/support/index.html">Support</a>
                 </li>
@@ -99,7 +106,8 @@
         </div>
         <!-- /.navbar-collapse -->
     </div>
-    <!-- /.container -->
+    <!-- /.container
+   -->
 </nav>
 
   
@@ -111,44 +119,59 @@
       <div class="row">
         <!-- If there's a sidebar, divide into 2 columns -->
         
-        <div class="col-md-12">
+        <div class="col-md-2">
+          <nav class="context-nav" id="myScrollspy">
+            
+            
+              <p><strong><a href="/start/quickstart.html">Quickstart</a></strong>
+<a href="/tasks/prerequisites.html">Installing Prerequisites</a>
+<strong><a href="/overview/overview.html">Overview</a></strong>
+<strong><a href="/start/getting-started-cmd-line.html">Getting Started</a></strong>
+<strong><a href="/concepts/businessnetwork.html">Concepts</a></strong>
+<strong><a href="/tasks/prerequisites.html">Tasks</a></strong>
+<strong><a href="/jsdoc/index.html">API Documentation</a></strong>
+<strong><a href="/reference/MeetTheModules.html">Reference</a></strong>
+<strong><a href="/support/index.html">Support</a></strong></p>
+
+            
+          </nav>
+        </div>
+        <div class="col-md-10">
           <section class="content-chunk">
             
-              <h2 id="fabric-composer-quickstart">Fabric Composer Quickstart</h2>
+              <h1 id="fabric-composer-quickstart">Fabric Composer Quickstart</h1>
 
 <hr>
 
-<p><i class="fa fa-fw  fa-coffee"></i>  <b>GET READY</b><br></p>
+<p>Check that your system has the required software (at the required versions) installed:</p>
 
-<hr>
+<p><strong>Operating Systems:</strong> Ubuntu Linux 14.04 LTS (64-bit) or Mac OS 10.12</p>
 
-<blockquote>
-<p>Before you start, you should check that your system has the required software (at the required versions) installed:
-<a href="../reference/platforms.html">Supported Platforms</a>
-If you need to update or install anything please refer to the install guides:
+<p><strong>Docker Engine:</strong> Version 1.12.x</p>
+
+<p><strong>Docker-Compose:</strong> Version 1.8.x</p>
+
+<p><strong>Node:</strong> 4.6.x or 6.x</p>
+
+<p><strong>npm:</strong> 4.0.x</p>
+
+<p>If you need to update or install anything please refer to the install guides:
 <a href="../tasks/prerequisites.html">Installing Prerequisites</a></p>
-</blockquote>
 
-<hr>
-
-<h2 id="clone-the-sample-applications-repository">Clone the Sample Applications repository</h2>
+<p><strong>Clone the Sample Applications Repository:</strong></p>
 <div class="highlight"><pre><code class="language-" data-lang="">npm install -g composer-cli
 git clone https://github.com/fabric-composer/sample-applications.git
 </code></pre></div>
-<h2 id="install-the-getting-started-application">Install the Getting Started Application</h2>
+<p><strong>Install the Getting Started Application:</strong></p>
 <div class="highlight"><pre><code class="language-" data-lang="">cd sample-applications/
 cd packages
 cd getting-started
 npm install
 </code></pre></div>
-<h2 id="run-the-getting-started-application">Run the Getting Started Application</h2>
+<p><strong>Run the Getting Started Application:</strong></p>
 
 <p>Run the <code>npm test</code> command. You should see output as below.</p>
-<div class="highlight"><pre><code class="language-" data-lang="">npm test
-
-daniels-mbp:getting-started dselman$ npm test
-
-&gt; getting-started@1.0.0 test /Users/dselman/dev/git/sample-applications/packages/getting-started
+<div class="highlight"><pre><code class="language-" data-lang="">&gt; getting-started@1.0.0 test /Users/dselman/dev/git/sample-applications/packages/getting-started
 &gt; mocha --recursive &amp;&amp; npm run bootstrapAssets &amp;&amp; npm run listAssets &amp;&amp; npm run submitTransaction
 
 
@@ -223,19 +246,10 @@ info: [Composer-GettingStarted]
 info: [Composer-GettingStarted] Command completed successfully.
 
 </code></pre></div>
-<hr>
-
-<p><i class="fa fa-fw  fa-forward"></i>  <b>WHERE TO NEXT?</b><br></p>
-
-<hr>
-
-<p>Continue experimenting with one of our Getting Started guides:</p>
-
-<p><a href="./index.html">Visit Getting Started</a></p>
-
             
           </section>
         </div>
+        <!-- Otherwise, have the main content fill all 12 columns... -->
         
       </div>
     </article>

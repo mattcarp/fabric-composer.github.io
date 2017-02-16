@@ -14,6 +14,7 @@
   <meta name="google-site-verification" content="fBQRJ6h7MV7_TJ7grbgq4P-d-07NRfDWPe4pqEEoH5w">
   <link href="//fonts.googleapis.com/css?family=Roboto+Slab:400,700%7CRoboto:400,700,700italic,400italic" rel="stylesheet" type="text/css">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Open+Sans:300,400,700|PT+Sans:400,700|Playfair+Display|Source+Code+Pro" rel="stylesheet">
   <script src="/assets/js/clipboard.min.js"></script>
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -33,6 +34,7 @@
     <link href="/assets/css/prettify.css" rel="stylesheet">
     <link href="/assets/css/bootstrap.css" rel="stylesheet">
     <link href="/assets/css/composer-style.css" rel="stylesheet">
+    <!-- <link href="/assets/css/new-style.min.css" rel="stylesheet"> -->
   
 
   <!--link href="/blog/atom.xml" type="application/atom+xml" rel="alternate" title="Concerto Blog Atom Feed">-->
@@ -43,6 +45,8 @@
 
   
   
+
+
 
 
 
@@ -69,7 +73,10 @@
                 <li>
                     <a href="/start/quickstart.html">Quickstart</a>
                 </li>
-                <li class="dropdown">
+                <li>
+                    <a href="/overview/overview.html">Documentation</a>
+                </li>
+                <!-- <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Docs <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
@@ -91,7 +98,7 @@
                             <a href="/jsdoc/index.html">API Documentation</a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
                 <li>
                     <a href="/support/index.html">Support</a>
                 </li>
@@ -99,7 +106,8 @@
         </div>
         <!-- /.navbar-collapse -->
     </div>
-    <!-- /.container -->
+    <!-- /.container
+   -->
 </nav>
 
   
@@ -112,24 +120,30 @@
         <!-- If there's a sidebar, divide into 2 columns -->
         
         <div class="col-md-2">
-          <nav class="context-nav">
+          <nav class="context-nav" id="myScrollspy">
             
             
-              <ul>
-<li><a href="/reference/MeetTheModules.html">Meet the Modules</a></li>
-<li><a href="/reference/platforms.html">Supported Platforms</a></li>
-<li><a href="/reference/cto_language.html">Modeling Language</a></li>
-<li><a href="/reference/acl_language.html">Access Control Language</a></li>
-<li><a href="/reference/connectionprofile.html">Connection Profile</a></li>
-<li><a href="/reference/js_scripts.html">Transaction Processor Functions</a></li>
-<li><a href="/reference/commands.html">Command Line Interface</a></li>
-<li><a href="/reference/composer.generator.tests.html">Application Generator</a></li>
-<li><a href="/reference/composer.participant.add.html">CLI Add Participant</a></li>
-<li><a href="/reference/composer.identity.issue.html">CLI Issue Identity </a></li>
-<li><a href="/reference/composer.identity.revoke.html">CLI Revoke Identity</a></li>
-<li><a href="/jsdoc/index.html">API Documentation</a></li>
-<li><a href="/reference/glossary.html">Glossary</a></li>
-</ul>
+              <p><strong><a href="/start/quickstart.html">Quickstart</a></strong>
+<strong><a href="/overview/overview.html">Overview</a></strong>
+<strong><a href="/start/getting-started-cmd-line.html">Getting Started</a></strong>
+<strong><a href="/concepts/businessnetwork.html">Concepts</a></strong>
+<strong><a href="/tasks/prerequisites.html">Tasks</a></strong>
+<strong><a href="/jsdoc/index.html">API Documentation</a></strong>
+<strong><a href="/reference/MeetTheModules.html">Reference</a></strong>
+<a href="/reference/MeetTheModules.html">Meet the Modules</a>
+<a href="/reference/platforms.html">Supported Platforms</a>
+<a href="/reference/cto_language.html">Modeling Language</a>
+<a href="/reference/acl_language.html">Access Control Language</a>
+<a href="reference/connectionprofile.html">Connection Profile</a>
+<a href="/reference/js_scripts.html">Transaction Processor Functions</a>
+<a href="/reference/commands.html">Command Line Interface</a>
+<a href="/reference/concerto.generator.tests.html">Application Generator</a>
+<a href="/reference/concerto.participant.add.html">CLI Add Participant</a>
+<a href="/reference/concerto.identity.issue.html">CLI Issue Identity </a>
+<a href="/reference/concerto.identity.revoke.html">CLI Revoke Identity</a>
+<a href="/jsdoc/develop/index.html">API Documentation</a>
+<a href="/reference/glossary.html">Glossary</a>
+<strong><a href="/support/index.html">Support</a></strong></p>
 
             
           </nav>
@@ -138,6 +152,8 @@
           <section class="content-chunk">
             
               <h1 id="fabric-composer-network-undeploy">Fabric Composer Network Undeploy</h1>
+
+<hr>
 
 <p>The <code>composer network undeploy</code> utility is used to undeploy a business network from a Hyperledger Fabric runtime.</p>
 <div class="highlight"><pre><code class="language-" data-lang="">composer network undeploy -a &lt;business-network-archive&gt; -i &lt;enrollment-id&gt; -s &lt;enrollment-secret&gt;

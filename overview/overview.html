@@ -14,6 +14,7 @@
   <meta name="google-site-verification" content="fBQRJ6h7MV7_TJ7grbgq4P-d-07NRfDWPe4pqEEoH5w">
   <link href="//fonts.googleapis.com/css?family=Roboto+Slab:400,700%7CRoboto:400,700,700italic,400italic" rel="stylesheet" type="text/css">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Open+Sans:300,400,700|PT+Sans:400,700|Playfair+Display|Source+Code+Pro" rel="stylesheet">
   <script src="/assets/js/clipboard.min.js"></script>
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -33,6 +34,7 @@
     <link href="/assets/css/prettify.css" rel="stylesheet">
     <link href="/assets/css/bootstrap.css" rel="stylesheet">
     <link href="/assets/css/composer-style.css" rel="stylesheet">
+    <!-- <link href="/assets/css/new-style.min.css" rel="stylesheet"> -->
   
 
   <!--link href="/blog/atom.xml" type="application/atom+xml" rel="alternate" title="Concerto Blog Atom Feed">-->
@@ -43,6 +45,8 @@
 
   
   
+
+
 
 
 
@@ -69,7 +73,10 @@
                 <li>
                     <a href="/start/quickstart.html">Quickstart</a>
                 </li>
-                <li class="dropdown">
+                <li>
+                    <a href="/overview/overview.html">Documentation</a>
+                </li>
+                <!-- <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Docs <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
@@ -91,7 +98,7 @@
                             <a href="/jsdoc/index.html">API Documentation</a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
                 <li>
                     <a href="/support/index.html">Support</a>
                 </li>
@@ -99,7 +106,8 @@
         </div>
         <!-- /.navbar-collapse -->
     </div>
-    <!-- /.container -->
+    <!-- /.container
+   -->
 </nav>
 
   
@@ -111,10 +119,26 @@
       <div class="row">
         <!-- If there's a sidebar, divide into 2 columns -->
         
-        <div class="col-md-12">
+        <div class="col-md-2">
+          <nav class="context-nav" id="myScrollspy">
+            
+            
+              <p><strong><a href="/start/quickstart.html">Quickstart</a></strong>
+<strong><a href="/overview/overview.html">Overview</a></strong>
+<strong><a href="/start/getting-started-cmd-line.html">Getting Started</a></strong>
+<strong><a href="/concepts/businessnetwork.html">Concepts</a></strong>
+<strong><a href="/tasks/prerequisites.html">Tasks</a></strong>
+<strong><a href="/jsdoc/index.html">API Documentation</a></strong>
+<strong><a href="/reference/MeetTheModules.html">Reference</a></strong>
+<strong><a href="/support/index.html">Support</a></strong></p>
+
+            
+          </nav>
+        </div>
+        <div class="col-md-10">
           <section class="content-chunk">
             
-              <h2 id="overview">Overview</h2>
+              <h1 id="overview">Overview</h1>
 
 <hr>
 
@@ -178,15 +202,13 @@ Definition, which contains a data model that defines the name and structure of a
 and transactions in the business network. The business network also specifies <em>transaction processor functions</em>
 (written in ES5 Javascript) that are automatically run on a Hyperledger Fabric when transactions are submitted by clients.</p>
 
-<p>Fabric Composer defines <a href="https://fabric-composer.github.io/jsdoc/index.html">Javascript APIs</a> to submit transactions and to create, retrieve, update and delete assets within asset registries.</p>
+<p>Fabric Composer defines <a href="https://fabric-composer.github.io/jsdoc/develop/index.html">Javascript APIs</a>to submit transactions and to create, retrieve, update and delete assets within asset registries.</p>
 
 <h3 id="roles-responsibilities-and-tasks">Roles, Responsibilities and Tasks</h3>
 
 <p>A typical project using Fabric Composer goes through a lifecycle of:</p>
 
 <p><em>Model -&gt; Define Business Network -&gt; Deploy Runtime -&gt; Deploying Business Network -&gt; Test -&gt; Generate Application</em></p>
-
-<p><img src="../assets/img/concerto_stack.png" alt="Framework Task Map"></p>
 
 <p>These tasks may all be performed by a single full-stack developer, but are more typically performed by:
 * Business analyst, responsible for defining the data model
@@ -203,16 +225,16 @@ and transactions in the business network. The business network also specifies <e
 
 <span class="nx">asset</span> <span class="nx">LandTitle</span> <span class="nx">identified</span> <span class="nx">by</span> <span class="nx">titleId</span> <span class="p">{</span>
   <span class="nx">o</span> <span class="nb">String</span>   <span class="nx">titleId</span>
-  <span class="o">--&gt;</span> <span class="nx">Person</span>   <span class="nx">owner</span>
+  <span class="nx">o</span> <span class="nx">Person</span>   <span class="nx">owner</span>
   <span class="nx">o</span> <span class="nb">String</span>   <span class="nx">information</span>
   <span class="nx">o</span> <span class="nb">Boolean</span>  <span class="nx">forSale</span>   <span class="nx">optional</span>
 <span class="p">}</span>
 
 <span class="nx">asset</span> <span class="nx">SalesAgreement</span> <span class="nx">identified</span> <span class="nx">by</span> <span class="nx">salesId</span> <span class="p">{</span>
   <span class="nx">o</span> <span class="nb">String</span>    <span class="nx">salesId</span>
-  <span class="o">--&gt;</span> <span class="nx">Person</span>    <span class="nx">buyer</span>
-  <span class="o">--&gt;</span> <span class="nx">Person</span>    <span class="nx">seller</span>
-  <span class="o">--&gt;</span> <span class="nx">LandTitle</span> <span class="nx">title</span>
+  <span class="nx">o</span> <span class="nx">Person</span>    <span class="nx">buyer</span>
+  <span class="nx">o</span> <span class="nx">Person</span>    <span class="nx">seller</span>
+  <span class="nx">o</span> <span class="nx">LandTitle</span> <span class="nx">title</span>
 <span class="p">}</span>
 
 <span class="nx">participant</span> <span class="nx">Person</span> <span class="nx">identified</span> <span class="nx">by</span> <span class="nx">personId</span> <span class="p">{</span>
@@ -329,21 +351,10 @@ and transactions in the business network. The business network also specifies <e
 
 <p>In addition, if they are building an Angular2 application, they may generate Typescript types from the domain model, ensuring type-safety in the user interface code they are writing.</p>
 
-<hr>
-
-<p><i class="fa fa-fw  fa-forward"></i>  <b>WHERE TO NEXT?</b><br></p>
-
-<hr>
-
-<p>Read more about the key concepts in a Business Network on our Concepts page, or get ready for app development with Quickstart.</p>
-
-<p><a href="../concepts/index.html">Fabric Composer Concepts Doc</a></p>
-
-<p><a href="../start/quickstart.html">Developer Quickstart</a></p>
-
             
           </section>
         </div>
+        <!-- Otherwise, have the main content fill all 12 columns... -->
         
       </div>
     </article>
