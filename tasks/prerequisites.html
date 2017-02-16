@@ -142,18 +142,34 @@
             
               <h1 id="installing-development-pre-requisites">Installing Development Pre-requisites</h1>
 
-<p>The essential tools you will need are <em>npm</em>, <em>docker</em>, <em>docker-compose</em> and a code editor for example <em>Atom</em> or <em>VSCode</em>. There are step by step <a href="#Manual%20Installation">instructions</a> for installing these if perhaps you have some of them already.</p>
+<p>The essential tools you will need are:</p>
 
-<p>There are also <a href="#Automatic%20Installation">two scripts</a> that can be used on Ubuntu to install everything automatically.</p>
+<ul>
+<li><a href="#2-installing-git"><em>git</em></a></li>
+<li><a href="#3-installing-nvm"><em>node.js and npm</em></a></li>
+<li><a href="#4-installing-docker-engine"><em>docker</em></a></li>
+<li><a href="#5-installing-docker-compose"><em>docker-compose</em></a></li>
+</ul>
 
-<p>The recommended versions are:
-<em>Docker</em>: v1.12.5
-<em>Docker-compose</em>: v1.9.0
-<em>node.js</em>: v6.9.5</p>
+<p>You will also need a code editor, for example <a href="#1-1-atom"><em>Atom</em></a> or <a href="#1-2-visual-studio-code"><em>VSCode</em></a>.</p>
+
+<p>There is a script that can be used on Ubuntu to install the essential tools <a href="#automatic-installation">automatically</a>. There are also step by step instructions for <a href="#manual-installation">manually</a> installing the essential tools or editors in isolation if you have some of them already.</p>
+
+<p>The recommended versions are:</p>
+
+<ul>
+<li><em>Docker</em>: v1.12.5</li>
+<li><em>Docker-compose</em>: v1.9.0</li>
+<li><em>node.js</em>: v6.9.5</li>
+</ul>
 
 <h2 id="automatic-installation">Automatic Installation</h2>
 
-<p>The script to install the pre-requisites can be found in <a href="https://github.com/fabric-composer/sample-applications/tree/master/packages/getting-started">GettingStarted</a> under <a href="https://github.com/fabric-composer/sample-applications/tree/master/packages/getting-started/scripts">scripts</a> and is named <a href="https://github.com/fabric-composer/sample-applications/blob/master/packages/getting-started/scripts/prereqs-ubuntu.sh">prereqs-ubuntu.sh</a>.</p>
+<p>The script to install the pre-requisite tools can be found in <a href="https://github.com/fabric-composer/sample-applications/tree/master/packages/getting-started">GettingStarted</a> under <a href="https://github.com/fabric-composer/sample-applications/tree/master/packages/getting-started/scripts">scripts</a> and is named <a href="https://github.com/fabric-composer/sample-applications/blob/master/packages/getting-started/scripts/prereqs-ubuntu.sh">prereqs-ubuntu.sh</a>.</p>
+
+<p>The script must be run twice. On the first run the script will install <em>git</em>, <em>nvm</em>, <em>node and npm (via nvm)</em>, and <em>docker</em>.</p>
+
+<p>On the second run, performed after logout and login, and using the &#39;docker&#39; flag, the script will install <em>python</em> and <em>docker-compose</em>.</p>
 
 <p>Usage:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># First run the script</span>
@@ -168,6 +184,7 @@
 
 <ul>
 <li>The installation commands have been tested on Ubuntu 14.04 (trusty), 64-bit. For other versions of Ubuntu, please check the official installation guides found under each instruction.</li>
+<li>The script will not install a code editor. Manual installation of recommended code editors is provided in the <a href="#1-installing-an-editor">manual installation</a> section.</li>
 </ul>
 
 <h2 id="manual-installation">Manual Installation</h2>
@@ -181,7 +198,7 @@ development. We have even created an experimental CTO file syntax highlighting p
 
 <h3 id="1-1-atom">1.1 Atom</h3>
 
-<p><a href="https://atom.io/">Atom</a> is a very popular editor and several contributors use it. Install Atom, and when you have done so, you are required to turn off Google analytics if you work for IBM. Navigate to Atom-&gt;Preferences-&gt;Packages, search and find the <code>metrics</code> package and disable it.</p>
+<p><a href="https://atom.io/">Atom</a> is a very popular editor and several contributors use it. Having installed Atom, it may be a company requirement to disable the Google Analytics package (as is the case if you work for IBM). To do this, navigate to Atom-&gt;Preferences-&gt;Packages, search and find the <code>metrics</code> package and disable it.</p>
 
 <h4 id="installation-commands-for-ubuntu">Installation Commands for Ubuntu:</h4>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Add Atom Repository</span>
@@ -238,7 +255,7 @@ sudo apt-get install -f
 
 <h3 id="2-installing-git">2. Installing Git</h3>
 
-<p>This is probably already installed on most Linux machines. Setup is well documented on the <a href="https://help.github.com/enterprise/2.7/user/articles/set-up-git/">ibm.git website</a>. Pay particular attention to <a href="https://help.github.com/enterprise/2.7/user/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/#platform-linux">setting up the SSL keys</a> that are required.</p>
+<p>Git setup is well documented on the <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">official Git installation guide</a>.</p>
 
 <p><strong>Installation Commands for Ubuntu:</strong></p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Install Git</span>
@@ -247,12 +264,6 @@ sudo apt-get -y install git
 <p><strong>Installation Commands for MacOS:</strong></p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">tbd
 </code></pre></div>
-<p><strong>Additional Notes:</strong></p>
-
-<ul>
-<li><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Official Git installation guide</a></li>
-</ul>
-
 <h3 id="3-installing-nvm">3. Installing NVM</h3>
 
 <p>We highly recommend installing <a href="https://github.com/creationix/nvm">nvm</a> to easily install and manage versions of <a href="https://nodejs.org/en/">node.js</a> and <a href="https://www.npmjs.com/">npm</a>. The main runtime uses node.js and npm is used for package management and dependency installation.
