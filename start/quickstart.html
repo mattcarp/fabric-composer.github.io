@@ -168,6 +168,20 @@ cd packages
 cd getting-started
 npm install
 </code></pre></div>
+<p><strong><em>npm install</em></strong></p>
+
+<p><code>npm install</code> will run several scripts that are packaged into the getting-started repository. </p>
+
+<p><small><a href="https://fabric-composer.github.io/reference/commands.html">Reference material</a> for Composer CLI</small></p>
+
+<ol>
+<li><em>scripts/download-hyperledger.sh</em> - This kills any docker images started with the <em>/scripts/docker-compose.yml</em> file, remove the current default connection profile, <em>~/.composer-connection-profiles/defaultProfile</em> and pull the required Hyperledger Fabric base image.</li>
+<li><em>scripts/start-hyperledger.sh</em> - This uses the <em>/scripts/docker-compose.yml</em> by running <code>docker-compose up -d --build</code> to create a Hyperledger Fabric peer and memebership service docker container.</li>
+<li><code>composer archive create -m digitalproperty-network --archiveFile digitalPropertyNetwork.bna</code> - using Composer CLI, create an archive of the <em>npm</em> module <em>digitalproperty-network</em> and <em>archive</em> it into a <code>digitalPropertyNetwork.bna</code>.</li>
+<li><code>composer network deploy --archiveFile digitalPropertyNetwork.bna  --enrollId WebAppAdmin --enrollSecret DJY27pEnl16d</code> - Deploy the <code>digitalPropertyNetwork.bna</code> business network to the deployed fabric using the <em>defaultProfile</em> connection progfile.</li>
+<li><code>composer network list -n digitalproperty-network --enrollId WebAppAdmin --enrollSecret DJY27pEnl16d</code> - Lists the contents of a deployed business network.</li>
+</ol>
+
 <p><strong>Run the Getting Started Application:</strong></p>
 
 <p>Run the <code>npm test</code> command. You should see output as below.</p>
@@ -246,6 +260,15 @@ info: [Composer-GettingStarted]
 info: [Composer-GettingStarted] Command completed successfully.
 
 </code></pre></div>
+<p><strong><em>npm test</em></strong></p>
+
+<ol>
+<li><code>mocha --recursive</code> - Runs all unit tests in the <em>/tests</em> directory.</li>
+<li><code>node cli.js landregistry bootstrap</code> - Run the boostrap command included in getting-started to create two land titles owned by Fred Bloggs.</li>
+<li><code>node cli.js landregistry list</code> - Run the list command included the getting-started to lists all of the assets in the LandTitles asset registry.</li>
+<li><code>node cli.js landregistry submit</code> - Run the submit command included the getting-started to submit a transaction that changes LandTitle <em>LID:6789</em>&#39;s <em>ForSale</em> property to <em>Yes</em>.</li>
+</ol>
+
             
           </section>
         </div>
