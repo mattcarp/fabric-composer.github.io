@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   
-    <title>Task - Add a participant | Fabric Composer</title>
+    <title>Task - Enable OAuth with Github | Fabric Composer</title>
   
   <meta name="viewport" content="width=device-width">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -155,57 +155,22 @@
         <div class="col-md-10">
           <section class="content-chunk">
             
-              <h1 id="add-a-participant">Add a participant</h1>
+              <h1 id="enable-oauth-with-github">Enable OAuth with Github</h1>
 
-<hr>
-
-<p>A participant can be added to a participant registry using either the API or the
-command line.</p>
-
-<h2 id="before-you-start">Before you start</h2>
-
-<p>Before you follow these steps, you must have modelled a participant in a Business
-Network Definition and deployed it as a Business Network.</p>
-
-<p>The procedure below shows an example using the following model of a participant
-from the Getting Started walkthrough.</p>
-<div class="highlight"><pre><code class="language-" data-lang="">namespace net.biz.digitalPropertyNetwork
-
-participant Person identified by personId {
-  o String personId
-  o String firstName
-  o String lastName
-}
-</code></pre></div>
-<h2 id="procedure">Procedure</h2>
+<p>To enable importing of samples without receiving an error when the rate limit is hit follow these steps.</p>
 
 <ol>
-<li><p>Add the participant to a participant registry</p>
-
-<ul>
-<li>JavaScript API</li>
-</ul>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">let</span> <span class="nx">businessNetworkConnection</span> <span class="o">=</span> <span class="cm">/* TODO: get a business network connection */</span>
-<span class="nx">businessNetworkConnection</span><span class="p">.</span><span class="nx">getParticipantRegistry</span><span class="p">(</span><span class="s1">'net.biz.digitalPropertyNetwork'</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">participantRegistry</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="kd">let</span> <span class="nx">factory</span> <span class="o">=</span> <span class="nx">businessNetworkConnection</span><span class="p">.</span><span class="nx">getFactory</span><span class="p">();</span>
-        <span class="kd">let</span> <span class="nx">participant</span> <span class="o">=</span> <span class="nx">factory</span><span class="p">.</span><span class="nx">newResource</span><span class="p">(</span><span class="s1">'net.biz.digitalPropertyNetwork'</span><span class="p">,</span> <span class="s1">'Person'</span><span class="p">,</span> <span class="s1">'mae@biznet.org'</span><span class="p">);</span>
-        <span class="nx">participant</span><span class="p">.</span><span class="nx">firstName</span> <span class="o">=</span> <span class="s1">'Mae'</span><span class="p">;</span>
-        <span class="nx">participant</span><span class="p">.</span><span class="nx">lastName</span> <span class="o">=</span> <span class="s1">'Smith'</span><span class="p">;</span>
-        <span class="k">return</span> <span class="nx">participantRegistry</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">participant</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="c1">// TODO: handle errors.</span>
-    <span class="p">});</span>
-
+<li>Go to <a href="https://github.com/settings/developers">Github OAuth Applications</a>.</li>
+<li>Register a new application.</li>
+<li><p>On the command line navigate to the <code>composer-connector-server</code> config directory.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">cd fabric-composer/packages/composer-connector-server/config
 </code></pre></div></li>
+<li><p>Copy the file.</p>
+<div class="highlight"><pre><code class="language-" data-lang="">cp .env.sample .env
+</code></pre></div></li>
+<li><p>Open the <code>.env</code> file and set the <code>CLIENT_ID</code> and <code>CLIENT_SECRET</code> to the values that were given when you registered the application.</p></li>
+<li><p>(optional) The <code>port</code> which the <code>composer-connector-server</code> can also be set by setting the <code>PORT</code> value in the <code>.env</code> file.</p></li>
 </ol>
-
-<ul>
-<li><p>Command line</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">composer participant add -n <span class="s1">'@ibm/digitalproperty-network'</span> -i admin -s Xurw3yU9zI0l -d <span class="s1">'{"$class":"net.biz.digitalPropertyNetwork.Person","personId":"mae@biznet.org","firstName":"Mae","lastName":"Smith"}'</span>
-</code></pre></div></li>
-</ul>
 
             
           </section>
