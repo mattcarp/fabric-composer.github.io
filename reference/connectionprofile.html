@@ -157,20 +157,20 @@
 
 <p>The AdminConnection and BusinessNetworkConnection classes use references to named Connection Profiles to connect to a running Fabric. A Connection Profile captures the URLs and configuration options required to connect to a physical instance of the Hyperledger Fabric.</p>
 
-<p>Connection Profiles are stored under sub-directories of the &#39;concerto-connection-profiles&#39; directory in the user&#39;s home directory.</p>
+<p>Connection Profiles are stored under sub-directories of the &#39;composer-connection-profiles&#39; directory in the user&#39;s home directory.</p>
 
 <p>For example, if connecting using the &#39;testprofile&#39; Connection Profile, the &#39;<HOMEDIR>/.composer-connection-profiles/testprofile&#39; directory must exist, and must contain a file named &#39;connection.json&#39;.</p>
 
 <p>The contents of the file will depend on the location of the Fabric, but will be similar to the example below:</p>
 <div class="highlight"><pre><code class="language-" data-lang="">  ``{
       "type": "hlf",
-      "keyValStore": "/home/&lt;your-username&gt;/.concerto-credentials",
+      "keyValStore": "/home/&lt;your-username&gt;/.composer-credentials",
       "membershipServicesURL": "grpc://localhost:7054",
       "peerURL": "grpc://localhost:7051",
       "eventHubURL": "grpc://localhost:7053"
   }``
 </code></pre></div>
-<p>This connection profile connects to a Fabric instance running on localhost and places the HFC keyValStore under the &#39;/tmp/keyValStore&#39; directory.</p>
+<p>This connection profile connects to a Fabric instance running on localhost and places the HFC keyValStore under the &#39;/home/<your-username>/.composer-credentials&#39; directory.</p>
 
 <p>Connection Profiles may be shared across a development team to ensure that everyone on the team is using consistent connection information. The use of Connection Profiles ensures that physical connection details are not stored in application code.</p>
 
