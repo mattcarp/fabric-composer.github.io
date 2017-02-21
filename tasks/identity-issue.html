@@ -305,7 +305,13 @@ ID that was specified in the <code>composer identity issue</code> command.</p></
 <script>
 
   $( document ).ready(function() {
-      new Clipboard(".btn");
+
+      new Clipboard('.btn', {
+    text: function() {
+
+        return document.querySelector("[style='display:none;']").value;
+    }
+});
   });
 
 </script>

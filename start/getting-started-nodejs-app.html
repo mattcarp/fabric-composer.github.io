@@ -367,7 +367,13 @@ Note that the transaction JSON matches the structure specified in the model file
 <script>
 
   $( document ).ready(function() {
-      new Clipboard(".btn");
+
+      new Clipboard('.btn', {
+    text: function() {
+
+        return document.querySelector("[style='display:none;']").value;
+    }
+});
   });
 
 </script>

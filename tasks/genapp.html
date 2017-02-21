@@ -397,7 +397,13 @@ The application can be then be started using <code>npm start</code>.</p>
 <script>
 
   $( document ).ready(function() {
-      new Clipboard(".btn");
+
+      new Clipboard('.btn', {
+    text: function() {
+
+        return document.querySelector("[style='display:none;']").value;
+    }
+});
   });
 
 </script>

@@ -337,7 +337,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="composer-runtime_lib_api_factory.js.html">composer-runtime/lib/api/factory.js</a>,
-				 <a href="composer-runtime_lib_api_factory.js.html#sunlight-1-line-105">line 105</a>
+				 <a href="composer-runtime_lib_api_factory.js.html#sunlight-1-line-133">line 133</a>
 			</li>
 		</ul>
 	</dd>
@@ -571,6 +571,15 @@ person.records.push(record);</pre>
     
 
 	
+	<dt class="important tag-deprecated method-doc-label method-doc-details-label">Deprecated:</dt>
+	
+    <dd>
+        <ul class="dummy">
+            <li>type) is not defined in the current version of the business network.</li>
+        </ul>
+    </dd>
+    
+    
 
 	
 
@@ -588,7 +597,7 @@ person.records.push(record);</pre>
 		<ul class="dummy">
 			<li>
 				<a href="composer-runtime_lib_api_factory.js.html">composer-runtime/lib/api/factory.js</a>,
-				 <a href="composer-runtime_lib_api_factory.js.html#sunlight-1-line-50">line 50</a>
+				 <a href="composer-runtime_lib_api_factory.js.html#sunlight-1-line-77">line 77</a>
 			</li>
 		</ul>
 	</dd>
@@ -618,7 +627,7 @@ person.records.push(record);</pre>
 <dl>
     <dt>
         <div class="param-desc">
-        <p>If the specified type (specified by the namespace and<br>type) is not defined in the current version of the business network.</p>
+        <p>If the specified type (specified by the namespace and</p>
         </div>
     </dt>
     <dt>
@@ -838,7 +847,7 @@ vehicle.manufacturer = &#x27;Toyota&#x27;;</pre>
 		<ul class="dummy">
 			<li>
 				<a href="composer-runtime_lib_api_factory.js.html">composer-runtime/lib/api/factory.js</a>,
-				 <a href="composer-runtime_lib_api_factory.js.html#sunlight-1-line-77">line 77</a>
+				 <a href="composer-runtime_lib_api_factory.js.html#sunlight-1-line-105">line 105</a>
 			</li>
 		</ul>
 	</dd>
@@ -927,6 +936,256 @@ var factory = getFactory();
 var vehicle = factory.newRelationship(&#x27;org.acme&#x27;, &#x27;Vehicle&#x27;, &#x27;VEHICLE_1&#x27;);
 // Set the relationship as the value of the vehicle property of the driver.
 driver.vehicle = vehicle;</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="newResource"><span class="type-signature"></span>newResource(ns, type, id)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Create a new resource (an instance of an asset, participant, or transaction). The<br>properties of the new instance should be set as standard JavaScript<br>object properties. The new instance can then be stored in a registry<br>using the appropriate registry APIs, for example {@link<br>module:composer-runtime.AssetRegistry AssetRegistry}.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ns</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The namespace of the resource to create.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The type of the resource to create.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The identifier of the new resource.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="composer-runtime_lib_api_factory.js.html">composer-runtime/lib/api/factory.js</a>,
+				 <a href="composer-runtime_lib_api_factory.js.html#sunlight-1-line-50">line 50</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Throws:</h5>
+    
+            
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        <p>If the specified type (specified by the namespace and<br>type) is not defined in the current version of the business network.</p>
+        </div>
+    </dt>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+</dl>
+
+
+        
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>The new instance of the resource.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Resource</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">// Get the factory.
+var factory = getFactory();
+// Create a new vehicle.
+var vehicle = factory.newResource(&#x27;org.acme&#x27;, &#x27;Vehicle&#x27;, &#x27;VEHICLE_1&#x27;);
+// Set the properties of the new vehicle.
+vehicle.colour = &#x27;BLUE&#x27;;
+vehicle.manufacturer = &#x27;Toyota&#x27;;</pre>
 
 
     

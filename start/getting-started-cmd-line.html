@@ -424,7 +424,13 @@ This lists the deployed business network details. <code>-n</code> is the name of
 <script>
 
   $( document ).ready(function() {
-      new Clipboard(".btn");
+
+      new Clipboard('.btn', {
+    text: function() {
+
+        return document.querySelector("[style='display:none;']").value;
+    }
+});
   });
 
 </script>

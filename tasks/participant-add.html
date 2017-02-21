@@ -280,7 +280,13 @@ participant Person identified by personId {
 <script>
 
   $( document ).ready(function() {
-      new Clipboard(".btn");
+
+      new Clipboard('.btn', {
+    text: function() {
+
+        return document.querySelector("[style='display:none;']").value;
+    }
+});
   });
 
 </script>

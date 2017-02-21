@@ -273,7 +273,13 @@ R5 | org.acme | READ | EVERYONE | TRUE | ALLOW | Everyone can read all resources
 <script>
 
   $( document ).ready(function() {
-      new Clipboard(".btn");
+
+      new Clipboard('.btn', {
+    text: function() {
+
+        return document.querySelector("[style='display:none;']").value;
+    }
+});
   });
 
 </script>

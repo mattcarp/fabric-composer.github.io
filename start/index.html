@@ -222,7 +222,13 @@ Before you pick a guide, you should make sure you&#39;ve followed the essential 
 <script>
 
   $( document ).ready(function() {
-      new Clipboard(".btn");
+
+      new Clipboard('.btn', {
+    text: function() {
+
+        return document.querySelector("[style='display:none;']").value;
+    }
+});
   });
 
 </script>

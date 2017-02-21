@@ -372,7 +372,7 @@ return getAssetRegistry(&#x27;org.acme.Vehicle&#x27;)
     // Get the factory for creating new asset instances.
     var factory = getFactory();
     // Create the vehicle.
-    var vehicle = factory.newInstance(&#x27;org.acme&#x27;, &#x27;Vehicle&#x27;, &#x27;VEHICLE_1&#x27;);
+    var vehicle = factory.newResource(&#x27;org.acme&#x27;, &#x27;Vehicle&#x27;, &#x27;VEHICLE_1&#x27;);
     vehicle.colour = &#x27;BLUE&#x27;;
     // Add the vehicle to the vehicle asset registry.
     return vehicleAssetRegistry.add(vehicle);
@@ -553,10 +553,10 @@ return getAssetRegistry(&#x27;org.acme.Vehicle&#x27;)
     // Get the factory for creating new asset instances.
     var factory = getFactory();
     // Create the first vehicle.
-    var vehicle1 = factory.newInstance(&#x27;org.acme&#x27;, &#x27;Vehicle&#x27;, &#x27;VEHICLE_1&#x27;);
+    var vehicle1 = factory.newResource(&#x27;org.acme&#x27;, &#x27;Vehicle&#x27;, &#x27;VEHICLE_1&#x27;);
     vehicle1.colour = &#x27;BLUE&#x27;;
     // Create the second vehicle.
-    var vehicle2 = factory.newInstance(&#x27;org.acme&#x27;, &#x27;Vehicle&#x27;, &#x27;VEHICLE_2&#x27;);
+    var vehicle2 = factory.newResource(&#x27;org.acme&#x27;, &#x27;Vehicle&#x27;, &#x27;VEHICLE_2&#x27;);
     vehicle2.colour = &#x27;GREEN&#x27;;
     // Add the vehicles to the vehicle asset registry.
     return vehicleAssetRegistry.addAll([vehicle1, vehicle2]);
