@@ -161,7 +161,11 @@
 
 <ol>
 <li>Go to <a href="https://github.com/settings/developers">Github OAuth Applications</a>.</li>
-<li>Register a new application.</li>
+<li>Register a new application.
+
+<ul>
+<li>The <code>Authorization callback URL</code> should be set to <code>localhost:&lt;port&gt;/github</code>.</li>
+</ul></li>
 <li><p>On the command line navigate to the <code>composer-connector-server</code> config directory.</p>
 <div class="highlight"><pre><code class="language-" data-lang="">cd fabric-composer/packages/composer-connector-server/config
 </code></pre></div></li>
