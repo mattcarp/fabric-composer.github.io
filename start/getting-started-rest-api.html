@@ -293,19 +293,19 @@ found modelDefinition <span class="o">=</span> <span class="o">{</span><span cla
 
 <p>Launch your browser and go to the URL given (<a href="http://0.0.0.0:3000/explorer">http://0.0.0.0:3000/explorer</a>).  You&#39;ll see a screen similar to this.</p>
 
-<p><img src="../images/loopback-1.png" alt="LoopBack-1"></p>
+<p><img src="./images/loopback-1.png" alt="LoopBack-1"></p>
 
 <p>Select the Land Title asset, and you can see all the REST APIs that have generated for this asset. At present get and put are fully implemented, with transactions  - so lets try and get a list of all the land titles.;</p>
 
-<p><img src="../images/loopback-2.png" alt="LoopBack-2"></p>
+<p><img src="./images/loopback-2.png" alt="LoopBack-2"></p>
 
 <p>Expand the get and click on <em>Try it Out</em> to try it out.</p>
 
-<p><img src="../images/loopback-3.png" alt="LoopBack-3"></p>
+<p><img src="./images/loopback-3.png" alt="LoopBack-3"></p>
 
 <p>You&#39;ll see a list of land titles presented as a set of JSON</p>
 
-<p><img src="../images/loopback-4.png" alt="LoopBack-4"></p>
+<p><img src="./images/loopback-4.png" alt="LoopBack-4"></p>
 
 <p>Similarly it&#39;s quite easy to issue the curl command from a terminal prompt. This can be copied from the LoopBack web page.</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>curl -X GET --header <span class="s2">"Accept: application/json"</span> <span class="s2">"http://0.0.0.0:3000/api/net.biz.digitalPropertyNetwork.LandTitle"</span> | prettyjson
@@ -338,7 +338,7 @@ found modelDefinition <span class="o">=</span> <span class="o">{</span><span cla
 <p>If you go back to the main page and search down to the register property for sale, we can mark the other property for sale.
 In this example, we&#39;ve specified the other landtitle in the data box, we&#39;ve also had to specify the transaction id and the timestamp (the last two will change shortly).</p>
 
-<p><img src="../images/loopback-5.png" alt="LoopBack-5"></p>
+<p><img src="./images/loopback-5.png" alt="LoopBack-5"></p>
 
 <p>Click on the <em>Try it out!</em> button to submit the transaction. You&#39;ll see a succesful return code, but if you now return to your terminal prompt in the Getting Started directory, you can run the list assets command again.</p>
 
