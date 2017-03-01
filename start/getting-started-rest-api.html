@@ -178,117 +178,40 @@ info: <span class="o">[</span>Handel] Command completed successfully.
 </code></pre></div>
 <p>We can see the two sample land titles listed.</p>
 
-<h2 id="install-loopback">Install LoopBack</h2>
+<h2 id="install-the-general-purpose-composer-rest-server">Install the general purpose Composer REST Server</h2>
 
-<p>We need to install LoopBack; this is two npm modules <code>loopback</code> and <code>loopback-cli</code>.</p>
+<p>We need to install the Fabric Composer REST server; this is an npm module named <code>composer-rest-server</code>`.</p>
 
 <blockquote>
-<p>You might need to issue both of these using sudo.</p>
+<p>You might need to issue this command using sudo.</p>
 </blockquote>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">npm install -g loopback
-npm install -g loopback-cli
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">npm install -g composer-rest-server
 </code></pre></div>
-<h2 id="creating-the-loopback-server-application">Creating the LoopBack server application</h2>
+<h2 id="running-the-rest-server">Running the REST server</h2>
 
-<p>We need to have a LoopBack server running to serve the REST api. As this is an application itself, it&#39;s worth creating a new directory for this.  So assuming you&#39;re still in the Getting Started directory create a new directory as follows.</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ..
-mkdir loopback-server
-<span class="nb">cd </span>loopback-server
-</code></pre></div>
-<p>You can now create the loop back server. Issue the command <code>lb</code> in this new directory. This is the output you&#39;ll see together with the answers to the questions you&#39;ll be asked.</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>lb
+<p>You should now be able to run the Fabric Composer REST server.
+<code>bash
+composer-rest-server
+</code></p>
 
-     _-----_
-    |       |    ╭──────────────────────────╮
-    |--<span class="o">(</span>o<span class="o">)</span>--|    │  Let<span class="s1">'s create a LoopBack │
-   `---------´   │       application!       │
-    ( _´U`_ )    ╰──────────────────────────╯
-    /___A___\   /
-     |  ~  |
-   __'</span>.___.<span class="s1">'__
- ´   `  |° ´ Y `
-
-? What'</span>s the name of your application? rest
-? Which version of LoopBack would you like to use? 2.x <span class="o">(</span>long term support<span class="o">)</span>
-? What kind of application <span class="k">do </span>you have <span class="k">in </span>mind? api-server <span class="o">(</span>A LoopBack API server with <span class="nb">local </span>User auth<span class="o">)</span>
-Generating .yo-rc.json
-
-
-I<span class="s1">'m all done. Running npm install for you to install the required dependencies. If this fails, try running the command yourself.
-
-
-   create .editorconfig
-   create .eslintignore
-   create .eslintrc
-   create server/boot/root.js
-   create server/middleware.development.json
-   create server/middleware.json
-   create server/server.js
-   create README.md
-   create server/boot/authentication.js
-   create .gitignore
-   create client/README.md
-
-</span></code></pre></div>
-<p>That is now all created - the next step is to add an adapter to link with the Fabric Composer runtime.</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">npm install --save loopback-connector-composer
-</code></pre></div>
-<p>Last step before trying things out is to add a function in the <code>server/boot</code> boot directory. This function is below - the key parts are in the <code>datasource</code> variable.  These have been filled out with the same settings of the Getting Started guide.
-Create a new file in this directory with the following contents, the name of the file is not important, so for example <code>loopback-composer.js</code>.</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">
-<span class="s1">'use strict'</span><span class="p">;</span>
-
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">server</span><span class="p">)</span> <span class="p">{</span>
-
-  <span class="kr">const</span> <span class="nx">dataSource</span> <span class="o">=</span> <span class="nx">server</span><span class="p">.</span><span class="nx">loopback</span><span class="p">.</span><span class="nx">createDataSource</span><span class="p">(</span><span class="s1">'Concerto'</span><span class="p">,</span> <span class="p">{</span>
-    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Concerto"</span><span class="p">,</span>
-    <span class="s2">"connector"</span><span class="p">:</span> <span class="s2">"loopback-connector-composer"</span><span class="p">,</span>
-    <span class="s2">"connectionProfileName"</span> <span class="p">:</span> <span class="s1">'defaultProfile'</span><span class="p">,</span>
-    <span class="s2">"businessNetworkIdentifier"</span> <span class="p">:</span> <span class="s1">'digitalproperty-network'</span><span class="p">,</span>
-    <span class="s2">"participantId"</span> <span class="p">:</span> <span class="s1">'WebAppAdmin'</span><span class="p">,</span>
-    <span class="s2">"participantPwd"</span> <span class="p">:</span> <span class="s1">'DJY27pEnl16d'</span>
-  <span class="p">});</span>
-
-  <span class="nx">dataSource</span><span class="p">.</span><span class="nx">discoverModelDefinitions</span><span class="p">({},</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">modelDefinitions</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Concerto Loopback Connector'</span><span class="p">);</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">throw</span> <span class="nx">error</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="nx">modelDefinitions</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">modelDefinition</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'found modelDefinition = '</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">modelDefinition</span><span class="p">))</span>
-      <span class="nx">dataSource</span><span class="p">.</span><span class="nx">discoverSchemas</span><span class="p">(</span><span class="nx">modelDefinition</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="p">{</span><span class="na">visited</span><span class="p">:</span> <span class="p">{},</span> <span class="na">associations</span><span class="p">:</span> <span class="kc">true</span><span class="p">},</span> <span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">modelSchema</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-          <span class="k">throw</span> <span class="nx">error</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="c1">// this is required because LoopBack doesn't like dots in model schema names</span>
-        <span class="nx">modelSchema</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">modelSchema</span><span class="p">.</span><span class="nx">plural</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\.</span><span class="sr">/g</span><span class="p">,</span> <span class="s1">'_'</span><span class="p">);</span>
-        <span class="nx">modelSchema</span><span class="p">.</span><span class="nx">idInjection</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-        <span class="kd">let</span> <span class="nx">model</span> <span class="o">=</span> <span class="nx">server</span><span class="p">.</span><span class="nx">loopback</span><span class="p">.</span><span class="nx">createModel</span><span class="p">(</span><span class="nx">modelSchema</span><span class="p">);</span>
-        <span class="nx">server</span><span class="p">.</span><span class="nx">model</span><span class="p">(</span><span class="nx">model</span><span class="p">,</span> <span class="p">{</span>
-          <span class="na">dataSource</span><span class="p">:</span> <span class="nx">dataSource</span><span class="p">,</span>
-          <span class="na">public</span><span class="p">:</span> <span class="kc">true</span>
-        <span class="p">});</span>
-      <span class="p">});</span>
-    <span class="p">});</span>
-  <span class="p">});</span>
-<span class="p">};</span>
-</code></pre></div>
-<h2 id="run-loopback-server">Run LoopBack server</h2>
-
-<p>Go back to the <code>loopback-server</code> directory and start the server as follows.</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$cd</span> ../..
-<span class="gp">$ </span>node .
-WARNING: No configurations found <span class="k">in </span>configuration directory:/home/matthew/git17/rest/config
-WARNING: To disable this warning <span class="nb">set </span>SUPPRESS_NO_CONFIG_WARNING <span class="k">in </span>the environment.
-Web server listening at: http://0.0.0.0:3000
+<p>You will then be asked to enter a few simple details about your business network.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">  _____           _              _                   ____                                                         
+ |  ___|   __ _  | |__    _ __  <span class="o">(</span>_<span class="o">)</span>   ___           / ___|   ___    _ __ ___    _ __     ___    ___    ___   _ __ 
+ | |_     / _<span class="sb">`</span> | | <span class="s1">'_ \  | '</span>__| | |  / __|  _____  | |      / _ <span class="se">\ </span> | <span class="s1">'_ ` _ \  | '</span>_ <span class="se">\ </span>  / _ <span class="se">\ </span> / __|  / _ <span class="se">\ </span>| <span class="s1">'__|
+ |  _|   | (_| | | |_) | | |    | | | (__  |_____| | |___  | (_) | | | | | | | | |_) | | (_) | \__ \ |  __/ | |   
+ |_|      \__,_| |_.__/  |_|    |_|  \___|          \____|  \___/  |_| |_| |_| | .__/   \___/  |___/  \___| |_|   
+                                                                               |_|                                
+? Enter your Fabric Connection Profile Name: defaultProfile
+? Enter your Business Network Identifier : digitalproperty-network
+? Enter your Fabric username : WebAppAdmin
+? Enter your secret: DJY27pEnl16d
+WARNING: No configurations found in configuration directory:/Users/samsmith/Projects/BlockChain/Composer/fabric-composer/packages/composer-rest-server/config
+WARNING: To disable this warning set SUPPRESS_NO_CONFIG_WARNING in the environment.
+CONNECTING...{"name":"Composer","connector":"loopback-connector-composer","connectionProfileName":"defaultProfile","businessNetworkIdentifier":"digitalproperty-network","participantId":"WebAppAdmin","participantPwd":"DJY27pEnl16d","debug":false}
+Loopback Connector for Fabric Composer
+Models Loaded Now
 Browse your REST API at http://0.0.0.0:3000/explorer
-Concerto Loopback Connector
-found modelDefinition <span class="o">=</span> <span class="o">{</span><span class="s2">"type"</span>:<span class="s2">"table"</span>,<span class="s2">"name"</span>:<span class="s2">"net.biz.digitalPropertyNetwork.LandTitle"</span><span class="o">}</span>
-found modelDefinition <span class="o">=</span> <span class="o">{</span><span class="s2">"type"</span>:<span class="s2">"table"</span>,<span class="s2">"name"</span>:<span class="s2">"net.biz.digitalPropertyNetwork.SalesAgreement"</span><span class="o">}</span>
-found modelDefinition <span class="o">=</span> <span class="o">{</span><span class="s2">"type"</span>:<span class="s2">"table"</span>,<span class="s2">"name"</span>:<span class="s2">"net.biz.digitalPropertyNetwork.Person"</span><span class="o">}</span>
-
-</code></pre></div>
+</span></code></pre></div>
 <h2 id="looking-at-the-generated-apis">Looking at the generated APIs</h2>
 
 <p>Launch your browser and go to the URL given (<a href="http://0.0.0.0:3000/explorer">http://0.0.0.0:3000/explorer</a>).  You&#39;ll see a screen similar to this.</p>
