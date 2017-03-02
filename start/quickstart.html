@@ -151,16 +151,20 @@
 
 <p><strong>Docker-Compose:</strong> Version 1.8.x</p>
 
-<p><strong>Node:</strong> 4.6.x or 6.x</p>
+<p><strong>Node:</strong> 6.x (note version 7 is not supported)</p>
 
 <p><strong>npm:</strong> 4.0.x</p>
+
+<p><strong>git:</strong> 2.9.x</p>
 
 <p>If you need to update or install anything please refer to the install guides:
 <a href="../tasks/prerequisites.html">Installing Prerequisites</a></p>
 
-<p><strong>Clone the Sample Applications Repository:</strong></p>
+<p><strong>Install the command line tools:</strong></p>
 <div class="highlight"><pre><code class="language-" data-lang="">npm install -g composer-cli
-git clone https://github.com/fabric-composer/sample-applications.git
+</code></pre></div>
+<p><strong>Clone the Sample Applications Repository:</strong></p>
+<div class="highlight"><pre><code class="language-" data-lang="">git clone https://github.com/fabric-composer/sample-applications.git
 </code></pre></div>
 <p><strong>Install the Getting Started Application:</strong></p>
 <div class="highlight"><pre><code class="language-" data-lang="">cd sample-applications/
@@ -170,17 +174,17 @@ npm install
 </code></pre></div>
 <p><strong><em>npm install</em></strong></p>
 
-<p><code>npm install</code> will run several scripts that are packaged into the getting-started repository. </p>
-
-<p><small><a href="https://fabric-composer.github.io/reference/commands.html">Reference material</a> for Composer CLI</small></p>
+<p><code>npm install</code> will run several scripts that are packaged into the getting-started repository.</p>
 
 <ol>
 <li><em>scripts/download-hyperledger.sh</em> - This kills any docker images started with the <em>/scripts/docker-compose.yml</em> file, remove the current default connection profile, <em>~/.composer-connection-profiles/defaultProfile</em> and pull the required Hyperledger Fabric base image.</li>
 <li><em>scripts/start-hyperledger.sh</em> - This uses the <em>/scripts/docker-compose.yml</em> by running <code>docker-compose up -d --build</code> to create a Hyperledger Fabric peer and memebership service docker container.</li>
-<li><code>composer archive create -m digitalproperty-network --archiveFile digitalPropertyNetwork.bna</code> - using Composer CLI, create an archive of the <em>npm</em> module <em>digitalproperty-network</em> and <em>archive</em> it into a <code>digitalPropertyNetwork.bna</code>.</li>
-<li><code>composer network deploy --archiveFile digitalPropertyNetwork.bna  --enrollId WebAppAdmin --enrollSecret DJY27pEnl16d</code> - Deploy the <code>digitalPropertyNetwork.bna</code> business network to the deployed fabric using the <em>defaultProfile</em> connection progfile.</li>
-<li><code>composer network list -n digitalproperty-network --enrollId WebAppAdmin --enrollSecret DJY27pEnl16d</code> - Lists the contents of a deployed business network.</li>
+<li><em>composer archive create</em> - using Composer CLI, create an archive of the <em>npm</em> module <em>digitalproperty-network</em> and <em>archive</em> it into a <em>digitalPropertyNetwork.bna</em>.</li>
+<li><em>composer network deploy</em> - Deploy the <code>digitalPropertyNetwork.bna</code> business network to the deployed fabric using the <em>defaultProfile</em> connection progfile.</li>
+<li><em>composer network list</em> - Lists the contents of a deployed business network.</li>
 </ol>
+
+<p>There is <a href="https://fabric-composer.github.io/reference/commands.html">Reference material</a> for Composer CLI</p>
 
 <p><strong>Run the Getting Started Application:</strong></p>
 
@@ -241,7 +245,6 @@ info: [Composer-GettingStarted] LandRegistry:&lt;init&gt; businessNetworkDefinit
 info: [Composer-GettingStarted] updateForSale Getting assest from the registry.
 info: [Composer-GettingStarted] updateForSale Submitting transaction
 info: [Composer-GettingStarted] Transaction Submitted
-undefined
 info: [Composer-GettingStarted] Command completed successfully.
 info: [Composer-GettingStarted] Fabric Composer: Getting Started appliation
 info: [Composer-GettingStarted] LandRegistry:&lt;init&gt; businessNetworkDefinition obtained digitalproperty-network@0.0.1
@@ -268,6 +271,12 @@ info: [Composer-GettingStarted] Command completed successfully.
 <li><code>node cli.js landregistry list</code> - Run the list command included the getting-started to lists all of the assets in the LandTitles asset registry.</li>
 <li><code>node cli.js landregistry submit</code> - Run the submit command included the getting-started to submit a transaction that changes LandTitle <em>LID:6789</em>&#39;s <em>ForSale</em> property to <em>Yes</em>.</li>
 </ol>
+
+<p><strong>Where next?</strong></p>
+
+<ul>
+<li>Learn more about the Digital Property Network and running the tests in the first <a href="./getting-started-cmd-line.html">Getting Started Tutorial</a></li>
+</ul>
 
             
           </section>
