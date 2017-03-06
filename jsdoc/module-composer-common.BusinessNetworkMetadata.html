@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Fabric Composer Source: composer-common/lib/serializer/typedstack.js</title>
+	<title>Fabric Composer Class: BusinessNetworkMetadata</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -74,119 +74,308 @@
 <div class="row">
 
 	
-	<div class="col-md-12">
+	<div class="col-md-8">
 	
 		<div id="main">
 			
 
-		<h1 class="page-title">Source: composer-common/lib/serializer/typedstack.js</h1>
-    
+	<h1 class="page-title">Class: BusinessNetworkMetadata</h1>
 <section>
-    <article>
-        <pre
-            class="sunlight-highlight-javascript linenums">/*
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 
-'use strict';
+<header>
+    
+        <h2>
+            <span class="ancestors"><a href="module-composer-common.html">composer-common</a>.</span>
+        
+        BusinessNetworkMetadata
+        </h2>
+        
+            <div class="class-description"><p><br>Defines the metadata for a BusinessNeworkDefinition. This includes:<br><ul><br>  <li>README.md</li><br></ul><br></p></div>
+        
+    
+</header>
 
-const Util = require('../util');
 
-/**
- * Tracks a stack of typed instances. The type information is used to detect
- * overflow / underflow bugs by the caller. It also performs basic sanity
- * checking on push/pop to make detecting bugs easier.
- * @private
- * @class
- * @memberof module:composer-common
- */
-class TypedStack {
+<article>
+    <div class="container-overview">
+    
+        
+<hr>
+<dt>
+    <h4 class="name" id="BusinessNetworkMetadata"><span class="type-signature"></span>new BusinessNetworkMetadata(readme)</h4>
+    
+    
+</dt>
+<dd>
 
-  /**
-   * Create the Stack with the resource at the head.
-   * @param {Object} resource - the resource to be put at the head of the stack
-   */
-    constructor(resource) {
-        this.stack = [];
-        this.push(resource);
-    }
+    
+    <div class="description">
+        <p>Create the BusinessNetworkMetadata.</p>
+<p><br><strong>Note: Only to be called by framework code. Applications should<br>retrieve instances from BusinessNetworkDefinition</strong><br></p>
+    </div>
+    
 
-    /**
-     * Push a new object.
-     * @param {Object} obj - the object being visited
-     * @param {Object} expectedType - the expected type of the object being pushed
-     */
-    push(obj, expectedType) {
-        if(expectedType &amp;&amp; !(obj instanceof expectedType)) {
-            throw new Error('Did not find expected type ' + expectedType.constructor.name + ' as argument to push. Found: ' + obj.toString());
-        }
+    
 
-        if(Util.isNull(obj)) {
-            throw new Error('Pushing null data!');
-        }
+    
 
-        this.stack.push(obj);
-        //console.log('Push depth is: ' + this.stack.length + ', contents: ' + this.stack.toString() );
-    }
+    
+    
+        <h5>Parameters:</h5>
+        
 
-    /**
-     * Push a new object.
-     * @param {Object} expectedType - the type that should be the result of pop
-     * @return {Object} the result of pop
-     */
-    pop(expectedType) {
-        this.peek(expectedType);
-        return this.stack.pop();
-    }
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
 
-    /**
-     * Peek the top of the stack
-     * @param {Object} expectedType - the type that should be the result of pop
-     * @return {Object} the result of peek
-     */
-    peek(expectedType) {
+        <th>Type</th>
 
-        //console.log( 'pop ' );
+        
 
-        if(this.stack.length &lt; 1) {
-            throw new Error('Stack is empty!');
-        }
+        
 
-        const result = this.stack[this.stack.length-1];
-        if(expectedType &amp;&amp; !(result instanceof expectedType)) {
-            throw new Error('Did not find expected type ' + expectedType + ' on head of stack. Found: ' + result);
-        }
+        <th class="last">Description</th>
+    </tr>
+    </thead>
 
-        if(Util.isNull(result)) {
-            throw new Error('Pop returned invalid data');
-        }
+    <tbody>
+    
 
-        return result;
-    }
+        <tr>
+            
+                <td class="name"><code>readme</code></td>
+            
 
-    /**
-     * Clears the stack
-     */
-    clear() {
-        this.stack = [];
-    }
-}
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
 
-module.exports = TypedStack;
-</pre>
-    </article>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the README.md for the business network</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="composer-common_lib_businessnetworkmetadata.js.html">composer-common/lib/businessnetworkmetadata.js</a>,
+				 <a href="composer-common_lib_businessnetworkmetadata.js.html#sunlight-1-line-30">line 30</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id="getREADME"><span class="type-signature"></span>getREADME()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns the README.md for this business network. This may be null if the business network does not have a README.md</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="composer-common_lib_businessnetworkmetadata.js.html">composer-common/lib/businessnetworkmetadata.js</a>,
+				 <a href="composer-common_lib_businessnetworkmetadata.js.html#sunlight-1-line-56">line 56</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>the README.md file for the business network or null</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">String</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+
+    
+</article>
+
 </section>
-
 
 
 
@@ -196,6 +385,10 @@ module.exports = TypedStack;
 
 	<div class="clearfix"></div>
 
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
 	
 
 </div>
