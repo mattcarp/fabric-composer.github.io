@@ -161,16 +161,14 @@
 <a href="../tasks/prerequisites.html">Installing Prerequisites</a></p>
 
 <p><strong>Install the command line tools:</strong></p>
-<div class="highlight"><pre><code class="language-" data-lang="">npm install -g composer-cli
+<div class="highlight"><pre><code class="language-" data-lang="">$ npm install -g composer-cli
 </code></pre></div>
 <p><strong>Clone the Sample Applications Repository:</strong></p>
-<div class="highlight"><pre><code class="language-" data-lang="">git clone https://github.com/fabric-composer/sample-applications.git
+<div class="highlight"><pre><code class="language-" data-lang="">$ git clone https://github.com/fabric-composer/sample-applications.git
 </code></pre></div>
 <p><strong>Install the Getting Started Application:</strong></p>
-<div class="highlight"><pre><code class="language-" data-lang="">cd sample-applications/
-cd packages
-cd getting-started
-npm install
+<div class="highlight"><pre><code class="language-" data-lang="">$ cd sample-applications/packages/getting-started
+$ npm install
 </code></pre></div>
 <p><strong><em>npm install</em></strong></p>
 
@@ -189,78 +187,79 @@ npm install
 <p><strong>Run the Getting Started Application:</strong></p>
 
 <p>Run the <code>npm test</code> command. You should see output as below.</p>
-<div class="highlight"><pre><code class="language-" data-lang="">&gt; getting-started@1.0.0 test /Users/dselman/dev/git/sample-applications/packages/getting-started
-&gt; mocha --recursive &amp;&amp; npm run bootstrapAssets &amp;&amp; npm run listAssets &amp;&amp; npm run submitTransaction
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>npm <span class="nb">test</span>
+<span class="gp">&gt; </span>getting-started@1.0.0 <span class="nb">test</span> /Users/dselman/dev/git/sample-applications/packages/getting-started
+<span class="gp">&gt; </span>mocha --recursive <span class="o">&amp;&amp;</span> npm run bootstrapAssets <span class="o">&amp;&amp;</span> npm run listAssets <span class="o">&amp;&amp;</span> npm run submitTransaction
 
 
   Default
-    #sample test
+    <span class="c">#sample test</span>
       ✓ should pass
 
 
-  1 passing (8ms)
+  1 passing <span class="o">(</span>8ms<span class="o">)</span>
 
 
-&gt; getting-started@1.0.0 bootstrapAssets /Users/dselman/dev/git/sample-applications/packages/getting-started
-&gt; node cli.js landregistry bootstrap
+<span class="gp">&gt; </span>getting-started@1.0.0 bootstrapAssets /Users/dselman/dev/git/sample-applications/packages/getting-started
+<span class="gp">&gt; </span>node cli.js landregistry bootstrap
 
-info: [Composer-GettingStarted] Fabric Composer: Getting Started appliation
-info: [Composer-GettingStarted] Adding default land titles to the asset registry
-info: [Composer-GettingStarted] LandRegistry:&lt;init&gt; businessNetworkDefinition obtained digitalproperty-network@0.0.1
-info: [Composer-GettingStarted] LandRegistry:_bootstrapTitles getting asset registry for "net.biz.digitalPropertyNetwork.LandTitle"
-info: [Composer-GettingStarted] about to get asset registry
-info: [Composer-GettingStarted] LandRegistry:_bootstrapTitles got asset registry
-info: [Composer-GettingStarted] LandRegistry:_bootstrapTitles getting factory and adding assets
-info: [Composer-GettingStarted] LandRegistry:_bootstrapTitles Creating a person
-info: [Composer-GettingStarted] LandRegistry:_bootstrapTitles Creating a land title#1
-info: [Composer-GettingStarted] LandRegistry:_bootstrapTitles Creating a land title#2
-info: [Composer-GettingStarted] LandRegistry:_bootstrapTitles Adding these to the registry
-info: [Composer-GettingStarted] Default titles added
-info: [Composer-GettingStarted] Command completed successfully.
+info: <span class="o">[</span>Composer-GettingStarted] Fabric Composer: Getting Started appliation
+info: <span class="o">[</span>Composer-GettingStarted] Adding default land titles to the asset registry
+info: <span class="o">[</span>Composer-GettingStarted] LandRegistry:&lt;init&gt; businessNetworkDefinition obtained digitalproperty-network@0.0.1
+info: <span class="o">[</span>Composer-GettingStarted] LandRegistry:_bootstrapTitles getting asset registry <span class="k">for</span> <span class="s2">"net.biz.digitalPropertyNetwork.LandTitle"</span>
+info: <span class="o">[</span>Composer-GettingStarted] about to get asset registry
+info: <span class="o">[</span>Composer-GettingStarted] LandRegistry:_bootstrapTitles got asset registry
+info: <span class="o">[</span>Composer-GettingStarted] LandRegistry:_bootstrapTitles getting factory and adding assets
+info: <span class="o">[</span>Composer-GettingStarted] LandRegistry:_bootstrapTitles Creating a person
+info: <span class="o">[</span>Composer-GettingStarted] LandRegistry:_bootstrapTitles Creating a land title#1
+info: <span class="o">[</span>Composer-GettingStarted] LandRegistry:_bootstrapTitles Creating a land title#2
+info: <span class="o">[</span>Composer-GettingStarted] LandRegistry:_bootstrapTitles Adding these to the registry
+info: <span class="o">[</span>Composer-GettingStarted] Default titles added
+info: <span class="o">[</span>Composer-GettingStarted] Command completed successfully.
 
-&gt; getting-started@1.0.0 listAssets /Users/dselman/dev/git/sample-applications/packages/getting-started
-&gt; node cli.js landregistry list
+<span class="gp">&gt; </span>getting-started@1.0.0 listAssets /Users/dselman/dev/git/sample-applications/packages/getting-started
+<span class="gp">&gt; </span>node cli.js landregistry list
 
-info: [Composer-GettingStarted] Fabric Composer: Getting Started appliation
-info: [Composer-GettingStarted] LandRegistry:&lt;init&gt; businessNetworkDefinition obtained digitalproperty-network@0.0.1
-info: [Composer-GettingStarted] listTitles Getting the asset registry
-info: [Composer-GettingStarted] listTitles Getting all assest from the registry.
-info: [Composer-GettingStarted] listTitles Current Land Titles
-info: [Composer-GettingStarted] Titles listed
-info: [Composer-GettingStarted]
+info: <span class="o">[</span>Composer-GettingStarted] Fabric Composer: Getting Started appliation
+info: <span class="o">[</span>Composer-GettingStarted] LandRegistry:&lt;init&gt; businessNetworkDefinition obtained digitalproperty-network@0.0.1
+info: <span class="o">[</span>Composer-GettingStarted] listTitles Getting the asset registry
+info: <span class="o">[</span>Composer-GettingStarted] listTitles Getting all assest from the registry.
+info: <span class="o">[</span>Composer-GettingStarted] listTitles Current Land Titles
+info: <span class="o">[</span>Composer-GettingStarted] Titles listed
+info: <span class="o">[</span>Composer-GettingStarted]
 ┌──────────┬────────────────┬────────────┬─────────┬─────────────────────────────┬─────────┐
 │ TitleID  │ OwnerID        │ First Name │ Surname │ Description                 │ ForSale │
 ├──────────┼────────────────┼────────────┼─────────┼─────────────────────────────┼─────────┤
-│ LID:6789 │ PID:1234567890 │ Fred       │ Bloggs  │ A small flat in the city    │ No      │
+│ LID:6789 │ PID:1234567890 │ Fred       │ Bloggs  │ A small flat <span class="k">in </span>the city    │ No      │
 ├──────────┼────────────────┼────────────┼─────────┼─────────────────────────────┼─────────┤
-│ LID:1148 │ PID:1234567890 │ Fred       │ Bloggs  │ A nice house in the country │ No      │
+│ LID:1148 │ PID:1234567890 │ Fred       │ Bloggs  │ A nice house <span class="k">in </span>the country │ No      │
 └──────────┴────────────────┴────────────┴─────────┴─────────────────────────────┴─────────┘
-info: [Composer-GettingStarted] Command completed successfully.
+info: <span class="o">[</span>Composer-GettingStarted] Command completed successfully.
 
-&gt; getting-started@1.0.0 submitTransaction /Users/dselman/dev/git/sample-applications/packages/getting-started
-&gt; node cli.js landregistry submit &amp;&amp; node cli.js landregistry list
+<span class="gp">&gt; </span>getting-started@1.0.0 submitTransaction /Users/dselman/dev/git/sample-applications/packages/getting-started
+<span class="gp">&gt; </span>node cli.js landregistry submit <span class="o">&amp;&amp;</span> node cli.js landregistry list
 
-info: [Composer-GettingStarted] Fabric Composer: Getting Started appliation
-info: [Composer-GettingStarted] LandRegistry:&lt;init&gt; businessNetworkDefinition obtained digitalproperty-network@0.0.1
-info: [Composer-GettingStarted] updateForSale Getting assest from the registry.
-info: [Composer-GettingStarted] updateForSale Submitting transaction
-info: [Composer-GettingStarted] Transaction Submitted
-info: [Composer-GettingStarted] Command completed successfully.
-info: [Composer-GettingStarted] Fabric Composer: Getting Started appliation
-info: [Composer-GettingStarted] LandRegistry:&lt;init&gt; businessNetworkDefinition obtained digitalproperty-network@0.0.1
-info: [Composer-GettingStarted] listTitles Getting the asset registry
-info: [Composer-GettingStarted] listTitles Getting all assest from the registry.
-info: [Composer-GettingStarted] listTitles Current Land Titles
-info: [Composer-GettingStarted] Titles listed
-info: [Composer-GettingStarted]
+info: <span class="o">[</span>Composer-GettingStarted] Fabric Composer: Getting Started appliation
+info: <span class="o">[</span>Composer-GettingStarted] LandRegistry:&lt;init&gt; businessNetworkDefinition obtained digitalproperty-network@0.0.1
+info: <span class="o">[</span>Composer-GettingStarted] updateForSale Getting assest from the registry.
+info: <span class="o">[</span>Composer-GettingStarted] updateForSale Submitting transaction
+info: <span class="o">[</span>Composer-GettingStarted] Transaction Submitted
+info: <span class="o">[</span>Composer-GettingStarted] Command completed successfully.
+info: <span class="o">[</span>Composer-GettingStarted] Fabric Composer: Getting Started appliation
+info: <span class="o">[</span>Composer-GettingStarted] LandRegistry:&lt;init&gt; businessNetworkDefinition obtained digitalproperty-network@0.0.1
+info: <span class="o">[</span>Composer-GettingStarted] listTitles Getting the asset registry
+info: <span class="o">[</span>Composer-GettingStarted] listTitles Getting all assest from the registry.
+info: <span class="o">[</span>Composer-GettingStarted] listTitles Current Land Titles
+info: <span class="o">[</span>Composer-GettingStarted] Titles listed
+info: <span class="o">[</span>Composer-GettingStarted]
 ┌──────────┬────────────────┬────────────┬─────────┬─────────────────────────────┬─────────┐
 │ TitleID  │ OwnerID        │ First Name │ Surname │ Description                 │ ForSale │
 ├──────────┼────────────────┼────────────┼─────────┼─────────────────────────────┼─────────┤
-│ LID:6789 │ PID:1234567890 │ Fred       │ Bloggs  │ A small flat in the city    │ No      │
+│ LID:6789 │ PID:1234567890 │ Fred       │ Bloggs  │ A small flat <span class="k">in </span>the city    │ No      │
 ├──────────┼────────────────┼────────────┼─────────┼─────────────────────────────┼─────────┤
-│ LID:1148 │ PID:1234567890 │ Fred       │ Bloggs  │ A nice house in the country │ Yes     │
+│ LID:1148 │ PID:1234567890 │ Fred       │ Bloggs  │ A nice house <span class="k">in </span>the country │ Yes     │
 └──────────┴────────────────┴────────────┴─────────┴─────────────────────────────┴─────────┘
-info: [Composer-GettingStarted] Command completed successfully.
+info: <span class="o">[</span>Composer-GettingStarted] Command completed successfully.
 
 </code></pre></div>
 <p><strong><em>npm test</em></strong></p>

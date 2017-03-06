@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   
-    <title>Task - Installing Development Pre-requisites | Fabric Composer</title>
+    <title>Task - Installing Development Pre-requisites Manually | Fabric Composer</title>
   
   <meta name="viewport" content="width=device-width">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -161,33 +161,33 @@
 
 <p>The essential tools you will need are <em>npm</em>, <em>docker</em>, <em>docker-compose</em> and a code editor for example <em>Atom</em> or <em>VSCode</em>. Samples are held in Github so <em>git</em> will be needed as well.</p>
 
+<p>Automatic installations scripts are available for <a href="./prerequisites.html">Ubuntu 14.04</a></p>
+
 <p>The recommended versions are:
 <em>Docker</em>: v1.12.5
 <em>Docker-compose</em>: v1.10.0
 <em>node.js</em>: v6.9.5</p>
 
-<h2 id="installation-for-ubuntu-14-04-lts">Installation for Ubuntu 14.04 LTS</h2>
+<h2 id="manual-installation">Manual Installation</h2>
 
-<p>There is an automated installation script that will install <em>node</em> <em>docker</em> <em>docker-compose</em>.<br>
-If some of the tools are already installed or to do the installation step-by-step follow the <a href="./manual_prerequisites.html">manual instructions</a>.</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>curl -O https://raw.githubusercontent.com/mbwhite/sample-applications/master/packages/getting-started/scripts/prereqs-ubuntu.sh
-<span class="gp">$ </span>chmod u+x prereqs-ubuntu.sh
-</code></pre></div>
-<p>Next run the script - as this uses sudo you will be prompted for your password.</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>./prereqs-ubuntu.sh
-</code></pre></div>
-<p><strong>Important:</strong> You will then need to logout and login again before running the next command</p>
+<h3 id="1-installing-nvm">1. Installing NVM</h3>
 
-<p>The end of the script does print out the versions installed, if you wish to check here are the version commands.</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>node --version
-v6.10.0
-<span class="gp">$ </span>npm --version
-4.3.0
-<span class="gp">$ </span>docker --version
-Docker version 1.13.1, build 092cba3
-<span class="gp">$ </span>docker-compose --version
-docker-compose version 1.11.1, build 7c5d5e4
-</code></pre></div>
+<p>We highly recommend installing NVM to easily install and manage versions of <a href="https://nodejs.org/en/">node.js</a> and <a href="https://www.npmjs.com/">npm</a>. The main runtime uses node.js and npm is used for package management and dependency installation. The runtime requires a version higher than v4.6.0.</p>
+
+<p><a href="https://github.com/creationix/nvm">Official nvm Github repository</a></p>
+
+<h3 id="2-installing-docker-engine">2. Installing Docker Engine</h3>
+
+<p>The Docker Engine is essential for running system tests and running the HyperLedger Fabric.</p>
+
+<p><a href="https://docs.docker.com/engine/installation/">Official Docker Engine Installation Guide</a></p>
+
+<h3 id="3-installing-docker-compose">3. Installing Docker Compose</h3>
+
+<p><a href="https://docs.docker.com/compose/overview/">Docker Compose</a> is used for easily configuring and starting HyperLedger Fabric.</p>
+
+<p><a href="https://docs.docker.com/compose/install/">Official Docker Compose Installation guide</a></p>
+
 <h2 id="optional-installs">Optional Installs</h2>
 
 <h3 id="1-installing-an-editor">1. Installing an editor</h3>
