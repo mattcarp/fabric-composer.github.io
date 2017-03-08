@@ -285,7 +285,7 @@ and transactions in the business network. The business network also specifies <e
 <span class="kr">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'fs'</span><span class="p">);</span>
 
 <span class="kr">const</span> <span class="nx">admin</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AdminConnection</span><span class="p">();</span>
-<span class="kr">const</span> <span class="nx">concerto</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BusinessNetworkConnection</span><span class="p">();</span>
+<span class="kr">const</span> <span class="nx">composer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BusinessNetworkConnection</span><span class="p">();</span>
 
 <span class="kr">const</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">type</span><span class="p">:</span> <span class="s1">'hlf'</span><span class="p">,</span>
@@ -324,17 +324,17 @@ and transactions in the business network. The business network also specifies <e
   <span class="p">})</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Disconnected admin'</span><span class="p">);</span>
-      <span class="k">return</span> <span class="nx">concerto</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">CONNECTION_PROFILE_NAME</span><span class="p">,</span> <span class="nx">businessNetworkIdentifier</span><span class="p">,</span> <span class="s1">'WebAppAdmin'</span><span class="p">,</span> <span class="s1">'DJY27pEnl16d'</span><span class="p">);</span>
+      <span class="k">return</span> <span class="nx">composer</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="nx">CONNECTION_PROFILE_NAME</span><span class="p">,</span> <span class="nx">businessNetworkIdentifier</span><span class="p">,</span> <span class="s1">'WebAppAdmin'</span><span class="p">,</span> <span class="s1">'DJY27pEnl16d'</span><span class="p">);</span>
   <span class="p">})</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Connected client to '</span> <span class="o">+</span> <span class="nx">businessNetworkIdentifier</span> <span class="p">);</span>
-      <span class="k">return</span> <span class="nx">concerto</span><span class="p">.</span><span class="nx">addAssetRegistry</span><span class="p">(</span><span class="s1">'com.ibm.concerto.mozart.Farmer'</span><span class="p">,</span> <span class="s1">'Farmer Registry'</span><span class="p">);</span>
+      <span class="k">return</span> <span class="nx">composer</span><span class="p">.</span><span class="nx">addAssetRegistry</span><span class="p">(</span><span class="s1">'com.ibm.composer.mozart.Farmer'</span><span class="p">,</span> <span class="s1">'Farmer Registry'</span><span class="p">);</span>
   <span class="p">})</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">registry</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Found animal asset registry '</span> <span class="o">+</span> <span class="nx">registry</span> <span class="p">);</span>
   <span class="p">})</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">concerto</span><span class="p">.</span><span class="nx">disconnect</span><span class="p">();</span>
+      <span class="k">return</span> <span class="nx">composer</span><span class="p">.</span><span class="nx">disconnect</span><span class="p">();</span>
   <span class="p">})</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Done'</span><span class="p">);</span>
