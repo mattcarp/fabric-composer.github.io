@@ -90,7 +90,7 @@
         BusinessNetworkMetadata
         </h2>
         
-            <div class="class-description"><p><br>Defines the metadata for a BusinessNeworkDefinition. This includes:<br><ul><br>  <li>README.md</li><br></ul><br></p></div>
+            <div class="class-description"><p><br>Defines the metadata for a BusinessNeworkDefinition. This includes:<br><ul><br>  <li>package.json</li><br>  <li>README.md (optional)</li><br></ul><br></p></div>
         
     
 </header>
@@ -102,7 +102,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="BusinessNetworkMetadata"><span class="type-signature"></span>new BusinessNetworkMetadata(readme)</h4>
+    <h4 class="name" id="BusinessNetworkMetadata"><span class="type-signature"></span>new BusinessNetworkMetadata(packageJson, readme)</h4>
     
     
 </dt>
@@ -146,6 +146,30 @@
 
         <tr>
             
+                <td class="name"><code>packageJson</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the JS object for package.json (required)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
                 <td class="name"><code>readme</code></td>
             
 
@@ -163,7 +187,7 @@
 
             
 
-            <td class="description last"><p>the README.md for the business network</p></td>
+            <td class="description last"><p>the README.md for the business network (may be null)</p></td>
         </tr>
 
     
@@ -208,7 +232,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="composer-common_lib_businessnetworkmetadata.js.html">composer-common/lib/businessnetworkmetadata.js</a>,
-				 <a href="composer-common_lib_businessnetworkmetadata.js.html#sunlight-1-line-30">line 30</a>
+				 <a href="composer-common_lib_businessnetworkmetadata.js.html#sunlight-1-line-31">line 31</a>
 			</li>
 		</ul>
 	</dd>
@@ -256,6 +280,454 @@
         <h3 class="subsection-title">Methods</h3>
 
         <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id="getDescription"><span class="type-signature"></span>getDescription()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns the description for this business network.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="composer-common_lib_businessnetworkmetadata.js.html">composer-common/lib/businessnetworkmetadata.js</a>,
+				 <a href="composer-common_lib_businessnetworkmetadata.js.html#sunlight-1-line-89">line 89</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>the description of the business network</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getIdentifier"><span class="type-signature"></span>getIdentifier()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns the identifier for this business network, formed from name@version.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="composer-common_lib_businessnetworkmetadata.js.html">composer-common/lib/businessnetworkmetadata.js</a>,
+				 <a href="composer-common_lib_businessnetworkmetadata.js.html#sunlight-1-line-105">line 105</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>the identifier of the business network</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getName"><span class="type-signature"></span>getName()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns the name for this business network.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="composer-common_lib_businessnetworkmetadata.js.html">composer-common/lib/businessnetworkmetadata.js</a>,
+				 <a href="composer-common_lib_businessnetworkmetadata.js.html#sunlight-1-line-81">line 81</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>the name of the business network</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getPackageJson"><span class="type-signature"></span>getPackageJson()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns the package.json for this business network.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="composer-common_lib_businessnetworkmetadata.js.html">composer-common/lib/businessnetworkmetadata.js</a>,
+				 <a href="composer-common_lib_businessnetworkmetadata.js.html#sunlight-1-line-73">line 73</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>the Javascript object for package.json</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">object</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
             
 <hr>
 <dt>
@@ -314,7 +786,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="composer-common_lib_businessnetworkmetadata.js.html">composer-common/lib/businessnetworkmetadata.js</a>,
-				 <a href="composer-common_lib_businessnetworkmetadata.js.html#sunlight-1-line-56">line 56</a>
+				 <a href="composer-common_lib_businessnetworkmetadata.js.html#sunlight-1-line-65">line 65</a>
 			</li>
 		</ul>
 	</dd>
@@ -355,6 +827,118 @@
     <dd>
         
 <span class="param-type">String</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getVersion"><span class="type-signature"></span>getVersion()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns the version for this business network.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="composer-common_lib_businessnetworkmetadata.js.html">composer-common/lib/businessnetworkmetadata.js</a>,
+				 <a href="composer-common_lib_businessnetworkmetadata.js.html#sunlight-1-line-97">line 97</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>the description of the business network</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
 
 
 

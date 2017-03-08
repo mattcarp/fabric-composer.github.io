@@ -102,7 +102,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="BusinessNetworkDefinition"><span class="type-signature"></span>new BusinessNetworkDefinition(identifier, description, readme)</h4>
+    <h4 class="name" id="BusinessNetworkDefinition"><span class="type-signature"></span>new BusinessNetworkDefinition(identifier, description, packageJson, readme)</h4>
     
     
 </dt>
@@ -163,7 +163,7 @@
 
             
 
-            <td class="description last"><p>the identifier of the business network. The<br>identifier is formed from a business network name + '@' + version. The<br>version is a semver valid version string.</p></td>
+            <td class="description last"><p>the identifier of the business network. The<br>identifier is formed from a business network name + '@' + version. The<br>version is a semver valid version string. If package.json is passed this is ignored.</p></td>
         </tr>
 
     
@@ -187,7 +187,31 @@
 
             
 
-            <td class="description last"><p>the description of the business network</p></td>
+            <td class="description last"><p>the description of the business network. If package.json is passed then this is ignored.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>packageJson</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the JS object for package.json (optional)</p></td>
         </tr>
 
     
@@ -211,7 +235,7 @@
 
             
 
-            <td class="description last"><p>the optional readme in markdown for the business network</p></td>
+            <td class="description last"><p>the readme in markdown for the business network (optional)</p></td>
         </tr>
 
     
@@ -412,7 +436,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="composer-common_lib_businessnetworkdefinition.js.html">composer-common/lib/businessnetworkdefinition.js</a>,
-				 <a href="composer-common_lib_businessnetworkdefinition.js.html#sunlight-1-line-134">line 134</a>
+				 <a href="composer-common_lib_businessnetworkdefinition.js.html#sunlight-1-line-147">line 147</a>
 			</li>
 		</ul>
 	</dd>
@@ -749,7 +773,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="composer-common_lib_businessnetworkdefinition.js.html">composer-common/lib/businessnetworkdefinition.js</a>,
-				 <a href="composer-common_lib_businessnetworkdefinition.js.html#sunlight-1-line-330">line 330</a>
+				 <a href="composer-common_lib_businessnetworkdefinition.js.html#sunlight-1-line-335">line 335</a>
 			</li>
 		</ul>
 	</dd>
@@ -861,7 +885,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="composer-common_lib_businessnetworkdefinition.js.html">composer-common/lib/businessnetworkdefinition.js</a>,
-				 <a href="composer-common_lib_businessnetworkdefinition.js.html#sunlight-1-line-125">line 125</a>
+				 <a href="composer-common_lib_businessnetworkdefinition.js.html#sunlight-1-line-138">line 138</a>
 			</li>
 		</ul>
 	</dd>
@@ -973,7 +997,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="composer-common_lib_businessnetworkdefinition.js.html">composer-common/lib/businessnetworkdefinition.js</a>,
-				 <a href="composer-common_lib_businessnetworkdefinition.js.html#sunlight-1-line-577">line 577</a>
+				 <a href="composer-common_lib_businessnetworkdefinition.js.html#sunlight-1-line-580">line 580</a>
 			</li>
 		</ul>
 	</dd>
@@ -1085,7 +1109,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="composer-common_lib_businessnetworkdefinition.js.html">composer-common/lib/businessnetworkdefinition.js</a>,
-				 <a href="composer-common_lib_businessnetworkdefinition.js.html#sunlight-1-line-91">line 91</a>
+				 <a href="composer-common_lib_businessnetworkdefinition.js.html#sunlight-1-line-104">line 104</a>
 			</li>
 		</ul>
 	</dd>
@@ -1197,7 +1221,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="composer-common_lib_businessnetworkdefinition.js.html">composer-common/lib/businessnetworkdefinition.js</a>,
-				 <a href="composer-common_lib_businessnetworkdefinition.js.html#sunlight-1-line-568">line 568</a>
+				 <a href="composer-common_lib_businessnetworkdefinition.js.html#sunlight-1-line-571">line 571</a>
 			</li>
 		</ul>
 	</dd>
@@ -1309,7 +1333,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="composer-common_lib_businessnetworkdefinition.js.html">composer-common/lib/businessnetworkdefinition.js</a>,
-				 <a href="composer-common_lib_businessnetworkdefinition.js.html#sunlight-1-line-99">line 99</a>
+				 <a href="composer-common_lib_businessnetworkdefinition.js.html#sunlight-1-line-112">line 112</a>
 			</li>
 		</ul>
 	</dd>
@@ -1421,7 +1445,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="composer-common_lib_businessnetworkdefinition.js.html">composer-common/lib/businessnetworkdefinition.js</a>,
-				 <a href="composer-common_lib_businessnetworkdefinition.js.html#sunlight-1-line-107">line 107</a>
+				 <a href="composer-common_lib_businessnetworkdefinition.js.html#sunlight-1-line-120">line 120</a>
 			</li>
 		</ul>
 	</dd>
@@ -1533,7 +1557,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="composer-common_lib_businessnetworkdefinition.js.html">composer-common/lib/businessnetworkdefinition.js</a>,
-				 <a href="composer-common_lib_businessnetworkdefinition.js.html#sunlight-1-line-586">line 586</a>
+				 <a href="composer-common_lib_businessnetworkdefinition.js.html#sunlight-1-line-589">line 589</a>
 			</li>
 		</ul>
 	</dd>
@@ -1645,7 +1669,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="composer-common_lib_businessnetworkdefinition.js.html">composer-common/lib/businessnetworkdefinition.js</a>,
-				 <a href="composer-common_lib_businessnetworkdefinition.js.html#sunlight-1-line-116">line 116</a>
+				 <a href="composer-common_lib_businessnetworkdefinition.js.html#sunlight-1-line-129">line 129</a>
 			</li>
 		</ul>
 	</dd>
@@ -1757,7 +1781,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="composer-common_lib_businessnetworkdefinition.js.html">composer-common/lib/businessnetworkdefinition.js</a>,
-				 <a href="composer-common_lib_businessnetworkdefinition.js.html#sunlight-1-line-246">line 246</a>
+				 <a href="composer-common_lib_businessnetworkdefinition.js.html#sunlight-1-line-256">line 256</a>
 			</li>
 		</ul>
 	</dd>
