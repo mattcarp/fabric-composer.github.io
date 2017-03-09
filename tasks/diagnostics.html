@@ -37,7 +37,7 @@
     <!-- <link href="/assets/css/new-style.min.css" rel="stylesheet"> -->
   
 
-  <!--link href="/blog/atom.xml" type="application/atom+xml" rel="alternate" title="Concerto Blog Atom Feed">-->
+  <!--link href="/blog/atom.xml" type="application/atom+xml" rel="alternate" title="Composer Blog Atom Feed">-->
 </head>
 
 
@@ -163,7 +163,7 @@
 
 <p>Let&#39;s look at the Getting Started application, and use that to explain how to get diagnostics out of the Framework.</p>
 
-<p>Key Point: This is a framework - so your application will need to have it&#39;s own logging framework. Plus, your application could also have configuration information to control Fabric Composer&#39;s own logging. Concerto does use the Winston logging module by default - and will use the Config module to look for any configuration information. If none is found, then a set of defaults will be used.</p>
+<p>Key Point: This is a framework - so your application will need to have it&#39;s own logging framework. Plus, your application could also have configuration information to control Fabric Composer&#39;s own logging. Composer does use the Winston logging module by default - and will use the Config module to look for any configuration information. If none is found, then a set of defaults will be used.</p>
 
 <p>Note that the config module does write out a warning, if there are no configuration files set. Eg. <code>WARNING: No configurations found in configuration directory</code>. This can be suppressed with an environment variable if you are happy with the defaults and don&#39;t wish to use config in your application. See more information <a href="https://github.com/lorenwest/node-config/wiki/Environment-Variables#suppress_no_config_warning">here</a>.</p>
 
@@ -213,7 +213,7 @@
        </span><span class="nt">"businessNetworkIdentifier"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"digitalproperty-network"</span><span class="p">,</span><span class="w">
        </span><span class="nt">"connectionProfile"</span><span class="w"> </span><span class="p">:</span><span class="s2">"defaultProfile"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"ConcertoConfig"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"ComposerConfig"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
        </span><span class="nt">"debug"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
          </span><span class="nt">"logger"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default"</span><span class="p">,</span><span class="w">
          </span><span class="nt">"config"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -233,7 +233,7 @@
 
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>The first section is specific to the Getting Started application, the second <code>ConcertoConfig</code> section is for the Fabric Composer.</p>
+<p>The first section is specific to the Getting Started application, the second <code>ComposerConfig</code> section is for the Fabric Composer.</p>
 
 <ul>
 <li><code>logger</code> is used to refer the module that does actual logging. default is implying that this is the winston framework</li>
@@ -243,7 +243,7 @@
 <h2 id="enabling-more-information">Enabling more information</h2>
 
 <p>The standard way of enabling node.js applications for debug is to use the <code>DEBUG</code> environment variable. So therefore</p>
-<div class="highlight"><pre><code class="language-" data-lang="">DEBUG=concerto:* node myApplication.js
+<div class="highlight"><pre><code class="language-" data-lang="">DEBUG=composer:* node myApplication.js
 </code></pre></div>
 <p>Will enabled more tracing - this then will use the levels marked as <code>enabledLevel</code> in the configuration above.</p>
 
@@ -265,7 +265,7 @@ bb5db2ca4e6a hyperledger/fabric-peer
     <span class="s2">"membershipServicesURL"</span>: <span class="s2">"grpc://localhost:7054"</span>,
     <span class="s2">"peerURL"</span>: <span class="s2">"grpc://localhost:7051"</span>,
     <span class="s2">"eventHubURL"</span>: <span class="s2">"grpc://localhost:7053"</span>,
-    <span class="s2">"keyValStore"</span>: <span class="s2">"/home/matthew/.concerto-credentials"</span>,
+    <span class="s2">"keyValStore"</span>: <span class="s2">"/home/matthew/.composer-credentials"</span>,
     <span class="s2">"deployWaitTime"</span>: <span class="s2">"300"</span>,
     <span class="s2">"invokeWaitTime"</span>: <span class="s2">"100"</span>,
     <span class="s2">"networks"</span>: <span class="o">{</span>
