@@ -97,7 +97,7 @@
               <p><strong><a href="../introduction/introduction.html">Introduction</a></strong>
 <strong><a href="../tutorials/tutorialindex.html">Tutorials</a></strong>
 <a href="../tutorials/defining-a-business-network.html">Tutorial 1: Building your first business network</a>
-<a href="../tutorial/getting-started-cmd-line.html">Getting started with the command line</a>
+<a href="../tutorials/getting-started-cmd-line.html">Getting started with the command line</a>
 <a href="../tutorials/getting-started-playground.html">Getting started with the playground</a>
 <strong><a href="../installing/prerequisites.html">Installing</a></strong>
 <strong><a href="../business-network/businessnetwork.html">Defining Business Networks</a></strong>
@@ -249,20 +249,20 @@ v4.6.2
 <h3 id="installation">Installation</h3>
 
 <p>You can install Fabric Composer Playground by running the following command in your terminal or command prompt:</p>
-<div class="highlight"><pre><code class="language-" data-lang="">  sudo npm install -g composer-ui
+<div class="highlight"><pre><code class="language-" data-lang="">  sudo npm install -g composer-playground
 </code></pre></div>
 <p>You should see the following output in your terminal or command prompt:</p>
-<div class="highlight"><pre><code class="language-" data-lang="">  $ sudo npm install -g composer-ui
+<div class="highlight"><pre><code class="language-" data-lang="">  $ sudo npm install -g composer-playground
   ...
-  /usr/local/bin/composer-ui -&gt; /usr/local/lib/node_modules/composer-ui/cli.js
+  /usr/local/bin/composer-playground -&gt; /usr/local/lib/node_modules/composer-playground/cli.js
   /usr/local/lib/node_modules
-  └─┬ composer-ui@0.4.3
+  └─┬ composer-playground@0.4.3
   ...
 </code></pre></div>
 <p>Verify that no errors occurred. If any part of this process fails, then Fabric Composer Playground will fail to work correctly. You may see errors from a program called <code>node-gyp</code>. These errors indicate that your system is not set up correctly to build Node.js C/C++ native modules. You may need to install additional software to correct this error.</p>
 
 <p>You can then start Fabric Composer Playground by running the following command in your terminal or command prompt:</p>
-<div class="highlight"><pre><code class="language-" data-lang="">  composer-ui
+<div class="highlight"><pre><code class="language-" data-lang="">  composer-playground
 </code></pre></div>
 <p>A web browser will be automatically opened once the playground has started, but should that not happen you should be able to access Fabric Composer Playground by clicking on this link: <a href="http://localhost:8080" target="_blank">http://<span></span>localhost:8080</a></p>
 
@@ -290,10 +290,10 @@ Docker version 1.13.0, build 49bf474
 <h3 id="installation">Installation</h3>
 
 <p>You can install Fabric Composer Playground by running the following Docker command in your terminal or command prompt:</p>
-<div class="highlight"><pre><code class="language-" data-lang="">  docker run -d -p 8080:8080 fabriccomposer/composer-ui
+<div class="highlight"><pre><code class="language-" data-lang="">  docker run -d -p 8080:8080 fabriccomposer/composer-playground
 </code></pre></div>
 <p>You should see the following output in your terminal or command prompt:</p>
-<div class="highlight"><pre><code class="language-" data-lang="">  $ docker run -d -p 8080:8080 fabriccomposer/composer-ui
+<div class="highlight"><pre><code class="language-" data-lang="">  $ docker run -d -p 8080:8080 fabriccomposer/composer-playground
   afd1baff0487de5c69626b8baea69c702744f92813043e3d2b0ef786c7f77517
 </code></pre></div>
 <p>Verify that no errors occurred.</p>
