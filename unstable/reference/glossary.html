@@ -37,21 +37,14 @@
     <!-- <link href="/assets/css/new-style.min.css" rel="stylesheet"> -->
   
 
-  <!--link href="/blog/atom.xml" type="application/atom+xml" rel="alternate" title="Concerto Blog Atom Feed">-->
+  <!--link href="/blog/atom.xml" type="application/atom+xml" rel="alternate" title="Composer Blog Atom Feed">-->
 </head>
 
 
 <body class="">
 
   
-  
-
-
-
-
-
-
-<!-- Navigation -->
+  <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -123,27 +116,29 @@
           <nav class="context-nav" id="myScrollspy">
             
             
-              <p><strong><a href="/start/quickstart.html">Quickstart</a></strong>
-<strong><a href="/overview/overview.html">Overview</a></strong>
-<strong><a href="/start/getting-started-cmd-line.html">Getting Started</a></strong>
-<strong><a href="/concepts/businessnetwork.html">Concepts</a></strong>
-<strong><a href="/tasks/prerequisites.html">Tasks</a></strong>
-<strong><a href="/jsdoc/index.html">API Documentation</a></strong>
-<strong><a href="/reference/MeetTheModules.html">Reference</a></strong>
-<a href="/reference/MeetTheModules.html">Meet the Modules</a>
-<a href="/reference/platforms.html">Supported Platforms</a>
-<a href="/reference/cto_language.html">Modeling Language</a>
-<a href="/reference/acl_language.html">Access Control Language</a>
-<a href="/reference/connectionprofile.html">Connection Profile</a>
-<a href="/reference/js_scripts.html">Transaction Processor Functions</a>
-<a href="/reference/commands.html">Command Line Interface</a>
-<a href="/reference/composer.generator.tests.html">Application Generator</a>
-<a href="/reference/composer.participant.add.html">CLI Add Participant</a>
-<a href="/reference/composer.identity.issue.html">CLI Issue Identity </a>
-<a href="/reference/composer.identity.revoke.html">CLI Revoke Identity</a>
-<a href="/jsdoc/index.html">API Documentation</a>
-<a href="/reference/glossary.html">Glossary</a>
-<strong><a href="/support/index.html">Support</a></strong></p>
+              <p><strong><a href="../introduction/introduction.html">Introduction</a></strong>
+<strong><a href="../tutorials/tutorialindex.html">Tutorials</a></strong>
+<strong><a href="../installing/prerequisites.html">Installing</a></strong>
+<strong><a href="../business-network/businessnetwork.html">Defining Business Networks</a></strong>
+<strong><a href="../applications/genapp.html">Writing Applications</a></strong>
+<strong><a href="../integrating/integrating-index.html">Integrating Existing Systems</a></strong>
+<strong><a href="../managing/participant-add.html">Managing and Operating</a></strong>
+<strong><a href="../problems/diagnostics.html">Determining Problems</a></strong>
+<strong><a href="../reference/MeetTheModules.html">Reference</a></strong>
+<a href="../reference/MeetTheModules.html">Meet the Modules</a>
+<a href="../reference/platforms.html">Supported Platforms</a>
+<a href="../reference/cto_language.html">Modeling Language</a>
+<a href="../reference/acl_language.html">Access Control Language</a>
+<a href="../reference/connectionprofile.html">Connection Profile</a>
+<a href="../reference/js_scripts.html">Transaction Processor Functions</a>
+<a href="../reference/commands.html">Command Line Interface</a>
+<a href="../reference/composer.generator.tests.html">Application Generator</a>
+<a href="../reference/composer.participant.add.html">CLI Add Participant</a>
+<a href="../reference/composer.identity.issue.html">CLI Issue Identity </a>
+<a href="../reference/composer.identity.revoke.html">CLI Revoke Identity</a>
+<a href="../jsdoc/index.html">API Documentation</a>
+<a href="../reference/glossary.html">Glossary</a>
+<strong><a href="../support/index.html">Support</a></strong></p>
 
             
           </nav>
@@ -189,19 +184,19 @@
 
 <p><strong>Model</strong> which describes, using a domain specific language, the business assets and the participants in the Business Network. This model is in effect the entity-relationship or static object structure of the overall business network.  To provide dynamic behaviour this is coupled with a</p>
 
-<p><strong>Transaction Processor Functions</strong> written in JavaScript that act on assets and participants to either create, update or delete properties on assets and participants. The set of scripts that define transaction processor functions, and Model (which may be split between multiple source files) form the Business Network Definition. In order to use these with the Concerto system, they are bundled together to form a</p>
+<p><strong>Transaction Processor Functions</strong> written in JavaScript that act on assets and participants to either create, update or delete properties on assets and participants. The set of scripts that define transaction processor functions, and Model (which may be split between multiple source files) form the Business Network Definition. In order to use these with the Composer system, they are bundled together to form a</p>
 
-<p><strong>Business Network Archive</strong> that can be deployed as an administrative action to the Concerto system running on a Hyperledger fabric.</p>
+<p><strong>Business Network Archive</strong> that can be deployed as an administrative action to the Composer system running on a Hyperledger fabric.</p>
 
 <h1 id="development-of-a-system-using-fabric-composer">Development of a system using Fabric Composer</h1>
 
-<p>There are two &#39;phases&#39; to running an application using the Concerto framework; the Business Network Definition should be deployed to a Hyperledger Fabric; then the application will run against this fabric, but using APIs applicable to the business model.</p>
+<p>There are two &#39;phases&#39; to running an application using the Composer framework; the Business Network Definition should be deployed to a Hyperledger Fabric; then the application will run against this fabric, but using APIs applicable to the business model.</p>
 
-<p>The Concerto system is defined in a number of <a href="MeetTheModules.html">modules</a>.</p>
+<p>The Composer system is defined in a number of <a href="../reference/MeetTheModules.html">modules</a>.</p>
 
 <p><strong>Fabric Composer Client API</strong> This is the API that is used by applications to connect to a business network and submit transactions. These end applications might be either command line, gui web applications using for example Angular-2.  These APIs permit CRUD operations on the assets that have been defined in the model. It also permits the submission of the transactions to be executed to update assets for example.</p>
 
-<p><strong>Fabric Composer Admin API</strong> is an administrative API to build admin applications. This can deploy and update business network definitions on the concerto fabric runtime.</p>
+<p><strong>Fabric Composer Admin API</strong> is an administrative API to build admin applications. This can deploy and update business network definitions on the Composer fabric runtime.</p>
 
 <p>To facilitate the application development process there are helper tools to permit the development.</p>
 
@@ -217,13 +212,7 @@
     
 
     
-    
-
-
-
-
-
-<!-- Navigation -->
+    <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navbar-fixed-bottom">
           <ul class="nav navbar-nav navbar-left">
             <li>

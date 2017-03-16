@@ -37,21 +37,14 @@
     <!-- <link href="/assets/css/new-style.min.css" rel="stylesheet"> -->
   
 
-  <!--link href="/blog/atom.xml" type="application/atom+xml" rel="alternate" title="Concerto Blog Atom Feed">-->
+  <!--link href="/blog/atom.xml" type="application/atom+xml" rel="alternate" title="Composer Blog Atom Feed">-->
 </head>
 
 
 <body class="">
 
   
-  
-
-
-
-
-
-
-<!-- Navigation -->
+  <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -123,27 +116,29 @@
           <nav class="context-nav" id="myScrollspy">
             
             
-              <p><strong><a href="/start/quickstart.html">Quickstart</a></strong>
-<strong><a href="/overview/overview.html">Overview</a></strong>
-<strong><a href="/start/getting-started-cmd-line.html">Getting Started</a></strong>
-<strong><a href="/concepts/businessnetwork.html">Concepts</a></strong>
-<strong><a href="/tasks/prerequisites.html">Tasks</a></strong>
-<strong><a href="/jsdoc/index.html">API Documentation</a></strong>
-<strong><a href="/reference/MeetTheModules.html">Reference</a></strong>
-<a href="/reference/MeetTheModules.html">Meet the Modules</a>
-<a href="/reference/platforms.html">Supported Platforms</a>
-<a href="/reference/cto_language.html">Modeling Language</a>
-<a href="/reference/acl_language.html">Access Control Language</a>
-<a href="/reference/connectionprofile.html">Connection Profile</a>
-<a href="/reference/js_scripts.html">Transaction Processor Functions</a>
-<a href="/reference/commands.html">Command Line Interface</a>
-<a href="/reference/composer.generator.tests.html">Application Generator</a>
-<a href="/reference/composer.participant.add.html">CLI Add Participant</a>
-<a href="/reference/composer.identity.issue.html">CLI Issue Identity </a>
-<a href="/reference/composer.identity.revoke.html">CLI Revoke Identity</a>
-<a href="/jsdoc/index.html">API Documentation</a>
-<a href="/reference/glossary.html">Glossary</a>
-<strong><a href="/support/index.html">Support</a></strong></p>
+              <p><strong><a href="../introduction/introduction.html">Introduction</a></strong>
+<strong><a href="../tutorials/tutorialindex.html">Tutorials</a></strong>
+<strong><a href="../installing/prerequisites.html">Installing</a></strong>
+<strong><a href="../business-network/businessnetwork.html">Defining Business Networks</a></strong>
+<strong><a href="../applications/genapp.html">Writing Applications</a></strong>
+<strong><a href="../integrating/integrating-index.html">Integrating Existing Systems</a></strong>
+<strong><a href="../managing/participant-add.html">Managing and Operating</a></strong>
+<strong><a href="../problems/diagnostics.html">Determining Problems</a></strong>
+<strong><a href="../reference/MeetTheModules.html">Reference</a></strong>
+<a href="../reference/MeetTheModules.html">Meet the Modules</a>
+<a href="../reference/platforms.html">Supported Platforms</a>
+<a href="../reference/cto_language.html">Modeling Language</a>
+<a href="../reference/acl_language.html">Access Control Language</a>
+<a href="../reference/connectionprofile.html">Connection Profile</a>
+<a href="../reference/js_scripts.html">Transaction Processor Functions</a>
+<a href="../reference/commands.html">Command Line Interface</a>
+<a href="../reference/composer.generator.tests.html">Application Generator</a>
+<a href="../reference/composer.participant.add.html">CLI Add Participant</a>
+<a href="../reference/composer.identity.issue.html">CLI Issue Identity </a>
+<a href="../reference/composer.identity.revoke.html">CLI Revoke Identity</a>
+<a href="../jsdoc/index.html">API Documentation</a>
+<a href="../reference/glossary.html">Glossary</a>
+<strong><a href="../support/index.html">Support</a></strong></p>
 
             
           </nav>
@@ -197,7 +192,7 @@ the vin field. Identifying fields must be Strings.</li>
 <li>An optional super-type, which the resource definition extends.</li>
 <li>An optional &#39;abstract&#39; declaration, to indicate that this type cannot be created</li>
 <li>A set of named fields (data owned by the resource, using a has-a relationship)</li>
-<li><p>A set of relationships to other concerto types that are not owned by the resource
+<li><p>A set of relationships to other Composer types that are not owned by the resource
 but that may be referenced from the resource. Relationships are unidirectional.</p>
 <div class="highlight"><pre><code class="language-" data-lang="">/**
  * A Field asset. A Field is related to a list of animals
@@ -253,7 +248,7 @@ concept UnitedStatesAddress extends Address {
 </code></pre></div>
 <h3 id="primitive-types">Primitive types</h3>
 
-<p>Concerto resources are defined in terms of the following primitive types:</p>
+<p>Composer resources are defined in terms of the following primitive types:</p>
 
 <ol>
 <li>String : a UTF8 encoded String</li>
@@ -267,7 +262,7 @@ and UTZ offset</li>
 
 <h3 id="arrays">Arrays</h3>
 
-<p>All types in Concerto may be declared as arrays using the [] notation. Hence</p>
+<p>All types in Composer may be declared as arrays using the [] notation. Hence</p>
 <div class="highlight"><pre><code class="language-" data-lang="">Integer[] integerArray
 </code></pre></div>
 <p>Is an array of Integers stored in a field called &#39;integerArray&#39;. While</p>
@@ -278,7 +273,7 @@ and UTZ offset</li>
 
 <h3 id="relationships">Relationships</h3>
 
-<p>A relationship in the Concerto language is a tuple composed of:</p>
+<p>A relationship in the Composer language is a tuple composed of:</p>
 
 <ol>
 <li>The namespace of the type being referenced</li>
@@ -300,7 +295,7 @@ exists or the information in the relationship is invalid.</p>
 
 <h3 id="field-validators">Field Validators</h3>
 
-<p>String fields may include an optional regular expression, which is used to validate the contents of the field. Careful use of field validators allows Concerto to perform rich data validation, leading to fewer errors and less boilerplate code.</p>
+<p>String fields may include an optional regular expression, which is used to validate the contents of the field. Careful use of field validators allows Composer to perform rich data validation, leading to fewer errors and less boilerplate code.</p>
 
 <p>The example below declares that the <code>Farmer</code> participant contains a field <code>postcode</code> that must conform to the regular expression for valid UK postcodes.</p>
 <div class="highlight"><pre><code class="language-" data-lang="">participant Farmer extends Participant {
@@ -347,13 +342,7 @@ exists or the information in the relationship is invalid.</p>
     
 
     
-    
-
-
-
-
-
-<!-- Navigation -->
+    <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navbar-fixed-bottom">
           <ul class="nav navbar-nav navbar-left">
             <li>
