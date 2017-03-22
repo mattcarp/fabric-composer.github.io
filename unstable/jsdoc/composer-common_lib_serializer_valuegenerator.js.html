@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Fabric Composer Source: composer-common/lib/serializer/instancegenerator.js</title>
+	<title>Fabric Composer Source: composer-common/lib/serializer/valuegenerator.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -79,7 +79,7 @@
 		<div id="main">
 			
 
-		<h1 class="page-title">Source: composer-common/lib/serializer/instancegenerator.js</h1>
+		<h1 class="page-title">Source: composer-common/lib/serializer/valuegenerator.js</h1>
     
 <section>
     <article>
@@ -100,156 +100,147 @@
 
 'use strict';
 
-const ClassDeclaration = require('../introspect/classdeclaration');
-const EnumDeclaration = require('../introspect/enumdeclaration');
-const Field = require('../introspect/field');
-const leftPad = require('left-pad');
-const ModelUtil = require('../modelutil');
-const RelationshipDeclaration = require('../introspect/relationshipdeclaration');
-const Util = require('../util');
-const ValueGeneratorFactory = require('./valuegenerator');
+const randomWords = require('random-words');
 
 /**
- * Generate sample instance data for the specified class declaration
- * and resource instance. The specified resource instance will be
- * updated with either default values or generated sample data.
+ * Factory providing static methods to create ValueGenerator instances.
  * @private
- * @class
- * @memberof module:composer-common
  */
-class InstanceGenerator {
-
+class ValueGeneratorFactory {
     /**
-     * Visitor design pattern
-     * @param {Object} thing - the object being visited
-     * @param {Object} parameters  - the parameter
-     * @return {Object} the result of visiting or null
-     * @private
+     * Create a value generator that supplies default values.
+     * @return {ValueGenerator} a value generator.
      */
-    visit(thing, parameters) {
-        if (thing instanceof ClassDeclaration) {
-            return this.visitClassDeclaration(thing, parameters);
-        } else if (thing instanceof RelationshipDeclaration) {
-            return this.visitRelationshipDeclaration(thing, parameters);
-        } else if (thing instanceof Field) {
-            return this.visitField(thing, parameters);
-        } else {
-            throw new Error('Unrecognised ' + JSON.stringify(thing) );
-        }
+    static default() {
+        return new ValueGenerator();
     }
 
     /**
-     * Visitor design pattern
-     * @param {ClassDeclaration} classDeclaration - the object being visited
-     * @param {Object} parameters  - the parameter
-     * @return {Object} the result of visiting or null
-     * @private
+     * Create a value generator that supplies randomly generated sample values.
+     * @return {ValueGenerator} a value generator.
      */
-    visitClassDeclaration(classDeclaration, parameters) {
-        const obj = parameters.stack.pop();
-        const properties = classDeclaration.getProperties();
-        for(let n=0; n &lt; properties.length; n++) {
-            const property = properties[n];
-            const value = obj[property.getName()];
-            if(Util.isNull(value)) {
-                obj[property.getName()] = property.accept(this,parameters);
-            }
-        }
-        return obj;
+    static sample() {
+        return new SampleValueGenerator();
     }
-
-    /**
-     * Visitor design pattern
-     * @param {Field} field - the object being visited
-     * @param {Object} parameters  - the parameter
-     * @return {Object} the result of visiting or null
-     * @private
-     */
-    visitField(field, parameters) {
-        if (field.isArray()) {
-            let result = [];
-            for (let i = 0; i &lt; 3; i++) {
-                result.push(this.getSampleValue(field, parameters));
-            }
-            return result;
-        } else {
-            return this.getSampleValue(field, parameters);
-        }
-    }
-
-    /**
-     * Get a sample value for the specified field.
-     * @param {Field} field - the object being visited
-     * @param {Object} parameters  - the parameter
-     * @return {*} A sample value for the specified field.
-     */
-    getSampleValue(field, parameters) {
-        let type = field.getFullyQualifiedTypeName();
-        const valueGenerator = parameters.valueGenerator || ValueGeneratorFactory.default();
-        if (ModelUtil.isPrimitiveType(type)) {
-            switch(type) {
-            case 'DateTime':
-                return valueGenerator.getDateTime();
-            case 'Integer':
-                return valueGenerator.getInteger();
-            case 'Long':
-                return valueGenerator.getLong();
-            case 'Double':
-                return valueGenerator.getDouble();
-            case 'Boolean':
-                return valueGenerator.getBoolean();
-            default:
-                return valueGenerator.getString();
-            }
-        }
-        let classDeclaration = parameters.modelManager.getType(type);
-        if (classDeclaration instanceof EnumDeclaration) {
-            let enumValues = classDeclaration.getOwnProperties();
-            return enumValues[Math.floor(Math.random() * enumValues.length)].getName();
-        } else {
-            let identifierFieldName = classDeclaration.getIdentifierFieldName();
-            let idx = Math.round(Math.random() * 9999).toString();
-            idx = leftPad(idx, 4, '0');
-            let id = `${identifierFieldName}:${idx}`;
-            let resource = parameters.factory.newResource(classDeclaration.getModelFile().getNamespace(), classDeclaration.getName(), id);
-            parameters.stack.push(resource);
-            return classDeclaration.accept(this, parameters);
-        }
-    }
-
-    /**
-     * Visitor design pattern
-     * @param {RelationshipDeclaration} relationshipDeclaration - the object being visited
-     * @param {Object} parameters  - the parameter
-     * @return {Object} the result of visiting or null
-     * @private
-     */
-    visitRelationshipDeclaration(relationshipDeclaration, parameters) {
-        let classDeclaration = parameters.modelManager.getType(relationshipDeclaration.getFullyQualifiedTypeName());
-        let identifierFieldName = classDeclaration.getIdentifierFieldName();
-        let factory = parameters.factory;
-        if (relationshipDeclaration.isArray()) {
-            let result = [];
-            for (let i = 0; i &lt; 3; i++) {
-                let idx = Math.round(Math.random() * 9999).toString();
-                idx = leftPad(idx, 4, '0');
-                let id = `${identifierFieldName}:${idx}`;
-                let relationship = factory.newRelationship(classDeclaration.getModelFile().getNamespace(), classDeclaration.getName(), id);
-                result.push(relationship);
-            }
-            return result;
-        } else {
-            let idx = Math.round(Math.random() * 9999).toString();
-            idx = leftPad(idx, 4, '0');
-            let id = `${identifierFieldName}:${idx}`;
-            let relationship = factory.newRelationship(classDeclaration.getModelFile().getNamespace(), classDeclaration.getName(), id);
-            return relationship;
-        }
-    }
-
 }
 
-module.exports = InstanceGenerator;
+/**
+ * Default value generator.
+ * @private
+ */
+class ValueGenerator {
+    /**
+     * This constructor should not be called directly.
+     * @private
+     */
+    constructor() {
+        this.currentDate = new Date();
+    }
+
+    /**
+     * Get a default DateTime value.
+     * @return {Date} a date value.
+     */
+    getDateTime() {
+        return this.currentDate;
+    }
+
+    /**
+     * Get a default Integer value.
+     * @return {number} an Integer value.
+     */
+    getInteger() {
+        return 0;
+    }
+
+    /**
+     * Get a default Long value.
+     * @return {number} a Long value.
+     */
+    getLong() {
+        return 0;
+    }
+
+    /**
+     * Get a default Double value.
+     * @return {number} a Double value.
+     */
+    getDouble() {
+        return 0.000;
+    }
+
+    /**
+     * Get a default Boolean value.
+     * @return {boolean} a Boolean value.
+     */
+    getBoolean() {
+        return false;
+    }
+
+    /**
+     * Get a default String value.
+     * @return {string} a String value.
+     */
+    getString() {
+        return '';
+    }
+}
+
+/**
+ * Sample data value generator.
+ * @private
+ */
+class SampleValueGenerator extends ValueGenerator {
+    /**
+     * This constructor should not be called directly.
+     * @private
+     */
+    constructor() {
+        super();
+    }
+
+    /**
+     * Get a randomly generated sample Integer value.
+     * @return {number} an Integer value.
+     */
+    getInteger() {
+        return Math.round(Math.random() * Math.pow(2, 16));
+    }
+
+    /**
+     * Get a randomly generated sample Long value.
+     * @return {number} a Long value.
+     */
+    getLong() {
+        return Math.round(Math.random() * Math.pow(2, 32));
+    }
+
+    /**
+     * Get a randomly generated sample Double value.
+     * @return {number} a Double value.
+     */
+    getDouble() {
+        return Number((Math.random() * Math.pow(2, 8)).toFixed(3));
+    }
+
+    /**
+     * Get a randomly generated sample Boolean value.
+     * @return {boolean} a Boolean value.
+     */
+    getBoolean() {
+        return Math.round(Math.random()) === 1;
+    }
+
+    /**
+     * Get a randomly generated sample String value.
+     * @return {string} a String value.
+     */
+    getString() {
+        return randomWords({min: 1, max: 5}).join(' ');
+    }
+}
+
+module.exports = ValueGeneratorFactory;
 </pre>
     </article>
 </section>
