@@ -313,7 +313,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="composer-runtime_lib_api_participantregistry.js.html">composer-runtime/lib/api/participantregistry.js</a>,
-				 <a href="composer-runtime_lib_api_participantregistry.js.html#sunlight-1-line-142">line 142</a>
+				 <a href="composer-runtime_lib_api_participantregistry.js.html#sunlight-1-line-169">line 169</a>
 			</li>
 		</ul>
 	</dd>
@@ -368,14 +368,14 @@
         
     <pre class="sunlight-highlight-javascript">// Get the driver participant registry.
 return getParticipantRegistry(&#x27;org.acme.Driver&#x27;)
-  .then(function (driverParticipantRegistry) {
+  .then(function (participantRegistry) {
     // Get the factory for creating new participant instances.
     var factory = getFactory();
     // Create the driver.
     var driver = factory.newResource(&#x27;org.acme&#x27;, &#x27;Driver&#x27;, &#x27;VEHICLE_1&#x27;);
     driver.location = &#x27;Southampton&#x27;;
     // Add the driver to the driver participant registry.
-    return driverParticipantRegistry.add(driver);
+    return participantRegistry.add(driver);
   })
   .catch(function (error) {
     // Add optional error handling here.
@@ -494,7 +494,7 @@ return getParticipantRegistry(&#x27;org.acme.Driver&#x27;)
 		<ul class="dummy">
 			<li>
 				<a href="composer-runtime_lib_api_participantregistry.js.html">composer-runtime/lib/api/participantregistry.js</a>,
-				 <a href="composer-runtime_lib_api_participantregistry.js.html#sunlight-1-line-109">line 109</a>
+				 <a href="composer-runtime_lib_api_participantregistry.js.html#sunlight-1-line-136">line 136</a>
 			</li>
 		</ul>
 	</dd>
@@ -549,7 +549,7 @@ return getParticipantRegistry(&#x27;org.acme.Driver&#x27;)
         
     <pre class="sunlight-highlight-javascript">// Get the driver participant registry.
 return getParticipantRegistry(&#x27;org.acme.Driver&#x27;)
-  .then(function (driverParticipantRegistry) {
+  .then(function (participantRegistry) {
     // Get the factory for creating new participant instances.
     var factory = getFactory();
     // Create the first driver.
@@ -559,7 +559,187 @@ return getParticipantRegistry(&#x27;org.acme.Driver&#x27;)
     var driver2 = factory.newResource(&#x27;org.acme&#x27;, &#x27;Driver&#x27;, &#x27;VEHICLE_2&#x27;);
     driver2.location = &#x27;GREEN&#x27;;
     // Add the drivers to the driver participant registry.
-    return driverParticipantRegistry.addAll([driver1, driver2]);
+    return participantRegistry.addAll([driver1, driver2]);
+  })
+  .catch(function (error) {
+    // Add optional error handling here.
+  });</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="exists"><span class="type-signature"></span>exists(id)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Determines whether a specific participant exists in this participant registry.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The ID of the participant.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="composer-runtime_lib_api_participantregistry.js.html">composer-runtime/lib/api/participantregistry.js</a>,
+				 <a href="composer-runtime_lib_api_participantregistry.js.html#sunlight-1-line-109">line 109</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>A promise. The promise is resolved with a boolean which<br>is true if the specified participant exists in this participant registry,<br>and false if the specified participant does not exist.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">// Get the driver participant registry.
+return getParticipantRegistry(&#x27;org.acme.Driver&#x27;)
+  .then(function (participantRegistry) {
+    // Determine if the specific driver exists in the driver participant registry.
+    return participantRegistry.exists(&#x27;VEHICLE_1&#x27;);
+  })
+  .then(function (exists) {
+    // Process the the boolean result.
+    console.log(&#x27;Driver exists&#x27;, exists);
   })
   .catch(function (error) {
     // Add optional error handling here.
@@ -733,7 +913,7 @@ return getParticipantRegistry(&#x27;org.acme.Driver&#x27;)
         
     <pre class="sunlight-highlight-javascript">// Get the driver participant registry.
 return getParticipantRegistry(&#x27;org.acme.Driver&#x27;)
-  .then(function (driverParticipantRegistry) {
+  .then(function (participantRegistry) {
     // Get the specific driver from the driver participant registry.
     return participantRegistry.get(&#x27;VEHICLE_1&#x27;);
   })
@@ -863,7 +1043,7 @@ return getParticipantRegistry(&#x27;org.acme.Driver&#x27;)
         
     <pre class="sunlight-highlight-javascript">// Get the driver participant registry.
 return getParticipantRegistry(&#x27;org.acme.Driver&#x27;)
-  .then(function (driverParticipantRegistry) {
+  .then(function (participantRegistry) {
     // Get all of the drivers in the driver participant registry.
     return participantRegistry.getAll();
   })
@@ -993,7 +1173,7 @@ return getParticipantRegistry(&#x27;org.acme.Driver&#x27;)
 		<ul class="dummy">
 			<li>
 				<a href="composer-runtime_lib_api_participantregistry.js.html">composer-runtime/lib/api/participantregistry.js</a>,
-				 <a href="composer-runtime_lib_api_participantregistry.js.html#sunlight-1-line-268">line 268</a>
+				 <a href="composer-runtime_lib_api_participantregistry.js.html#sunlight-1-line-295">line 295</a>
 			</li>
 		</ul>
 	</dd>
@@ -1050,11 +1230,11 @@ return getParticipantRegistry(&#x27;org.acme.Driver&#x27;)
 var driver;
 // Get the driver participant registry.
 return getParticipantRegistry(&#x27;org.acme.Driver&#x27;)
-  .then(function (driverParticipantRegistry) {
+  .then(function (participantRegistry) {
     // Get the factory for creating new participant instances.
     var factory = getFactory();
     // Remove the driver from the driver participant registry.
-    return driverParticipantRegistry.remove(driver);
+    return participantRegistry.remove(driver);
   })
   .catch(function (error) {
     // Add optional error handling here.
@@ -1176,7 +1356,7 @@ return getParticipantRegistry(&#x27;org.acme.Driver&#x27;)
 		<ul class="dummy">
 			<li>
 				<a href="composer-runtime_lib_api_participantregistry.js.html">composer-runtime/lib/api/participantregistry.js</a>,
-				 <a href="composer-runtime_lib_api_participantregistry.js.html#sunlight-1-line-236">line 236</a>
+				 <a href="composer-runtime_lib_api_participantregistry.js.html#sunlight-1-line-263">line 263</a>
 			</li>
 		</ul>
 	</dd>
@@ -1233,13 +1413,13 @@ return getParticipantRegistry(&#x27;org.acme.Driver&#x27;)
 var driver1;
 // Get the driver participant registry.
 return getParticipantRegistry(&#x27;org.acme.Driver&#x27;)
-  .then(function (driverParticipantRegistry) {
+  .then(function (participantRegistry) {
     // Get the factory for creating new participant instances.
     var factory = getFactory();
     // Remove the drivers from the driver participant registry. Note that
     // one driver is specified as a driver instance, and the other
     // driver is specified by the ID of the driver.
-    return driverParticipantRegistry.removeAll([driver1, &#x27;VEHICLE_2&#x27;]);
+    return participantRegistry.removeAll([driver1, &#x27;VEHICLE_2&#x27;]);
   })
   .catch(function (error) {
     // Add optional error handling here.
@@ -1358,7 +1538,7 @@ return getParticipantRegistry(&#x27;org.acme.Driver&#x27;)
 		<ul class="dummy">
 			<li>
 				<a href="composer-runtime_lib_api_participantregistry.js.html">composer-runtime/lib/api/participantregistry.js</a>,
-				 <a href="composer-runtime_lib_api_participantregistry.js.html#sunlight-1-line-205">line 205</a>
+				 <a href="composer-runtime_lib_api_participantregistry.js.html#sunlight-1-line-232">line 232</a>
 			</li>
 		</ul>
 	</dd>
@@ -1415,13 +1595,13 @@ return getParticipantRegistry(&#x27;org.acme.Driver&#x27;)
 var driver;
 // Get the driver participant registry.
 return getParticipantRegistry(&#x27;org.acme.Driver&#x27;)
-  .then(function (driverParticipantRegistry) {
+  .then(function (participantRegistry) {
     // Get the factory for creating new participant instances.
     var factory = getFactory();
     // Modify the properties of the driver.
     driver.location = &#x27;Hursley&#x27;;
     // Update the driver in the driver participant registry.
-    return driverParticipantRegistry.update(driver);
+    return participantRegistry.update(driver);
   })
   .catch(function (error) {
     // Add optional error handling here.
@@ -1540,7 +1720,7 @@ return getParticipantRegistry(&#x27;org.acme.Driver&#x27;)
 		<ul class="dummy">
 			<li>
 				<a href="composer-runtime_lib_api_participantregistry.js.html">composer-runtime/lib/api/participantregistry.js</a>,
-				 <a href="composer-runtime_lib_api_participantregistry.js.html#sunlight-1-line-171">line 171</a>
+				 <a href="composer-runtime_lib_api_participantregistry.js.html#sunlight-1-line-198">line 198</a>
 			</li>
 		</ul>
 	</dd>
@@ -1598,7 +1778,7 @@ var driver1;
 var driver2;
 // Get the driver participant registry.
 return getParticipantRegistry(&#x27;org.acme.Driver&#x27;)
-  .then(function (driverParticipantRegistry) {
+  .then(function (participantRegistry) {
     // Get the factory for creating new participant instances.
     var factory = getFactory();
     // Modify the properties of the first driver.
@@ -1606,7 +1786,7 @@ return getParticipantRegistry(&#x27;org.acme.Driver&#x27;)
     // Modify the properties of the second driver.
     driver2.location = &#x27;London&#x27;;
     // Update the drivers in the driver participant registry.
-    return driverParticipantRegistry.updateAll([driver1, driver2]);
+    return participantRegistry.updateAll([driver1, driver2]);
   })
   .catch(function (error) {
     // Add optional error handling here.
