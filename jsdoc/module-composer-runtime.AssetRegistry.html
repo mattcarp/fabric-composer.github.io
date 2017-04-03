@@ -313,7 +313,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="composer-runtime_lib_api_assetregistry.js.html">composer-runtime/lib/api/assetregistry.js</a>,
-				 <a href="composer-runtime_lib_api_assetregistry.js.html#sunlight-1-line-142">line 142</a>
+				 <a href="composer-runtime_lib_api_assetregistry.js.html#sunlight-1-line-169">line 169</a>
 			</li>
 		</ul>
 	</dd>
@@ -494,7 +494,7 @@ return getAssetRegistry(&#x27;org.acme.Vehicle&#x27;)
 		<ul class="dummy">
 			<li>
 				<a href="composer-runtime_lib_api_assetregistry.js.html">composer-runtime/lib/api/assetregistry.js</a>,
-				 <a href="composer-runtime_lib_api_assetregistry.js.html#sunlight-1-line-109">line 109</a>
+				 <a href="composer-runtime_lib_api_assetregistry.js.html#sunlight-1-line-136">line 136</a>
 			</li>
 		</ul>
 	</dd>
@@ -560,6 +560,186 @@ return getAssetRegistry(&#x27;org.acme.Vehicle&#x27;)
     vehicle2.colour = &#x27;GREEN&#x27;;
     // Add the vehicles to the vehicle asset registry.
     return vehicleAssetRegistry.addAll([vehicle1, vehicle2]);
+  })
+  .catch(function (error) {
+    // Add optional error handling here.
+  });</pre>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="exists"><span class="type-signature"></span>exists(id)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Determines whether a specific asset exists in this asset registry.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The ID of the asset.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="composer-runtime_lib_api_assetregistry.js.html">composer-runtime/lib/api/assetregistry.js</a>,
+				 <a href="composer-runtime_lib_api_assetregistry.js.html#sunlight-1-line-109">line 109</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <p>A promise. The promise is resolved with a boolean which<br>is true if the specified asset exists in this asset registry, and false<br>if the specified participant does not exist.</p>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">// Get the vehicle asset registry.
+return getAssetRegistry(&#x27;org.acme.Vehicle&#x27;)
+  .then(function (vehicleAssetRegistry) {
+    // Determine if the specific vehicle exists in the vehicle asset registry.
+    return assetRegistry.exists(&#x27;VEHICLE_1&#x27;);
+  })
+  .then(function (exists) {
+    // Process the the boolean result.
+    console.log(&#x27;Vehicle exists&#x27;, exists);
   })
   .catch(function (error) {
     // Add optional error handling here.
@@ -993,7 +1173,7 @@ return getAssetRegistry(&#x27;org.acme.Vehicle&#x27;)
 		<ul class="dummy">
 			<li>
 				<a href="composer-runtime_lib_api_assetregistry.js.html">composer-runtime/lib/api/assetregistry.js</a>,
-				 <a href="composer-runtime_lib_api_assetregistry.js.html#sunlight-1-line-268">line 268</a>
+				 <a href="composer-runtime_lib_api_assetregistry.js.html#sunlight-1-line-295">line 295</a>
 			</li>
 		</ul>
 	</dd>
@@ -1176,7 +1356,7 @@ return getAssetRegistry(&#x27;org.acme.Vehicle&#x27;)
 		<ul class="dummy">
 			<li>
 				<a href="composer-runtime_lib_api_assetregistry.js.html">composer-runtime/lib/api/assetregistry.js</a>,
-				 <a href="composer-runtime_lib_api_assetregistry.js.html#sunlight-1-line-236">line 236</a>
+				 <a href="composer-runtime_lib_api_assetregistry.js.html#sunlight-1-line-263">line 263</a>
 			</li>
 		</ul>
 	</dd>
@@ -1358,7 +1538,7 @@ return getAssetRegistry(&#x27;org.acme.Vehicle&#x27;)
 		<ul class="dummy">
 			<li>
 				<a href="composer-runtime_lib_api_assetregistry.js.html">composer-runtime/lib/api/assetregistry.js</a>,
-				 <a href="composer-runtime_lib_api_assetregistry.js.html#sunlight-1-line-205">line 205</a>
+				 <a href="composer-runtime_lib_api_assetregistry.js.html#sunlight-1-line-232">line 232</a>
 			</li>
 		</ul>
 	</dd>
@@ -1540,7 +1720,7 @@ return getAssetRegistry(&#x27;org.acme.Vehicle&#x27;)
 		<ul class="dummy">
 			<li>
 				<a href="composer-runtime_lib_api_assetregistry.js.html">composer-runtime/lib/api/assetregistry.js</a>,
-				 <a href="composer-runtime_lib_api_assetregistry.js.html#sunlight-1-line-171">line 171</a>
+				 <a href="composer-runtime_lib_api_assetregistry.js.html#sunlight-1-line-198">line 198</a>
 			</li>
 		</ul>
 	</dd>
@@ -1672,7 +1852,7 @@ return getAssetRegistry(&#x27;org.acme.Vehicle&#x27;)
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
 	
-		on Fri Mar 17th 2017
+		on Mon Apr 3rd 2017
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

@@ -16,16 +16,21 @@
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
   <script src="/assets/js/clipboard.min.js"></script>
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-91314349-1', 'auto');
-  ga('send', 'pageview');
+  
+    <!-- Google Analytics -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-91314349-2', 'auto');
+ga('require', 'outboundLinkTracker');
+ga('require', 'eventTracker');
+ga('send', 'pageview');
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script async src="/assets/js/autotrack.js"></script>
+<!-- End Google Analytics -->
 
-  </script>
+  
 
   
     <link href="/assets/css/normalize.css" rel="stylesheet">
@@ -114,7 +119,9 @@
         <div class="col-md-10">
           <section class="content-chunk">
             
-              <h1 id="welcome-to-fabric-composer">Welcome to Fabric Composer</h1>
+              <hr>
+
+<h1 id="welcome-to-fabric-composer">Welcome to Fabric Composer</h1>
 
 <hr>
 
@@ -126,9 +133,19 @@
 
 <hr>
 
+<h2 id="key-fabric-composer-concepts-diagram">Key Fabric Composer concepts diagram</h2>
+
+<hr>
+
+<p><img src="/assets/img/Composer-Diagram.svg" alt="Diagram of Fabric Composer"></p>
+
+<hr>
+
 <h2 id="how-does-fabric-composer-work-in-practise">How does Fabric Composer work in practise?</h2>
 
-<p>For an example of a business network in action; a realtor may have a business network containing houses and listings as assets. Participants could include buyers and homeowners. Transactions might include buying or selling houses, and creating and closing lsitings. Participants can have their access to transactions restricted based on their role as either a buyer, seller, or realtor. The realtor may want to create an application to present buyers and sellers participants with a simple user interface for viewing open listings and making offers. This business network could also be integrated with the existing inventory system for the realtor, allowing for the addition of new houses as assets. Relevant other parties can be registered as participants whilst maintaining their own business network, for example a lang registry might interact with a buyer winner to transfer ownership of the land.</p>
+<hr>
+
+<p>For an example of a business network in action; a realtor may have a business network containing houses and listings as assets. Participants could include buyers and homeowners. Transactions might include buying or selling houses, and creating and closing listings. Participants can have their access to transactions restricted based on their role as either a buyer, seller, or realtor. The realtor may want to create an application to present buyers and sellers participants with a simple user interface for viewing open listings and making offers. This business network could also be integrated with the existing inventory system for the realtor, allowing for the addition of new houses as assets. Relevant other parties can be registered as participants whilst maintaining their own business network, for example a land registry might interact with a buyer winner to transfer ownership of the land.</p>
 
 <hr>
 
